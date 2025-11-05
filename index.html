@@ -2801,11 +2801,13 @@
         body > div:not([class]):not([id]) {
             opacity: 0 !important;
             pointer-events: auto !important;
+            z-index: 10000 !important; /* Above our widget */
         }
 
-        /* Make sure our custom widget shows behind it */
+        /* Make sure our custom widget shows behind it but is visible */
         .cold-lava-widget {
             pointer-events: none !important; /* Don't intercept clicks */
+            z-index: 9999 !important; /* Below the transparent Retell button */
         }
 
         .cold-lava-widget .widget-tooltip {
