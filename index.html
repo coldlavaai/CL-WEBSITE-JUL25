@@ -3822,7 +3822,12 @@
 
         // Open chat modal
         document.getElementById('coldLavaWidgetBtn').addEventListener('click', function() {
-            document.getElementById('chatModal').style.display = 'flex';
+            const modal = document.getElementById('chatModal');
+            modal.style.display = 'flex';
+            // Small delay to ensure display is applied before adding active class for animation
+            setTimeout(function() {
+                modal.classList.add('active');
+            }, 10);
             document.getElementById('chatInput').focus();
 
             // Track in Facebook Pixel
@@ -3832,22 +3837,31 @@
         });
 
         // Close chat modal
-        document.getElementById('closeChat').addEventListener('click', function() {
-            document.getElementById('chatModal').style.display = 'none';
-        });
+        function closeModal() {
+            const modal = document.getElementById('chatModal');
+            modal.classList.remove('active');
+            setTimeout(function() {
+                modal.style.display = 'none';
+            }, 400); // Match the CSS transition duration
+        }
+
+        document.getElementById('closeChat').addEventListener('click', closeModal);
 
         // Close on outside click
         window.addEventListener('click', function(event) {
             const modal = document.getElementById('chatModal');
             if (event.target === modal) {
-                modal.style.display = 'none';
+                closeModal();
             }
         });
 
         // Close on Escape key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
-                document.getElementById('chatModal').style.display = 'none';
+                const modal = document.getElementById('chatModal');
+                if (modal.style.display === 'flex') {
+                    closeModal();
+                }
             }
         });
 
