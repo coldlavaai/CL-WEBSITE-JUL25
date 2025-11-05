@@ -3593,7 +3593,7 @@
 
     <!-- Retell AI Widget Script -->
     <script
-        id="retell-widget-script"
+        id="retell-widget"
         src="https://dashboard.retellai.com/retell-widget.js"
         type="module"
         data-public-key="public_key_09bbd18bfb973540a625d"
@@ -3613,7 +3613,7 @@
                 // Hide the default Retell widget button
                 const retellButtons = document.querySelectorAll('[id*="retell"], [class*="retell"]');
                 retellButtons.forEach(btn => {
-                    if (btn.id !== 'coldLavaWidgetBtn' && btn.id !== 'retell-widget-script') {
+                    if (btn.id !== 'coldLavaWidgetBtn' && btn.id !== 'retell-widget' && btn.tagName !== 'SCRIPT') {
                         btn.style.display = 'none';
                     }
                 });
