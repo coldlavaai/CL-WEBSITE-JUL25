@@ -2488,20 +2488,303 @@
 
     </style>
 
-    <!-- Retell Widget -->
-    <script
-        id="retell-widget"
-        src="https://dashboard.retellai.com/retell-widget.js"
-        type="module"
-        data-public-key="public_key_09bbd18bfb973540a625d"
-        data-agent-id="agent_81da82d9b3ff61a0d0918ae0f2"
-        data-title="Sophie • AI Assistant"
-        data-bot-name="Sophie"
-        data-color="#02bbd4"
-        data-logo-url="https://cdn.shopify.com/s/files/1/0951/6141/8067/files/LAVA_1.png?v=1753207208"
-        data-auto-open="false"
-        data-show-ai-popup="false"
-    ></script>
+    <!-- Custom Cold Lava Widget - Glassmorphism Design -->
+    <style>
+        /* Cold Lava Custom Widget Styles */
+        .cold-lava-widget {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9999;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .widget-button {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(2, 187, 212, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 2px solid rgba(2, 187, 212, 0.3);
+            box-shadow:
+                0 8px 32px rgba(2, 187, 212, 0.3),
+                0 0 0 0 rgba(2, 187, 212, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: visible;
+            animation: widget-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes widget-pulse {
+            0%, 100% {
+                box-shadow:
+                    0 8px 32px rgba(2, 187, 212, 0.3),
+                    0 0 0 0 rgba(2, 187, 212, 0.5),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            }
+            50% {
+                box-shadow:
+                    0 8px 32px rgba(2, 187, 212, 0.4),
+                    0 0 0 8px rgba(2, 187, 212, 0.2),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        .widget-button:hover {
+            transform: scale(1.1) translateY(-2px);
+            background: rgba(2, 187, 212, 0.25);
+            border-color: rgba(2, 187, 212, 0.5);
+            box-shadow:
+                0 12px 40px rgba(2, 187, 212, 0.5),
+                0 0 0 12px rgba(2, 187, 212, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .widget-button:active {
+            transform: scale(1.05);
+        }
+
+        .widget-logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        .widget-tooltip {
+            position: absolute;
+            right: 74px;
+            top: 50%;
+            transform: translateY(-50%) translateX(10px);
+            background: rgba(10, 10, 51, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(2, 187, 212, 0.3);
+            border-radius: 12px;
+            padding: 12px 20px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .widget-button:hover .widget-tooltip {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+        }
+
+        .widget-tooltip-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #02bbd4;
+            margin: 0 0 4px 0;
+        }
+
+        .widget-tooltip-subtitle {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+
+        .widget-badge {
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            background: linear-gradient(135deg, #02bbd4, #4a90e2);
+            border: 2px solid rgba(10, 10, 51, 0.9);
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 700;
+            color: white;
+            animation: badge-bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes badge-bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Widget Modal */
+        .widget-modal {
+            position: fixed;
+            bottom: 100px;
+            right: 24px;
+            width: 380px;
+            max-height: 600px;
+            background: rgba(10, 10, 51, 0.95);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(2, 187, 212, 0.3);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .widget-modal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: all;
+        }
+
+        .widget-modal-header {
+            background: linear-gradient(135deg, rgba(2, 187, 212, 0.2), rgba(74, 144, 226, 0.1));
+            border-bottom: 1px solid rgba(2, 187, 212, 0.2);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .widget-modal-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        .widget-modal-info h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 700;
+            color: #02bbd4;
+        }
+
+        .widget-modal-info p {
+            margin: 4px 0 0 0;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .widget-modal-close {
+            margin-left: auto;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .widget-modal-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .widget-modal-body {
+            padding: 24px 20px;
+        }
+
+        .widget-option {
+            background: rgba(2, 187, 212, 0.1);
+            border: 1px solid rgba(2, 187, 212, 0.2);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .widget-option:hover {
+            background: rgba(2, 187, 212, 0.2);
+            border-color: rgba(2, 187, 212, 0.4);
+            transform: translateX(4px);
+        }
+
+        .widget-option-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #02bbd4, #4a90e2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .widget-option-content h4 {
+            margin: 0 0 4px 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .widget-option-content p {
+            margin: 0;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .widget-powered-by {
+            text-align: center;
+            padding: 16px 20px;
+            border-top: 1px solid rgba(2, 187, 212, 0.2);
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .widget-powered-by strong {
+            color: #02bbd4;
+            font-weight: 600;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .cold-lava-widget {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .widget-button {
+                width: 56px;
+                height: 56px;
+            }
+
+            .widget-logo {
+                width: 32px;
+                height: 32px;
+            }
+
+            .widget-modal {
+                bottom: 86px;
+                right: 20px;
+                left: 20px;
+                width: auto;
+                max-height: 70vh;
+            }
+
+            .widget-tooltip {
+                display: none;
+            }
+        }
+    </style>
 
 
     'https://connect.facebook.net/en_US/fbevents.js');
@@ -3296,9 +3579,85 @@
         document.head.appendChild(style);
     </script>
 
+    <!-- Cold Lava Widget HTML -->
+    <div class="cold-lava-widget">
+        <div class="widget-button" id="coldLavaWidgetBtn">
+            <img src="coldlava-logo.png" alt="Cold Lava AI" class="widget-logo">
+            <div class="widget-tooltip">
+                <p class="widget-tooltip-title">Talk to Sophie</p>
+                <p class="widget-tooltip-subtitle">Our AI Assistant</p>
+            </div>
+            <div class="widget-badge">AI</div>
+        </div>
 
-</body>
-</html>
+        <div class="widget-modal" id="coldLavaWidgetModal">
+            <div class="widget-modal-header">
+                <img src="coldlava-logo.png" alt="Cold Lava AI" class="widget-modal-logo">
+                <div class="widget-modal-info">
+                    <h3>Cold Lava AI</h3>
+                    <p>How can we help you today?</p>
+                </div>
+                <button class="widget-modal-close" id="coldLavaWidgetClose">&times;</button>
+            </div>
+            <div class="widget-modal-body">
+                <div class="widget-option" onclick="window.location.href='tel:+441515416933'">
+                    <div class="widget-option-icon">📞</div>
+                    <div class="widget-option-content">
+                        <h4>Call Sophie Now</h4>
+                        <p>Speak with our AI voice assistant</p>
+                    </div>
+                </div>
+                <div class="widget-option" onclick="window.location.href='https://cal.com/coldlava/discovery-call'">
+                    <div class="widget-option-icon">📅</div>
+                    <div class="widget-option-content">
+                        <h4>Book a Discovery Call</h4>
+                        <p>Schedule time with our team</p>
+                    </div>
+                </div>
+                <div class="widget-option" onclick="window.location.href='mailto:oliver@otdm.net'">
+                    <div class="widget-option-icon">✉️</div>
+                    <div class="widget-option-content">
+                        <h4>Send us an Email</h4>
+                        <p>oliver@otdm.net</p>
+                    </div>
+                </div>
+            </div>
+            <div class="widget-powered-by">
+                Powered by <strong>Cold Lava AI</strong>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cold Lava Widget JavaScript
+        const widgetBtn = document.getElementById('coldLavaWidgetBtn');
+        const widgetModal = document.getElementById('coldLavaWidgetModal');
+        const widgetClose = document.getElementById('coldLavaWidgetClose');
+
+        // Toggle widget modal
+        widgetBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            widgetModal.classList.toggle('active');
+        });
+
+        // Close widget modal
+        widgetClose.addEventListener('click', function(e) {
+            e.stopPropagation();
+            widgetModal.classList.remove('active');
+        });
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!widgetBtn.contains(e.target) && !widgetModal.contains(e.target)) {
+                widgetModal.classList.remove('active');
+            }
+        });
+
+        // Prevent modal close when clicking inside
+        widgetModal.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    </script>
 
 </body>
 </html>
