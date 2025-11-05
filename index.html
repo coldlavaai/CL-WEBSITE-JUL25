@@ -4013,7 +4013,7 @@
                 if (messageData.messages && messageData.messages.length > 0) {
                     // Get the last message from the agent
                     const lastMessage = messageData.messages[messageData.messages.length - 1];
-                    if (lastMessage.role === 'assistant') {
+                    if (lastMessage.role === 'agent' || lastMessage.role === 'assistant') {
                         addMessageToChat(lastMessage.content, 'bot');
                     }
                 } else {
