@@ -2982,6 +2982,19 @@
             object-fit: cover;
         }
 
+        .widget-footer {
+            text-align: center;
+            padding: 12px 20px;
+            border-top: 1px solid rgba(2, 187, 212, 0.2);
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .widget-footer strong {
+            color: #02bbd4;
+            font-weight: 600;
+        }
+
         .chat-header-info {
             display: flex;
             align-items: center;
@@ -3844,7 +3857,7 @@
         <div class="widget-modal-content">
             <div class="chat-header">
                 <div class="chat-header-info">
-                    <img src="coldlava-icon.png" alt="Sophie" class="chat-avatar">
+                    <img src="sophie-avatar.png" alt="Sophie" class="chat-avatar">
                     <div>
                         <h3>Sophie</h3>
                         <p>AI Assistant</p>
@@ -3951,19 +3964,16 @@
             // Show typing indicator
             showTypingIndicator();
 
-            // Hardcoded API key for testing
-            const API_KEY = 'key_f636ae490564b5eeb88a55223ed9';
-
             try {
                 // If first message, create chat session
                 if (!retellChatId) {
-                    const createResponse = await fetch('https://api.retellai.com/create-chat', {
+                    const createResponse = await fetch('/api/chat', {
                         method: 'POST',
                         headers: {
-                            'Authorization': 'Bearer ' + API_KEY,
                             'Content-Type': 'application/json'
                         },
                         body: JSON.stringify({
+                            action: 'create',
                             agent_id: AGENT_ID
                         })
                     });
@@ -3985,13 +3995,13 @@
                 }
 
                 // Send message to chat
-                const messageResponse = await fetch('https://api.retellai.com/create-chat-completion', {
+                const messageResponse = await fetch('/api/chat', {
                     method: 'POST',
                     headers: {
-                        'Authorization': 'Bearer ' + API_KEY,
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
+                        action: 'message',
                         chat_id: retellChatId,
                         content: message
                     })
@@ -4010,9 +4020,9 @@
                 removeTypingIndicator();
 
                 // Add bot response to chat
-                if (messageData.messages && messageData.messages.length > 0) {
+                if (messageData.response && messageData.response.length > 0) {
                     // Get the last message from the agent
-                    const lastMessage = messageData.messages[messageData.messages.length - 1];
+                    const lastMessage = messageData.response[messageData.response.length - 1];
                     if (lastMessage.role === 'agent' || lastMessage.role === 'assistant') {
                         addMessageToChat(lastMessage.content, 'bot');
                     }
