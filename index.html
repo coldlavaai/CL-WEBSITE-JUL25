@@ -3577,52 +3577,72 @@
         document.head.appendChild(style);
     </script>
 
-    <!-- Cold Lava Chat Widget with Retell Integration -->
+    <!-- Cold Lava Chat Widget -->
     <div class="cold-lava-widget">
-        <div class="widget-button" id="coldLavaWidgetBtn">
+        <div class="widget-button" id="coldLavaWidgetBtn" onclick="window.retellWebClient && window.retellWebClient.toggleWidget()">
             <img src="coldlava-icon.png" alt="Cold Lava AI" class="widget-logo">
             <div class="widget-tooltip">
                 <p class="widget-tooltip-title">Chat to Sophie</p>
                 <p class="widget-tooltip-subtitle">AI Assistant</p>
             </div>
-            <div class="widget-badge">AI</div>
         </div>
     </div>
 
+    <!-- Retell Widget (Hidden) -->
+    <div id="retell-widget-container" style="display: none;"></div>
+
     <!-- Retell AI Widget Script -->
     <script
-        src="https://cdn.jsdelivr.net/npm/retell-client-js-sdk@2.4.0/dist/retell-client-js-sdk.min.js"
-        onload="initRetellWidget()"
+        id="retell-widget-script"
+        src="https://dashboard.retellai.com/retell-widget.js"
+        type="module"
+        data-public-key="public_key_09bbd18bfb973540a625d"
+        data-agent-id="agent_81da82d9b3ff61a0d0918ae0f2"
+        data-title="Sophie • AI Assistant"
+        data-bot-name="Sophie"
+        data-color="#02bbd4"
+        data-logo-url="coldlava-icon.png"
+        data-auto-open="false"
+        data-show-ai-popup="false"
     ></script>
 
     <script>
-        // Initialize Retell Widget
-        async function initRetellWidget() {
-            const widgetBtn = document.getElementById('coldLavaWidgetBtn');
+        // Wait for Retell widget to load and hide its default button
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                // Hide the default Retell widget button
+                const retellButtons = document.querySelectorAll('[id*="retell"], [class*="retell"]');
+                retellButtons.forEach(btn => {
+                    if (btn.id !== 'coldLavaWidgetBtn' && btn.id !== 'retell-widget-script') {
+                        btn.style.display = 'none';
+                    }
+                });
 
-            if (!widgetBtn) return;
-
-            widgetBtn.addEventListener('click', async function(e) {
-                e.stopPropagation();
-
-                try {
-                    // Initialize Retell client
-                    const retellClient = new RetellWebClient();
-
-                    // Start a web call with your agent
-                    await retellClient.startCall({
-                        accessToken: 'public_key_09bbd18bfb973540a625d',
-                        callId: 'agent_81da82d9b3ff61a0d0918ae0f2',
-                        sampleRate: 24000,
-                        enableUpdate: true
-                    });
-
-                    console.log('Retell call started');
-                } catch (error) {
-                    console.error('Error starting Retell call:', error);
+                // Find and store the Retell widget client
+                if (window.RetellWidget) {
+                    window.retellWebClient = window.RetellWidget;
                 }
-            });
-        }
+            }, 1000);
+        });
+
+        // Custom button click handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const customBtn = document.getElementById('coldLavaWidgetBtn');
+            if (customBtn) {
+                customBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    // Try to trigger the Retell widget
+                    setTimeout(function() {
+                        const retellBtn = document.querySelector('button[data-retell-button]');
+                        if (retellBtn) {
+                            retellBtn.click();
+                        }
+                    }, 100);
+                });
+            }
+        });
     </script>
 
 </body>
