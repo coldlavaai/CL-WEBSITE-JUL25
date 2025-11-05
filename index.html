@@ -2784,11 +2784,17 @@
         }
     </style>
 
-    <!-- Retell AI Widget Script -->
+    <!-- Retell AI Widget Script - Hidden default button -->
+    <style>
+        /* Hide the default Retell widget button */
+        [data-retell-button],
+        button[style*="position: fixed"][style*="bottom"][style*="right"] {
+            display: none !important;
+        }
+    </style>
     <script
         id="retell-widget"
         src="https://dashboard.retellai.com/retell-widget.js"
-        type="module"
         data-public-key="public_key_09bbd18bfb973540a625d"
         data-agent-id="agent_81da82d9b3ff61a0d0918ae0f2"
         data-title="Sophie • AI Assistant"
@@ -3594,7 +3600,7 @@
 
     <!-- Cold Lava Chat Widget -->
     <div class="cold-lava-widget">
-        <div class="widget-button" id="coldLavaWidgetBtn" onclick="window.retellWebClient && window.retellWebClient.toggleWidget()">
+        <div class="widget-button" id="coldLavaWidgetBtn">
             <img src="coldlava-icon.png" alt="Cold Lava AI" class="widget-logo">
             <div class="widget-tooltip">
                 <p class="widget-tooltip-title">Chat to Sophie</p>
@@ -3604,41 +3610,33 @@
     </div>
 
     <script>
-        // Wait for Retell widget to load and hide its default button
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                // Hide the default Retell widget button
-                const retellButtons = document.querySelectorAll('[id*="retell"], [class*="retell"]');
-                retellButtons.forEach(btn => {
-                    if (btn.id !== 'coldLavaWidgetBtn' && btn.id !== 'retell-widget' && btn.tagName !== 'SCRIPT') {
-                        btn.style.display = 'none';
-                    }
-                });
-
-                // Find and store the Retell widget client
-                if (window.RetellWidget) {
-                    window.retellWebClient = window.RetellWidget;
-                }
-            }, 1000);
-        });
-
-        // Custom button click handler
+        // Custom button click handler - triggers hidden Retell button
         document.addEventListener('DOMContentLoaded', function() {
             const customBtn = document.getElementById('coldLavaWidgetBtn');
-            if (customBtn) {
-                customBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
 
-                    // Try to trigger the Retell widget
-                    setTimeout(function() {
-                        const retellBtn = document.querySelector('button[data-retell-button]');
-                        if (retellBtn) {
-                            retellBtn.click();
-                        }
-                    }, 100);
-                });
-            }
+            customBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Find and click the hidden Retell widget button
+                const findRetellButton = setInterval(function() {
+                    const retellBtn = document.querySelector('button[data-retell-button]') ||
+                                     document.querySelector('iframe[src*="retell"]')?.parentElement?.querySelector('button') ||
+                                     Array.from(document.querySelectorAll('button')).find(btn =>
+                                         btn.style.position === 'fixed' && btn.style.bottom && btn.style.right
+                                     );
+
+                    if (retellBtn) {
+                        clearInterval(findRetellButton);
+                        retellBtn.click();
+                    }
+                }, 100);
+
+                // Stop looking after 5 seconds
+                setTimeout(function() {
+                    clearInterval(findRetellButton);
+                }, 5000);
+            });
         });
     </script>
 
