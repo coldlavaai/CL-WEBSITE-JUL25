@@ -310,6 +310,10 @@
             gap: 2.5rem;
         }
 
+        .nav-item {
+            position: relative;
+        }
+
         .nav-link {
             color: var(--text-light);
             text-decoration: none;
@@ -319,6 +323,7 @@
             cursor: pointer;
             position: relative;
             padding: 0.5rem 0;
+            display: inline-block;
         }
 
         .nav-link::after {
@@ -346,6 +351,59 @@
 
         .nav-link:hover::after {
             width: 100%;
+        }
+
+        /* Dropdown Menu */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown > .nav-link::after {
+            content: ' ▼';
+            font-size: 0.7rem;
+            margin-left: 0.3rem;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: rgba(10, 10, 51, 0.98);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 0.75rem 0;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(2, 187, 212, 0.1);
+            border-left-color: var(--accent-blue);
+            color: var(--accent-blue);
+            padding-left: 2rem;
         }
 
         .contact-email {
@@ -3838,12 +3896,19 @@
                 <span>COLD LAVA</span>
             </a>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#consulting" class="nav-link">Consulting</a></li>
-                <li><a href="#ai-agents" class="nav-link">AI Agents</a></li>
-                <li><a href="#reactivation" class="nav-link">Reactivation</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item nav-dropdown">
+                    <span class="nav-link">Services</span>
+                    <div class="dropdown-menu">
+                        <a href="#consulting" class="dropdown-item">AI Consulting</a>
+                        <a href="#ai-agents" class="dropdown-item">AI Agents</a>
+                        <a href="#websites" class="dropdown-item">Websites</a>
+                        <a href="#reactivation" class="dropdown-item">Database Reactivation</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <a href="mailto:hello@coldlava.ai" class="contact-email">✉ hello@coldlava.ai</a>
         </div>
@@ -3976,7 +4041,7 @@
     </section>
 
     <!-- Top Testimonials - All 3 Reviews -->
-    <section class="top-testimonials">
+    <section id="testimonials" class="top-testimonials">
         <div class="top-testimonials-header fade-in">
             <div class="trustpilot-badge-compact">
                 <span>100% 5 Star Reviews</span>
