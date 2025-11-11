@@ -3979,7 +3979,7 @@
     <section class="top-testimonials">
         <div class="top-testimonials-header fade-in">
             <div class="trustpilot-badge-compact">
-                <span>TrustScore 4.0</span>
+                <span>100% 5 Star Reviews</span>
                 <div class="stars-compact">
                     <svg class="star-compact" viewBox="0 0 24 24">
                         <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
@@ -4177,25 +4177,16 @@
                         <li>🚀 Next.js + Sanity CMS (lightning fast)</li>
                     </ul>
 
-                    <div class="websites-viewport-controls">
-                        <button class="viewport-btn active" data-viewport="desktop">
-                            <span class="viewport-icon">🖥️</span> Desktop
-                        </button>
-                        <button class="viewport-btn" data-viewport="mobile">
-                            <span class="viewport-icon">📱</span> Mobile
-                        </button>
-                    </div>
-
-                    <div class="websites-iframe-container" id="websitesIframeContainer">
+                    <div class="websites-iframe-container mobile-view" id="websitesIframeContainer">
                         <iframe
                             src="https://greenstar.coldlava.ai/?hideConsent=true"
-                            title="Greenstar Solar Website - Live Demo"
+                            title="Greenstar Solar Website - Mobile Preview"
                             class="websites-live-iframe"
                             loading="lazy"
                         ></iframe>
                     </div>
 
-                    <a href="https://greenstar.coldlava.ai/" target="_blank" class="websites-example-link">Open in New Tab →</a>
+                    <a href="https://greenstar.coldlava.ai/" target="_blank" class="websites-example-link">Open desktop version in new tab →</a>
                 </div>
             </div>
         </div>
@@ -4588,27 +4579,6 @@
 
         // Dynamic year for footer
         document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Viewport Toggle for Website Preview
-        const viewportButtons = document.querySelectorAll('.viewport-btn');
-        const iframeContainer = document.getElementById('websitesIframeContainer');
-
-        viewportButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active from all buttons
-                viewportButtons.forEach(b => b.classList.remove('active'));
-                // Add active to clicked button
-                btn.classList.add('active');
-
-                // Toggle iframe container class
-                const viewport = btn.getAttribute('data-viewport');
-                if (viewport === 'mobile') {
-                    iframeContainer.classList.add('mobile-view');
-                } else {
-                    iframeContainer.classList.remove('mobile-view');
-                }
-            });
-        });
 
         // Luxury Cursor Removed - Better Performance
 
