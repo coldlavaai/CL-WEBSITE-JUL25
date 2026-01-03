@@ -114,22 +114,26 @@ export const fragmentShader = /* glsl */ `
     return length(max(d, 0.0)) + min(max(d.x, d.y), 0.0);
   }
 
-  // Get organic blob position with slow animation
+  // Get organic blob position with flowing animation
   vec3 getBlobPosition(int index, float time) {
     if (index >= uBlobCount) return vec3(0.0);
 
     vec4 blobData = uBlobPositions[index];
     vec3 basePos = blobData.xyz;
 
-    // Slow, viscous oscillation (Cold Lava feel)
-    float t = time * 0.25;  // Very slow time multiplier
+    // More dynamic flowing movement
+    float t = time * 0.5;  // Faster time multiplier for visible flow
     float phase = float(index) * 1.618;  // Golden ratio for variation
 
     vec3 offset = vec3(
-      sin(t + phase) * 0.08,
-      cos(t * 0.7 + phase) * 0.12,
-      sin(t * 0.3 + phase) * 0.05
+      sin(t + phase) * 0.25,           // 3x larger amplitude
+      cos(t * 0.7 + phase) * 0.35,     // More vertical movement
+      sin(t * 0.3 + phase) * 0.15      // 3x depth movement
     );
+
+    // Add secondary flowing motion
+    offset.x += sin(t * 0.4 + basePos.y) * 0.15;
+    offset.y += cos(t * 0.5 + basePos.x) * 0.15;
 
     // Add scroll velocity stretch
     offset.y += uScrollVelocity * 0.3;
@@ -171,11 +175,11 @@ export const fragmentShader = /* glsl */ `
       vec2 size = zone.zw;
       float strength = uRepulsionStrengths[i];
 
-      // Distance to repulsion zone
-      float dist = sdBox(screenPos, center, size * 1.2);  // Padding
+      // Distance to repulsion zone with larger padding for text readability
+      float dist = sdBox(screenPos, center, size * 1.8);  // Increased padding
 
-      // Inverse square repulsion
-      repulsion += strength / (dist * dist + 0.1);
+      // Stronger inverse square repulsion for better fade
+      repulsion += (strength * 3.0) / (dist * dist + 0.05);
     }
 
     return repulsion;
@@ -264,13 +268,16 @@ export const fragmentShader = /* glsl */ `
       float thickness = smoothstep(0.0, 2.0, d);
       lavaColor = mix(lavaColor, midColor, thickness * 0.3);
 
-      // Apply repulsion dimming (lava fades near content)
+      // Apply repulsion dimming (lava fades aggressively near content)
       vec2 screenPos = uv;
       float repulsion = getRepulsion(screenPos);
-      float dimming = smoothstep(2.0, 0.5, repulsion);
 
-      // Final alpha (semi-transparent, dimmed near content)
-      float alpha = 0.25 * dimming;
+      // Aggressive fade near content, full visibility in gaps
+      float dimming = smoothstep(4.0, 0.3, repulsion);
+      dimming = pow(dimming, 2.0);  // Sharper fade curve
+
+      // Higher base alpha in open areas, completely transparent near text
+      float alpha = 0.5 * dimming;
 
       color = vec4(lavaColor, alpha);
     }

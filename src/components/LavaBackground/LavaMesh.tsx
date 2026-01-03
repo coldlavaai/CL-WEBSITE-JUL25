@@ -82,8 +82,8 @@ export function LavaMesh({ quality }: LavaMeshProps) {
 
     const mat = materialRef.current
 
-    // Slow, viscous time (Cold Lava brand)
-    mat.uniforms.uTime.value = state.clock.elapsedTime * 0.2
+    // More dynamic time for visible flow
+    mat.uniforms.uTime.value = state.clock.elapsedTime * 0.4
 
     // Update scroll data
     mat.uniforms.uScrollProgress.value = scrollProgress
