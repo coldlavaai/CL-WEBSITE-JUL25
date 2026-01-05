@@ -151,7 +151,7 @@ export default function Home() {
           <FadeIn>
             <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 md:p-12 text-center">
               <p className="text-2xl md:text-3xl text-white/80 italic leading-relaxed mb-4">
-                "We build software tailored to how you operate, not how a product manager in San Francisco thinks you should."
+                "Custom solutions for how you work, not how Silicon Valley thinks you should."
               </p>
               <p className="text-white/40 text-sm">— Oliver, Head Developer</p>
             </div>
