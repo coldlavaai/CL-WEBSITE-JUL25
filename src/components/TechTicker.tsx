@@ -2,8 +2,8 @@
 
 import Image from 'next/image'
 
-// Top ticker - scrolls left (working logos only)
-const topLogos = [
+// All logos - we'll use one continuous set that loops infinitely
+const allLogos = [
   { name: 'React', path: '/logos/react.svg' },
   { name: 'Next.js', path: '/logos/nextjs.png' },
   { name: 'TypeScript', path: '/logos/typescript.svg' },
@@ -17,10 +17,6 @@ const topLogos = [
   { name: 'Twilio', path: '/logos/twilio.svg' },
   { name: 'Telegram', path: '/logos/telegram.svg' },
   { name: 'WhatsApp', path: '/logos/whatsapp.svg' },
-]
-
-// Bottom ticker - scrolls right (working logos only)
-const bottomLogos = [
   { name: 'Shopify', path: '/logos/shopify.svg' },
   { name: 'WordPress', path: '/logos/wordpress.svg' },
   { name: 'Vercel', path: '/logos/vercel.svg' },
@@ -31,69 +27,57 @@ const bottomLogos = [
   { name: 'Google', path: '/logos/google.svg' },
   { name: 'Stripe', path: '/logos/stripe.svg' },
   { name: 'Cal.com', path: '/logos/cal.svg' },
-  { name: 'Meta', path: '/logos/meta.svg' },
   { name: 'Tailwind CSS', path: '/logos/tailwind.svg' },
 ]
 
-function TickerRow({ logos, reverse = false }: { logos: typeof topLogos; reverse?: boolean }) {
+function InfiniteTicker({ logos, reverse = false }: { logos: typeof allLogos; reverse?: boolean }) {
+  // Triple the logos for truly seamless infinite scroll
+  const tripleLogos = [...logos, ...logos, ...logos]
+
   return (
     <div className="relative overflow-hidden">
       {/* Gradient overlays */}
-      <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none" />
 
-      {/* Ticker container - must have exactly 2 sets for seamless loop */}
-      <div className={`flex ${reverse ? 'animate-ticker-reverse' : 'animate-ticker'}`}>
-        {/* First set */}
-        <div className="flex items-center gap-12 px-6 shrink-0">
-          {logos.map((logo, index) => (
-            <div
-              key={`first-${index}`}
-              className="flex items-center justify-center h-16 w-32 grayscale hover:grayscale-0 opacity-40 hover:opacity-100 transition-all duration-300"
-            >
-              <Image
-                src={logo.path}
-                alt={logo.name}
-                width={120}
-                height={60}
-                className="h-12 w-auto object-contain"
-                unoptimized
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Duplicate set for seamless loop */}
-        <div className="flex items-center gap-12 px-6 shrink-0">
-          {logos.map((logo, index) => (
-            <div
-              key={`second-${index}`}
-              className="flex items-center justify-center h-16 w-32 grayscale hover:grayscale-0 opacity-40 hover:opacity-100 transition-all duration-300"
-            >
-              <Image
-                src={logo.path}
-                alt={logo.name}
-                width={120}
-                height={60}
-                className="h-12 w-auto object-contain"
-                unoptimized
-              />
-            </div>
-          ))}
-        </div>
+      {/* Infinite ticker - uses CSS animation for smoothness */}
+      <div
+        className={`flex gap-16 ${reverse ? 'animate-ticker-reverse' : 'animate-ticker'}`}
+        style={{ width: 'max-content' }}
+      >
+        {tripleLogos.map((logo, index) => (
+          <div
+            key={index}
+            className="flex-shrink-0 flex items-center justify-center h-20 w-40 group"
+          >
+            <Image
+              src={logo.path}
+              alt={logo.name}
+              width={160}
+              height={80}
+              className="h-16 w-auto object-contain brightness-0 invert opacity-60 group-hover:brightness-100 group-hover:invert-0 group-hover:opacity-100 transition-all duration-300"
+              unoptimized
+            />
+          </div>
+        ))}
       </div>
     </div>
   )
 }
 
 export function TechTicker() {
+  // Split logos for top/bottom tickers
+  const midpoint = Math.ceil(allLogos.length / 2)
+  const topLogos = allLogos.slice(0, midpoint)
+  const bottomLogos = allLogos.slice(midpoint)
+
   return (
-    <div className="py-4 space-y-6">
+    <div className="py-4 space-y-8">
       {/* Top ticker - scrolls left */}
-      <TickerRow logos={topLogos} />
+      <InfiniteTicker logos={topLogos} />
 
       {/* Bottom ticker - scrolls right */}
-      <TickerRow logos={bottomLogos} reverse />
+      <InfiniteTicker logos={bottomLogos} reverse />
     </div>
   )
 }
