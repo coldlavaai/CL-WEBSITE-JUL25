@@ -49,8 +49,8 @@ module.exports = {
         'fade-in': 'fadeIn 0.8s var(--ease-apple) forwards',
         'slide-up': 'slideUp 0.8s var(--ease-apple) forwards',
         'scale-in': 'scaleIn 0.6s var(--ease-apple) forwards',
-        'ticker': 'ticker 40s linear infinite',
-        'ticker-reverse': 'tickerReverse 40s linear infinite',
+        'ticker': 'ticker 60s linear infinite',
+        'ticker-reverse': 'tickerReverse 60s linear infinite',
       },
       keyframes: {
         fadeIn: {
