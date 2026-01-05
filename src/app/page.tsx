@@ -195,51 +195,62 @@ export default function Home() {
 
       {/* BOS Section */}
       <section id="bos" className="py-24 md:py-32 border-t border-white/5">
-        <div className="container-default max-w-4xl">
-          <FadeIn>
-            <div className="border border-white/5 rounded-2xl p-8 md:p-12 bg-white/[0.02]">
-              <p className="text-sm uppercase tracking-[0.2em] text-orange-500 mb-4">
-                Coming 2026
-              </p>
+        <div className="container-default max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <FadeIn>
+              <div>
+                <p className="text-sm uppercase tracking-[0.2em] text-orange-500 mb-4">
+                  Coming 2026
+                </p>
 
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-2">
-                BOS
-              </h2>
-              <p className="text-xl md:text-2xl text-white/50 mb-6">
-                Business Operating System
-              </p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-2">
+                  BOS
+                </h2>
+                <p className="text-xl md:text-2xl text-white/50 mb-6">
+                  Business Operating System
+                </p>
 
-              <p className="text-lg text-white/70 mb-8 leading-relaxed">
-                We built BOS because CRMs are broken. An AI-native operating system designed for how modern businesses actually run.
-              </p>
+                <p className="text-lg text-white/70 mb-8 leading-relaxed">
+                  We built BOS because CRMs are broken. An AI-native operating system designed for how modern businesses actually run.
+                </p>
 
-              <ul className="space-y-3 mb-10">
-                {[
-                  'Not another CRM. A complete operating system.',
-                  'AI built in from the start, not bolted on.',
-                  'One system instead of twelve integrations.',
-                  'Built for operators, not administrators.',
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-white/50">
-                    <span className="text-orange-500 mt-0.5">—</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+                <ul className="space-y-3 mb-10">
+                  {[
+                    'Not another CRM. A complete operating system.',
+                    'AI built in from the start, not bolted on.',
+                    'One system instead of twelve integrations.',
+                    'Built for operators, not administrators.',
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-white/50">
+                      <span className="text-orange-500 mt-0.5">—</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
 
-              <a
-                href="https://cal.com/coldlava/discovery-call"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-accent inline-block"
-              >
-                Talk to us
-              </a>
-              <p className="text-sm text-white/30 mt-3">
-                For operators done stitching together tools.
-              </p>
-            </div>
-          </FadeIn>
+                <a
+                  href="https://cal.com/coldlava/discovery-call"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-accent inline-block"
+                >
+                  Talk to us
+                </a>
+                <p className="text-sm text-white/30 mt-3">
+                  For operators done stitching together tools.
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.2}>
+              <div className="relative h-full min-h-[400px] rounded-2xl bg-gradient-to-br from-orange-500/10 via-transparent to-transparent border border-white/5 flex items-center justify-center">
+                <div className="text-center text-white/20">
+                  <div className="text-6xl mb-4">⚙️</div>
+                  <p className="text-sm uppercase tracking-wider">Product Preview</p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
 
           {/* One-liner testimonial */}
           <FadeIn delay={0.3}>
@@ -269,7 +280,7 @@ export default function Home() {
 
       {/* Process Section */}
       <section className="py-24 md:py-32 border-t border-white/5">
-        <div className="container-default max-w-4xl">
+        <div className="container-default max-w-6xl">
           <div className="mb-16 text-center">
             <FadeIn>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-6">
@@ -283,17 +294,17 @@ export default function Home() {
             </FadeIn>
           </div>
 
-          <div className="space-y-12">
+          <StaggerChildren className="grid md:grid-cols-2 gap-8 md:gap-12">
             {process.map((step, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <div className="text-left">
+              <StaggerItem key={i}>
+                <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6 md:p-8 h-full">
                   <span className="text-orange-500 font-mono text-sm">{step.num}</span>
-                  <h3 className="text-xl font-semibold mt-2">{step.title}</h3>
-                  <p className="text-white/40 mt-2 leading-relaxed">{step.description}</p>
+                  <h3 className="text-xl md:text-2xl font-semibold mt-3 mb-3">{step.title}</h3>
+                  <p className="text-white/50 leading-relaxed">{step.description}</p>
                 </div>
-              </FadeIn>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
 
           <FadeIn delay={0.4}>
             <p className="text-center text-white/30 mt-16 text-lg">
@@ -316,21 +327,21 @@ export default function Home() {
       {/* Work Section */}
       <section id="work" className="py-24 md:py-32 border-t border-white/5">
         <div className="container-default max-w-5xl">
-          <div className="mb-12">
+          <div className="mb-16 text-center">
             <FadeIn>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-4">
                 Satisfied customers
               </h2>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <p className="text-lg text-white/50 max-w-xl">
+              <p className="text-lg text-white/50 max-w-2xl mx-auto">
                 We&apos;ve built systems for vehicle detailing, renewable energy, landscaping, and more.
               </p>
             </FadeIn>
           </div>
 
           <FadeIn delay={0.2}>
-            <div className="flex flex-wrap items-center gap-8 md:gap-12">
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
               <img
                 src="/client-logos/DetailDynamics-Logo.png"
                 alt="Detail Dynamics"
