@@ -375,17 +375,17 @@ export default function Home() {
           </FadeIn>
 
           {/* All Testimonials - 3 columns, 2 rows */}
-          <StaggerChildren className="mt-16 md:mt-20 grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <StaggerChildren className="mt-16 md:mt-20 grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {testimonials.map((testimonial, i) => (
               <StaggerItem key={i}>
-                <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6 md:p-8 h-full flex flex-col justify-between text-center">
-                  <p className="text-base md:text-lg text-white/60 italic leading-relaxed mb-6">
+                <div className="text-center">
+                  <p className="text-base md:text-lg text-white/60 italic leading-relaxed mb-4">
                     "{testimonial.quote}"
                   </p>
-                  <p className="text-white/40 text-sm">
-                    — {testimonial.name}
-                    {testimonial.company && `, ${testimonial.company}`}
-                  </p>
+                  <p className="text-white/40 text-sm font-medium">{testimonial.name}</p>
+                  {testimonial.company && (
+                    <p className="text-white/30 text-xs mt-1">{testimonial.company}</p>
+                  )}
                 </div>
               </StaggerItem>
             ))}
