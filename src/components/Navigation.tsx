@@ -42,11 +42,11 @@ export function Navigation() {
             className="hover:opacity-70 transition-opacity"
           >
             <Image
-              src="/Cold Lava Logo/Cold Lava Logo.png"
+              src="/Cold Lava Logo/Cold Lava - Icon.png"
               alt="Cold Lava"
-              width={200}
+              width={60}
               height={60}
-              className="h-12 w-auto"
+              className="h-14 w-auto"
               priority
             />
           </Link>

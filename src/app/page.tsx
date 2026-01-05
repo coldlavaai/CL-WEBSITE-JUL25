@@ -79,7 +79,7 @@ export default function Home() {
 
           <FadeIn delay={0.1}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.05] max-w-5xl mx-auto mb-8">
-              We build the systems your business actually needs
+              We Build The Systems Your Business Actually Needs
             </h1>
           </FadeIn>
 

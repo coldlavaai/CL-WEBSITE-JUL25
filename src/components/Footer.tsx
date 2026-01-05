@@ -9,11 +9,11 @@ export function Footer() {
           {/* Logo & Copyright */}
           <div className="flex flex-col gap-3">
             <Image
-              src="/Cold Lava Logo/Cold Lava Logo.png"
+              src="/Cold Lava Logo/Cold Lava - Icon.png"
               alt="Cold Lava"
-              width={160}
+              width={48}
               height={48}
-              className="h-10 w-auto object-contain"
+              className="h-12 w-auto object-contain"
             />
             <span className="text-sm text-white/30">
               © {new Date().getFullYear()} Cold Lava Ltd. Liverpool, UK.
