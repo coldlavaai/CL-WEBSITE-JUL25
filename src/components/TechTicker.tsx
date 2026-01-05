@@ -33,7 +33,7 @@ const allLogos = [
   { name: 'Xero', path: '/logos/xero.png' },
   { name: 'Tailwind', path: '/logos/tailwind.svg' },
   { name: 'LinkedIn', path: '/logos/linkedin.png' },
-  { name: 'VAPI', path: '/logos/vapi.png' },
+  { name: 'VAPI', path: '/logos/VAPIFULL.png' },
   { name: 'Cal.com', path: '/logos/cal.svg' },
   { name: 'Airtable', path: '/logos/airtable.png' },
   { name: 'Telegram', path: '/logos/telegram.svg' },
