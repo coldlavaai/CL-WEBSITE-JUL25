@@ -32,6 +32,10 @@ const allLogos = [
   { name: 'Cal.com', path: '/logos/cal.svg' },
   { name: 'Meta', path: '/logos/meta.png' },
   { name: 'Tailwind', path: '/logos/tailwind.svg' },
+  { name: 'Zapier', path: '/logos/zapier.png' },
+  { name: 'Make', path: '/logos/make.png' },
+  { name: 'Python', path: '/logos/python.svg' },
+  { name: 'Xero', path: '/logos/xero.png' },
 ]
 
 function LogoTicker({ logos, reverse = false }: { logos: typeof allLogos; reverse?: boolean }) {
