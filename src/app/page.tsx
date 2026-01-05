@@ -323,9 +323,9 @@ export default function Home() {
           <FadeIn delay={0.5}>
             <div className="text-center mt-16 md:mt-20 max-w-3xl mx-auto">
               <p className="text-white/40 italic text-base md:text-lg leading-relaxed mb-3">
-                "Incredibly efficient, knowledgeable, and easy to work with. Delivered everything on time, and often ahead of schedule."
+                "The team's knowledge of AI and system development coupled with their work ethic made them the perfect partners to tackle our team and data challenges."
               </p>
-              <p className="text-white/30 text-sm">— Jack Castle</p>
+              <p className="text-white/30 text-sm">— Mat Cunningham, Upmarket Hotels & Leisure</p>
             </div>
           </FadeIn>
         </div>
