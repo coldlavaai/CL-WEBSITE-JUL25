@@ -96,7 +96,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-        <div className="container-default text-center">
+        <div className="container-default text-left max-w-5xl">
           <FadeIn>
             <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-white/40 mb-6">
               AI consultancy & software development
@@ -116,12 +116,12 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <div className="flex justify-center mb-20">
+            <div className="mb-20">
               <a
                 href="https://cal.com/coldlava/discovery-call"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary"
+                className="btn-primary inline-block"
               >
                 Talk to us
               </a>
@@ -145,19 +145,25 @@ export default function Home() {
         />
       </section>
 
+      {/* Positioning Statement */}
+      <section className="py-16 md:py-20 border-t border-white/5">
+        <div className="container-default max-w-4xl">
+          <FadeIn>
+            <p className="text-2xl md:text-3xl text-white/70 leading-relaxed">
+              We build software tailored to how you actually operate — not how a product manager in San Francisco thinks you should.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section id="services" className="py-24 md:py-32 border-t border-white/5">
-        <div className="container-default">
-          <div className="max-w-2xl mb-16">
+        <div className="container-default max-w-6xl">
+          <div className="mb-16 text-center">
             <FadeIn>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
                 Systems that work around your business
               </h2>
-            </FadeIn>
-            <FadeIn delay={0.1}>
-              <p className="text-lg text-white/50 leading-relaxed">
-                We build software and automation tailored to how you actually operate — not how a product manager in San Francisco thinks you should.
-              </p>
             </FadeIn>
           </div>
 
@@ -189,75 +195,55 @@ export default function Home() {
 
       {/* BOS Section */}
       <section id="bos" className="py-24 md:py-32 border-t border-white/5">
-        <div className="container-default">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div>
-              <FadeIn>
-                <p className="text-sm uppercase tracking-[0.2em] text-orange-500 mb-4">
-                  Coming 2026
-                </p>
-              </FadeIn>
-              
-              <FadeIn delay={0.1}>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-2">
-                  BOS
-                </h2>
-                <p className="text-xl md:text-2xl text-white/50 mb-6">
-                  Business Operating System
-                </p>
-              </FadeIn>
+        <div className="container-default max-w-4xl">
+          <FadeIn>
+            <div className="border border-white/5 rounded-2xl p-8 md:p-12 bg-white/[0.02]">
+              <p className="text-sm uppercase tracking-[0.2em] text-orange-500 mb-4">
+                Coming 2026
+              </p>
 
-              <FadeIn delay={0.2}>
-                <p className="text-lg text-white/70 mb-8 leading-relaxed">
-                  We built BOS because CRMs are broken. An AI-native operating system designed for how modern businesses actually run.
-                </p>
-              </FadeIn>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-2">
+                BOS
+              </h2>
+              <p className="text-xl md:text-2xl text-white/50 mb-6">
+                Business Operating System
+              </p>
 
-              <FadeIn delay={0.3}>
-                <ul className="space-y-3 mb-10 text-left">
-                  {[
-                    'Not another CRM. A complete operating system.',
-                    'AI built in from the start, not bolted on.',
-                    'One system instead of twelve integrations.',
-                    'Built for operators, not administrators.',
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-white/50">
-                      <span className="text-orange-500 mt-0.5">—</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </FadeIn>
+              <p className="text-lg text-white/70 mb-8 leading-relaxed">
+                We built BOS because CRMs are broken. An AI-native operating system designed for how modern businesses actually run.
+              </p>
 
-              <FadeIn delay={0.4}>
-                <a
-                  href="https://cal.com/coldlava/discovery-call"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-accent inline-flex"
-                >
-                  Talk to us
-                </a>
-                <p className="text-sm text-white/30 mt-3">
-                  For operators done stitching together tools.
-                </p>
-              </FadeIn>
+              <ul className="space-y-3 mb-10">
+                {[
+                  'Not another CRM. A complete operating system.',
+                  'AI built in from the start, not bolted on.',
+                  'One system instead of twelve integrations.',
+                  'Built for operators, not administrators.',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-white/50">
+                    <span className="text-orange-500 mt-0.5">—</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="https://cal.com/coldlava/discovery-call"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-accent inline-block"
+              >
+                Talk to us
+              </a>
+              <p className="text-sm text-white/30 mt-3">
+                For operators done stitching together tools.
+              </p>
             </div>
+          </FadeIn>
 
-            <FadeIn delay={0.2} direction="right">
-              <div className="aspect-square bg-white/[0.02] border border-white/5 rounded-2xl flex items-center justify-center">
-                <div className="text-white/20 text-sm">
-                  [Product visualization]
-                </div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-
-        {/* One-liner testimonial */}
-        <div className="container-default">
-          <FadeIn delay={0.5}>
-            <div className="text-center mt-16 md:mt-20 max-w-4xl mx-auto">
+          {/* One-liner testimonial */}
+          <FadeIn delay={0.3}>
+            <div className="text-center mt-16 md:mt-20 max-w-3xl mx-auto">
               <p className="text-white/40 italic text-base md:text-lg leading-relaxed mb-3">
                 "Working with Cold Lava has allowed us to rethink our client delivery systems and reshape the way our industry works with data."
               </p>
@@ -283,38 +269,34 @@ export default function Home() {
 
       {/* Process Section */}
       <section className="py-24 md:py-32 border-t border-white/5">
-        <div className="container-default">
-          <div className="max-w-2xl mb-16">
+        <div className="container-default max-w-4xl">
+          <div className="mb-16 text-center">
             <FadeIn>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-6">
                 No surprises. No black boxes.
               </h2>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <p className="text-lg text-white/50 leading-relaxed">
+              <p className="text-lg text-white/50 leading-relaxed max-w-2xl mx-auto">
                 Every project follows a clear structure — whether it's a two-week automation or a six-month platform build.
               </p>
             </FadeIn>
           </div>
 
-          <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+          <div className="space-y-12">
             {process.map((step, i) => (
-              <StaggerItem key={i}>
-                <div>
-                  <span className="text-4xl md:text-5xl font-semibold text-white/10 block mb-4">
-                    {step.num}
-                  </span>
-                  <h3 className="text-lg font-medium mb-2">{step.title}</h3>
-                  <p className="text-sm text-white/40 leading-relaxed">
-                    {step.description}
-                  </p>
+              <FadeIn key={i} delay={i * 0.1}>
+                <div className="text-left">
+                  <span className="text-orange-500 font-mono text-sm">{step.num}</span>
+                  <h3 className="text-xl font-semibold mt-2">{step.title}</h3>
+                  <p className="text-white/40 mt-2 leading-relaxed">{step.description}</p>
                 </div>
-              </StaggerItem>
+              </FadeIn>
             ))}
-          </StaggerChildren>
+          </div>
 
           <FadeIn delay={0.4}>
-            <p className="text-center text-white/30 mt-16 max-w-md mx-auto">
+            <p className="text-center text-white/30 mt-16 text-lg">
               Good, fast, cheap. Pick two. We optimise for good.
             </p>
           </FadeIn>
@@ -333,7 +315,7 @@ export default function Home() {
 
       {/* Work Section */}
       <section id="work" className="py-24 md:py-32 border-t border-white/5">
-        <div className="container-default">
+        <div className="container-default max-w-5xl">
           <div className="mb-12">
             <FadeIn>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-4">
@@ -397,7 +379,7 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="py-24 md:py-32 border-t border-white/5">
-        <div className="container-narrow text-center">
+        <div className="container-default max-w-4xl text-center">
           <FadeIn>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-6">
               Let&apos;s talk
