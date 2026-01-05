@@ -49,7 +49,7 @@ module.exports = {
         'fade-in': 'fadeIn 0.8s var(--ease-apple) forwards',
         'slide-up': 'slideUp 0.8s var(--ease-apple) forwards',
         'scale-in': 'scaleIn 0.6s var(--ease-apple) forwards',
-        'ticker': 'ticker 30s linear infinite',
+        'ticker': 'ticker 20s linear infinite',
       },
       keyframes: {
         fadeIn: {
