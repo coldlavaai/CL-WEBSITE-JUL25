@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { FadeIn, TechStackTicker, IntegrationsTicker, GridOverlay, TechnicalLabel, BOSVisual, BOSScreenshotCarousel, MouseCoordinates, ScrollProgressBar } from '@/components'
+import { FadeIn, TechStackTicker, IntegrationsTicker, GridOverlay, TechnicalLabel, BOSVisual, BOSScreenshotCarousel, MouseCoordinates, ScrollProgressBar, ProcessSection, PremiumHeroTitle } from '@/components'
 
 const services = [
   {
@@ -579,39 +579,48 @@ export default function Home() {
         <div className="absolute top-1/4 -left-1/4 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-3xl" />
 
         <div className="container-default relative z-10 py-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-6xl"
-          >
+          <div className="max-w-6xl">
             {/* Eyebrow */}
-            <p className="font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-white/30 mb-8">
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.8,
+                duration: 0.6,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-white/30 mb-8"
+            >
               AI Consultancy & Software Development
-            </p>
+            </motion.p>
 
-            {/* Headline */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.03em] leading-[0.9] mb-8 max-w-5xl">
-              We Build The{' '}
-              <span className="block text-white/40 italic font-light">Systems</span>
-              <span className="block">Your Business</span>
-              <span className="block relative inline-block">
-                Actually Needs
-                <span className="inline-block w-1 h-[0.9em] bg-cyan-500 animate-blink ml-1 align-middle" />
-              </span>
-            </h1>
+            {/* Headline - Premium word swap */}
+            <PremiumHeroTitle contentDelay={0.8} swapDelay={1.5} />
 
             {/* Subhead */}
-            <p className="text-lg md:text-xl text-white/50 max-w-2xl mb-10 leading-relaxed font-light">
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.8,
+                duration: 0.6,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="text-lg md:text-xl text-white/50 max-w-2xl mb-10 leading-relaxed font-light"
+            >
               Custom software, AI agents, and automation for UK businesses ready to scale beyond generic tools.
-            </p>
+            </motion.p>
 
             {/* CTA */}
             <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.8,
+                duration: 0.6,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="mb-12"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.2, duration: 0.6 }}
             >
               <a
                 href="https://cal.com/coldlava/discovery-call"
@@ -620,35 +629,12 @@ export default function Home() {
                 className="group relative inline-block"
               >
                 {/* Architectural frame that expands on hover */}
-                <motion.div
-                  className="absolute -inset-2 border border-cyan-500/20 group-hover:border-cyan-500/30 transition-all duration-500"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 2, duration: 0.6 }}
-                />
-                <motion.div
-                  className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-cyan-500/40 group-hover:border-cyan-500/60 transition-all duration-500"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 2, duration: 0.6 }}
-                />
-                <motion.div
-                  className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-cyan-500/40 group-hover:border-cyan-500/60 transition-all duration-500"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 2, duration: 0.6 }}
-                />
+                <div className="absolute -inset-2 border border-cyan-500/20 group-hover:border-cyan-500/30 transition-all duration-500" />
+                <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-cyan-500/40 group-hover:border-cyan-500/60 transition-all duration-500" />
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-cyan-500/40 group-hover:border-cyan-500/60 transition-all duration-500" />
 
                 {/* Button */}
                 <div className="relative px-8 py-4 bg-white text-black font-medium overflow-hidden">
-                  {/* Initial load animation - cyan sweep */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-cyan-400"
-                    initial={{ x: '0%' }}
-                    animate={{ x: '-100%' }}
-                    transition={{ delay: 2, duration: 0.8, ease: "easeInOut" }}
-                  />
-
                   {/* Hover effect - cyan sweep */}
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-cyan-400 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
 
@@ -668,9 +654,13 @@ export default function Home() {
 
             {/* Tech Stack Ticker - Integrated */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.4, duration: 0.6 }}
+              transition={{
+                delay: 0.8,
+                duration: 0.6,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="border-t border-white/5 pt-6 mt-6"
             >
               <p className="font-mono text-[10px] uppercase tracking-wider text-white/20 mb-3">
@@ -678,7 +668,7 @@ export default function Home() {
               </p>
               <TechStackTicker />
             </motion.div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Dimension line (decorative) */}
@@ -767,96 +757,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROCESS - Centered Layout */}
-      <section className="py-32 border-t border-white/5 relative overflow-hidden">
-        <GridOverlay spacing={32} opacity={0.015} />
-
-        <div className="container-default relative">
-          {/* Section Header - Left Aligned */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mb-20"
-          >
-            <div className="flex items-center gap-4 mb-4">
-              <div className="h-px w-12 bg-cyan-500/40" />
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/30">
-                Process / Methodology
-              </p>
-            </div>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight max-w-3xl">
-              No surprises.
-              <br />
-              No black boxes.
-            </h2>
-          </motion.div>
-
-          {/* Orbital Visualization - Large & Centered */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative mx-auto"
-          >
-            {/* Trust principles stack - right side */}
-            <TrustPrinciplesStack />
-
-            <ProcessOrbit />
-
-            {/* Bottom annotation */}
-            <div className="text-center mt-12">
-              <div className="inline-flex items-center gap-3">
-                <div className="h-px w-8 bg-cyan-500/20" />
-                <p className="font-mono text-[10px] text-white/40 uppercase tracking-wider">
-                  Continuous Development Cycle
-                </p>
-                <div className="h-px w-8 bg-cyan-500/20" />
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Philosophy/002 Box - Centered Below */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative border border-white/5 p-8 md:p-10 mt-20 max-w-2xl mx-auto"
-          >
-            {/* Architectural annotation */}
-            <div className="absolute -top-3 left-8 bg-black px-3">
-              <span className="font-mono text-[9px] text-cyan-500/40 uppercase tracking-wider">
-                Philosophy / 002
-              </span>
-            </div>
-
-            {/* Corner brackets */}
-            <div className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-cyan-500/20" />
-            <div className="absolute top-0 right-0 w-6 h-6 border-r-2 border-t-2 border-cyan-500/20" />
-            <div className="absolute bottom-0 left-0 w-6 h-6 border-l-2 border-b-2 border-cyan-500/20" />
-            <div className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-cyan-500/20" />
-
-            <p className="font-mono text-base md:text-lg text-white/50 text-center leading-relaxed">
-              Good, fast, cheap. Pick two. We optimise for <span className="text-cyan-500/80">good</span>.
-            </p>
-
-            {/* Dimension markers */}
-            <div className="absolute -left-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-1">
-              <div className="w-px h-4 bg-cyan-500/20" />
-              <div className="w-2 h-px bg-cyan-500/20" />
-              <div className="w-px h-4 bg-cyan-500/20" />
-            </div>
-            <div className="absolute -right-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-1">
-              <div className="w-px h-4 bg-cyan-500/20" />
-              <div className="w-2 h-px bg-cyan-500/20" />
-              <div className="w-px h-4 bg-cyan-500/20" />
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* PROCESS - Orb Wave Animation */}
+      <ProcessSection />
 
       {/* SERVICES - Architectural Grid */}
       <section id="services" className="py-32 border-t border-white/5 relative overflow-hidden">
