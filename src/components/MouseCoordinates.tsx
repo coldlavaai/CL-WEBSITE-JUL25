@@ -43,54 +43,54 @@ export function MouseCoordinates() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed top-6 left-6 z-50 select-none"
+          className="fixed top-4 md:top-6 left-4 md:left-6 z-50 select-none"
         >
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 md:gap-4">
             {/* Logo */}
             <a href="#" className="relative pointer-events-auto group cursor-pointer">
               <Image
                 src="/Cold Lava Logo/Cold Lava - Icon.png"
                 alt="Cold Lava"
-                width={48}
-                height={48}
-                className="h-12 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                width={40}
+                height={40}
+                className="h-10 md:h-12 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300"
                 priority
               />
             </a>
 
             {/* Separator line */}
-            <div className="h-12 w-px bg-gradient-to-b from-transparent via-cyan-500/30 to-transparent pointer-events-none" />
+            <div className="h-10 md:h-12 w-px bg-gradient-to-b from-transparent via-cyan-500/30 to-transparent pointer-events-none" />
 
-            {/* Coordinates */}
-            <div className="relative pointer-events-none">
+            {/* Coordinates - Hidden on very small screens */}
+            <div className="relative pointer-events-none hidden sm:block">
               {/* Corner bracket */}
               <div className="absolute -top-1 -left-1 w-3 h-3 border-l border-t border-cyan-500/30" />
 
-              <div className="flex items-center gap-3 pt-1 pl-2">
+              <div className="flex items-center gap-2 md:gap-3 pt-1 pl-2">
                 {/* X coordinate */}
                 <div className="flex items-baseline gap-1">
-                  <span className="font-mono text-[9px] text-cyan-500/60 uppercase tracking-wider">X</span>
+                  <span className="font-mono text-[8px] md:text-[9px] text-cyan-500/60 uppercase tracking-wider">X</span>
                   <motion.span
                     key={displayX}
                     initial={{ opacity: 0.5 }}
                     animate={{ opacity: 1 }}
-                    className="font-mono text-xs text-white/90 tabular-nums"
+                    className="font-mono text-[10px] md:text-xs text-white/90 tabular-nums"
                   >
                     {String(displayX).padStart(4, '0')}
                   </motion.span>
                 </div>
 
                 {/* Separator */}
-                <div className="w-px h-3 bg-cyan-500/20" />
+                <div className="w-px h-2.5 md:h-3 bg-cyan-500/20" />
 
                 {/* Y coordinate */}
                 <div className="flex items-baseline gap-1">
-                  <span className="font-mono text-[9px] text-cyan-500/60 uppercase tracking-wider">Y</span>
+                  <span className="font-mono text-[8px] md:text-[9px] text-cyan-500/60 uppercase tracking-wider">Y</span>
                   <motion.span
                     key={totalY}
                     initial={{ opacity: 0.5 }}
                     animate={{ opacity: 1 }}
-                    className="font-mono text-xs text-white/90 tabular-nums"
+                    className="font-mono text-[10px] md:text-xs text-white/90 tabular-nums"
                   >
                     {String(totalY).padStart(4, '0')}
                   </motion.span>
