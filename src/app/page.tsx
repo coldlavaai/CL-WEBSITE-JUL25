@@ -996,7 +996,7 @@ export default function Home() {
                 {[
                   'Built from the ground up for your business, not configured.',
                   'Manages your entire operation, not just customers.',
-                  'Does exactly what you need and nothing you don't.',
+                  'Does exactly what you need and nothing you don\'t.',
                   'One integrated system instead of twelve apps held together with duct tape.',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
