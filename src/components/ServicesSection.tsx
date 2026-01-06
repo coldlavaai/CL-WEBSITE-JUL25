@@ -216,14 +216,14 @@ export function ServicesSection() {
               {/* Solutions section */}
               <div className="mb-6">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-px bg-green-500/40" />
-                  <span className="font-mono text-[9px] text-green-500/40 uppercase tracking-wider">Solutions</span>
-                  <div className="flex-1 h-px bg-gradient-to-r from-green-500/20 to-transparent" />
+                  <div className="w-8 h-px bg-[#C9A962]/40" />
+                  <span className="font-mono text-[9px] text-[#C9A962]/60 uppercase tracking-wider">Solutions</span>
+                  <div className="flex-1 h-px bg-gradient-to-r from-[#C9A962]/20 to-transparent" />
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   {services[0].solutions.map((solution, idx) => (
                     <div key={idx} className="flex items-start gap-2 text-sm text-white/50">
-                      <div className="w-1 h-1 bg-green-500/40 rounded-full mt-2 flex-shrink-0" />
+                      <div className="w-1 h-1 bg-[#C9A962]/50 rounded-full mt-2 flex-shrink-0" />
                       <span className="leading-relaxed">{solution}</span>
                     </div>
                   ))}
@@ -286,7 +286,7 @@ export function ServicesSection() {
               <div className="relative bg-white/[0.01] border border-white/5 p-5 lg:p-6 hover:border-white/10 transition-all duration-500 overflow-hidden">
                 {/* Status indicator */}
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse" />
+                  <div className="w-1.5 h-1.5 bg-[#C9A962] rounded-full animate-pulse" />
                   <span className="font-mono text-[8px] text-white/30 uppercase tracking-wider">Advisory</span>
                 </div>
 
@@ -295,8 +295,8 @@ export function ServicesSection() {
                 </h3>
 
                 {/* Problem statement */}
-                <div className="mb-4 p-3 border-l-2 border-purple-500/30 bg-purple-500/5">
-                  <span className="font-mono text-[8px] text-purple-500/60 uppercase tracking-wider block mb-1">Problem</span>
+                <div className="mb-4 p-3 border-l-2 border-cyan-500/30 bg-cyan-500/5">
+                  <span className="font-mono text-[8px] text-cyan-500/60 uppercase tracking-wider block mb-1">Problem</span>
                   <p className="text-white/70 text-xs leading-relaxed">{services[3].problem}</p>
                 </div>
 
@@ -382,7 +382,7 @@ export function ServicesSection() {
               <div className="relative bg-white/[0.01] border border-white/5 p-6 lg:p-8 hover:border-white/10 transition-all duration-500 overflow-hidden">
                 {/* Status light */}
                 <div className="flex items-center gap-2 mb-4">
-                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                  <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full animate-pulse" />
                   <span className="font-mono text-[8px] text-white/30 uppercase tracking-wider">24/7 Active</span>
                 </div>
 
@@ -391,8 +391,8 @@ export function ServicesSection() {
                 </h3>
 
                 {/* Problem statement */}
-                <div className="mb-4 p-3 border-l-2 border-green-500/30 bg-green-500/5">
-                  <span className="font-mono text-[8px] text-green-500/60 uppercase tracking-wider block mb-1">Problem</span>
+                <div className="mb-4 p-3 border-l-2 border-cyan-500/30 bg-cyan-500/5">
+                  <span className="font-mono text-[8px] text-cyan-500/60 uppercase tracking-wider block mb-1">Problem</span>
                   <p className="text-white/70 text-xs leading-relaxed">{services[1].problem}</p>
                 </div>
 
@@ -419,13 +419,13 @@ export function ServicesSection() {
                 {/* Solutions */}
                 <div>
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="w-6 h-px bg-green-500/30" />
-                    <span className="font-mono text-[8px] text-green-500/40 uppercase tracking-wider">Solutions</span>
+                    <div className="w-6 h-px bg-[#C9A962]/30" />
+                    <span className="font-mono text-[8px] text-[#C9A962]/60 uppercase tracking-wider">Solutions</span>
                   </div>
                   <div className="space-y-2">
                     {services[1].solutions.map((solution, idx) => (
                       <div key={idx} className="flex items-start gap-2 text-xs text-white/50">
-                        <div className="w-1 h-1 bg-green-500/40 rounded-full mt-1.5 flex-shrink-0" />
+                        <div className="w-1 h-1 bg-[#C9A962]/50 rounded-full mt-1.5 flex-shrink-0" />
                         <span className="leading-relaxed">{solution}</span>
                       </div>
                     ))}
