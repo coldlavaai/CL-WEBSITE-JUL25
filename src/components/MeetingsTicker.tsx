@@ -41,7 +41,7 @@ export function MeetingsTicker() {
     return (
       <div className="flex items-baseline gap-2 font-mono text-xs text-white/30">
         <span className="text-[10px] text-cyan-500/40 uppercase tracking-wider">📅</span>
-        <span className="text-white/20">meetings today that could have been emails:</span>
+        <span className="text-white/20">Meetings today that could have been emails:</span>
         <span className="text-cyan-400/50 tabular-nums">—</span>
       </div>
     )
@@ -59,7 +59,7 @@ export function MeetingsTicker() {
       <span className="text-[10px] text-cyan-500/40 uppercase tracking-wider">📅</span>
 
       {/* Label */}
-      <span className="text-white/30 font-light">meetings today that could have been emails:</span>
+      <span className="text-white/30 font-light">Meetings today that could have been emails:</span>
 
       {/* Animated count */}
       <motion.span

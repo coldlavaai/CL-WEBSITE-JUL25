@@ -3,55 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { FadeIn, TechStackTicker, IntegrationsTicker, GridOverlay, TechnicalLabel, BOSVisual, BOSScreenshotCarousel, MouseCoordinates, ScrollProgressBar, ProcessSection, PremiumHeroTitle } from '@/components'
-
-const services = [
-  {
-    num: '01',
-    title: 'Business systems built to spec',
-    description: 'CRMs, platforms, and internal tools designed around your workflows.',
-    details: [
-      'Custom CRM and pipeline management',
-      'Client portals and dashboards',
-      'Internal automation tools',
-      'Database design and migration'
-    ],
-    featured: true
-  },
-  {
-    num: '02',
-    title: 'Voice and chat agents that work 24/7',
-    description: 'Custom AI that handles calls, qualifies leads, and books appointments.',
-    details: [
-      'Inbound call handling',
-      'Lead qualification and routing',
-      'Appointment scheduling',
-      'Multi-language support'
-    ]
-  },
-  {
-    num: '03',
-    title: 'Workflows that run without you',
-    description: 'Connect systems, eliminate manual tasks, and build processes that scale.',
-    details: [
-      'API integrations',
-      'Data synchronization',
-      'Email and SMS automation',
-      'Document generation'
-    ]
-  },
-  {
-    num: '04',
-    title: 'AI strategy without the jargon',
-    description: 'Assess operations, identify opportunities, and build executable roadmaps.',
-    details: [
-      'Process audit and mapping',
-      'ROI analysis and forecasting',
-      'Technology selection',
-      'Implementation planning'
-    ]
-  },
-]
+import { FadeIn, TechStackTicker, IntegrationsTicker, GridOverlay, TechnicalLabel, BOSVisual, BOSScreenshotCarousel, MouseCoordinates, ScrollProgressBar, ProcessSection, ServicesSection, PremiumHeroTitle } from '@/components'
 
 const process = [
   { num: '01', title: 'Diagnose', desc: 'Understanding your business, not just requirements.' },
@@ -759,109 +711,8 @@ export default function Home() {
       {/* PROCESS - Orb Wave Animation */}
       <ProcessSection />
 
-      {/* SERVICES - Architectural Grid */}
-      <section id="services" className="py-32 border-t border-white/5 relative overflow-hidden">
-        <GridOverlay spacing={32} opacity={0.01} />
+      <ServicesSection />
 
-        <div className="container-default relative">
-          {/* Section Header with architectural detail */}
-          <div className="mb-20">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="h-px w-12 bg-cyan-500/40" />
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/30">
-                Services / Capabilities
-              </p>
-            </div>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight max-w-3xl">
-              Systems that <span className="text-cyan-500">work</span> around your business
-            </h2>
-          </div>
-
-          {/* Service Grid */}
-          <div className="grid md:grid-cols-2 gap-8">
-            {services.map((service, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative"
-              >
-                {/* Architectural frame */}
-                <div className="relative h-full bg-white/[0.01] border border-white/5 p-8 hover:border-cyan-500/20 transition-all duration-700">
-                  {/* Corner brackets */}
-                  <div className="absolute top-0 left-0 w-4 h-4 border-l border-t border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-0 right-0 w-4 h-4 border-r border-b border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  {/* Service number */}
-                  <div className="absolute -top-3 left-6 bg-black px-2">
-                    <span className="font-mono text-[10px] text-cyan-500/60">{service.num}</span>
-                  </div>
-
-                  {/* Content */}
-                  <div className="relative">
-                    <h3 className="text-2xl font-semibold mb-3 group-hover:text-cyan-400 transition-colors duration-300">
-                      {service.title}
-                    </h3>
-
-                    <p className="text-white/50 mb-6 leading-relaxed">
-                      {service.description}
-                    </p>
-
-                    {/* Separator */}
-                    <div className="flex items-center gap-3 mb-5">
-                      <div className="w-6 h-px bg-cyan-500/30" />
-                      <span className="font-mono text-[9px] text-cyan-500/40 uppercase tracking-wider">Includes</span>
-                      <div className="flex-1 h-px bg-gradient-to-r from-cyan-500/20 to-transparent" />
-                    </div>
-
-                    {/* Details list */}
-                    <ul className="space-y-2">
-                      {service.details.map((detail, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-sm text-white/60">
-                          <div className="w-1 h-1 bg-cyan-500/40 rounded-full mt-2 flex-shrink-0" />
-                          <span className="leading-relaxed">{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Hover grid effect */}
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-[0.02] transition-opacity duration-700 pointer-events-none"
-                    style={{
-                      backgroundImage: 'linear-gradient(rgba(6,182,212,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.3) 1px, transparent 1px)',
-                      backgroundSize: '20px 20px'
-                    }}
-                  />
-                </div>
-
-                {/* Dimension line indicator */}
-                {i % 2 === 0 && (
-                  <div className="absolute -right-4 top-1/2 w-px h-12 bg-gradient-to-b from-transparent via-cyan-500/20 to-transparent" />
-                )}
-              </motion.div>
-            ))}
-          </div>
-
-          {/* One-liner testimonial */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mt-16 md:mt-20 max-w-3xl mx-auto"
-          >
-            <p className="text-white/40 italic text-base md:text-lg leading-relaxed mb-3">
-              "They helped us automate our whole sales process and built us a website that represents the business brilliantly."
-            </p>
-            <p className="text-white/30 text-sm">— Jason Wides, Greenstar Solar</p>
-          </motion.div>
-        </div>
-
-        {/* Background architectural elements */}
-        <div className="absolute top-1/4 left-0 w-px h-1/3 bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent" />
-      </section>
 
       {/* BOS - Full Width Dramatic */}
       <section id="bos" className="py-40 border-t border-white/5 relative overflow-hidden bg-white/[0.01]">
