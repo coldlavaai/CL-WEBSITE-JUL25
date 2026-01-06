@@ -715,7 +715,7 @@ export default function Home() {
 
 
       {/* BOS - Full Width Dramatic */}
-      <section id="bos" className="py-40 border-t border-white/5 relative overflow-hidden bg-white/[0.01]">
+      <section id="bos" className="py-32 border-t border-white/5 relative overflow-hidden bg-white/[0.01]">
         <GridOverlay spacing={24} opacity={0.02} />
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent" />
 
