@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import { SmoothScroll, Navigation, Footer } from '@/components'
+import { ConsoleEasterEgg } from '@/components/ConsoleEasterEgg'
 import '@/styles/globals.css'
 
 const montserrat = Montserrat({
@@ -46,6 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={montserrat.variable}>
       <body className="font-sans antialiased">
+        <ConsoleEasterEgg />
         <SmoothScroll>
           <Navigation />
           <main>{children}</main>

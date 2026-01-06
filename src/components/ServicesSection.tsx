@@ -38,6 +38,17 @@ const services = [
       'Document generation'
     ]
   },
+  {
+    num: '04',
+    title: 'AI strategy without the jargon',
+    description: 'Assess operations, identify opportunities, and build executable roadmaps.',
+    details: [
+      'Process audit and mapping',
+      'ROI analysis and forecasting',
+      'Technology selection',
+      'Implementation planning'
+    ]
+  },
 ]
 
 export function ServicesSection() {
@@ -65,16 +76,45 @@ export function ServicesSection() {
           </h2>
         </motion.div>
 
+        {/* Coordinate System Overlay */}
+        <div className="absolute top-20 left-0 right-0 pointer-events-none">
+          <div className="container-default relative">
+            {/* X-axis coordinates */}
+            <div className="flex justify-between items-center">
+              <span className="font-mono text-[8px] text-white/20">X: 0.00</span>
+              <span className="font-mono text-[8px] text-white/20">X: 1.00</span>
+            </div>
+          </div>
+        </div>
+
         {/* Asymmetric Service Layout */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Featured Service - Business Systems (Full Height Left) */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="group relative lg:row-span-2"
-          >
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 relative">
+          {/* Y-axis dimension markers */}
+          <div className="absolute -left-16 top-0 bottom-0 hidden xl:flex flex-col justify-between py-4 pointer-events-none">
+            <div className="flex items-center gap-2">
+              <span className="font-mono text-[8px] text-white/20">Y: 1.0</span>
+              <div className="w-4 h-px bg-cyan-500/20" />
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="font-mono text-[8px] text-white/20">Y: 0.5</span>
+              <div className="w-4 h-px bg-cyan-500/20" />
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="font-mono text-[8px] text-white/20">Y: 0.0</span>
+              <div className="w-4 h-px bg-cyan-500/20" />
+            </div>
+          </div>
+
+          {/* Left Column - Featured + Consulting */}
+          <div className="space-y-8 lg:space-y-12">
+            {/* Featured Service - Business Systems */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="group relative"
+            >
             {/* Outer technical frame */}
             <div className="absolute -inset-4 border border-cyan-500/10 group-hover:border-cyan-500/20 transition-all duration-700" />
 
@@ -85,6 +125,11 @@ export function ServicesSection() {
             {/* Technical annotation */}
             <div className="absolute -top-3 left-8 bg-black px-3 z-10">
               <span className="font-mono text-[10px] text-cyan-500/60 uppercase tracking-wider">Featured / 01</span>
+            </div>
+
+            {/* Corner coordinates */}
+            <div className="absolute top-0 left-0 -translate-y-full pl-2 pb-1">
+              <span className="font-mono text-[8px] text-white/15">[0.0, 1.0]</span>
             </div>
 
             {/* Main card */}
@@ -156,6 +201,75 @@ export function ServicesSection() {
             </div>
           </motion.div>
 
+            {/* Consulting Service */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="group relative"
+            >
+              {/* Technical frame */}
+              <div className="absolute -inset-2 border border-white/5 group-hover:border-cyan-500/10 transition-all duration-500" />
+
+              {/* Corner brackets */}
+              <div className="absolute top-0 left-0 w-4 h-4 border-l border-t border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-0 right-0 w-4 h-4 border-r border-b border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              {/* Service number */}
+              <div className="absolute -top-2.5 left-6 bg-black px-2 z-10">
+                <span className="font-mono text-[10px] text-cyan-500/60">{services[3].num}</span>
+              </div>
+
+              {/* Corner coordinates */}
+              <div className="absolute bottom-0 left-0 translate-y-full pl-2 pt-1">
+                <span className="font-mono text-[8px] text-white/15">[0.0, 0.0]</span>
+              </div>
+
+              {/* Dimension line connector from featured card */}
+              <div className="absolute -top-6 left-1/2 w-px h-4 bg-gradient-to-b from-cyan-500/30 to-transparent hidden lg:block" />
+
+              <div className="relative bg-white/[0.01] border border-white/5 p-6 lg:p-8 hover:border-white/10 transition-all duration-500 overflow-hidden">
+                {/* Status indicator */}
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse" />
+                  <span className="font-mono text-[8px] text-white/30 uppercase tracking-wider">Advisory</span>
+                </div>
+
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                  {services[3].title}
+                </h3>
+
+                <p className="text-white/50 mb-5 leading-relaxed">
+                  {services[3].description}
+                </p>
+
+                {/* Compact capabilities */}
+                <div className="space-y-2">
+                  {services[3].details.map((detail, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-xs text-white/50">
+                      <div className="w-px h-3 bg-cyan-500/30" />
+                      <span>{detail}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Diagonal scan line effect */}
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[2000ms] bg-gradient-to-r from-transparent via-cyan-500/5 to-transparent skew-x-12 pointer-events-none" />
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Center dividing line */}
+          <div className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 hidden lg:block pointer-events-none">
+            <div className="relative h-full flex flex-col items-center">
+              <div className="w-px flex-1 bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent" />
+              <div className="absolute top-1/2 -translate-y-1/2 bg-black px-2 py-1">
+                <span className="font-mono text-[8px] text-white/20 uppercase tracking-wider">Cross Section</span>
+              </div>
+            </div>
+          </div>
+
           {/* Right Column - Stacked Services */}
           <div className="space-y-8 lg:space-y-12">
             {/* Voice/Chat Agents */}
@@ -176,6 +290,11 @@ export function ServicesSection() {
               {/* Service number */}
               <div className="absolute -top-2.5 left-6 bg-black px-2 z-10">
                 <span className="font-mono text-[10px] text-cyan-500/60">{services[1].num}</span>
+              </div>
+
+              {/* Corner coordinates */}
+              <div className="absolute top-0 right-0 -translate-y-full pr-2 pb-1">
+                <span className="font-mono text-[8px] text-white/15">[1.0, 0.66]</span>
               </div>
 
               <div className="relative bg-white/[0.01] border border-white/5 p-6 lg:p-8 hover:border-white/10 transition-all duration-500 overflow-hidden">
@@ -206,6 +325,13 @@ export function ServicesSection() {
                 {/* Diagonal scan line effect */}
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[2000ms] bg-gradient-to-r from-transparent via-cyan-500/5 to-transparent skew-x-12 pointer-events-none" />
               </div>
+
+              {/* Dimension marker between cards */}
+              <div className="absolute -bottom-6 left-0 right-0 flex items-center justify-center gap-2 hidden lg:flex">
+                <div className="h-px flex-1 bg-gradient-to-r from-transparent to-cyan-500/20" />
+                <span className="font-mono text-[8px] text-white/20">Δ 120px</span>
+                <div className="h-px flex-1 bg-gradient-to-l from-transparent to-cyan-500/20" />
+              </div>
             </motion.div>
 
             {/* Workflows */}
@@ -226,6 +352,11 @@ export function ServicesSection() {
               {/* Service number */}
               <div className="absolute -top-2.5 left-6 bg-black px-2 z-10">
                 <span className="font-mono text-[10px] text-cyan-500/60">{services[2].num}</span>
+              </div>
+
+              {/* Corner coordinates */}
+              <div className="absolute top-0 right-0 -translate-y-full pr-2 pb-1">
+                <span className="font-mono text-[8px] text-white/15">[1.0, 0.33]</span>
               </div>
 
               <div className="relative bg-white/[0.01] border border-white/5 p-6 lg:p-8 hover:border-white/10 transition-all duration-500 overflow-hidden">

@@ -1,6 +1,7 @@
 export { SmoothScroll } from './SmoothScroll'
 export { Navigation } from './Navigation'
 export { HeaderClock } from './HeaderClock'
+export { ConsoleEasterEgg } from './ConsoleEasterEgg'
 export { Footer } from './Footer'
 export { FooterTicker } from './FooterTicker'
 export { ISSTracker } from './ISSTracker'
