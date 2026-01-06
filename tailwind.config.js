@@ -49,7 +49,10 @@ module.exports = {
         'slide-up': 'slideUp 0.8s var(--ease-apple) forwards',
         'scale-in': 'scaleIn 0.6s var(--ease-apple) forwards',
         'ticker': 'ticker 45s linear infinite',
+        'ticker-fast': 'ticker 28s linear infinite',
         'ticker-reverse': 'tickerReverse 45s linear infinite',
+        'blink': 'blink 1s step-end infinite',
+        'orbit': 'orbit 9s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -71,6 +74,18 @@ module.exports = {
         tickerReverse: {
           '0%': { transform: 'translateX(-33.333333%)' },
           '100%': { transform: 'translateX(0)' },
+        },
+        blink: {
+          '0%, 50%': { opacity: '1' },
+          '51%, 100%': { opacity: '0' },
+        },
+        orbit: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        progressFill: {
+          '0%': { strokeDashoffset: '1194' }, // 2 * PI * 190
+          '100%': { strokeDashoffset: '0' },
         },
       },
     },

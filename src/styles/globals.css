@@ -14,6 +14,17 @@
   --color-surface: #1d1d1f;
   --color-border: #424245;
 
+  /* Refined surface layers */
+  --surface-1: rgba(255, 255, 255, 0.02);
+  --surface-2: rgba(255, 255, 255, 0.04);
+  --surface-3: rgba(255, 255, 255, 0.06);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-emphasis: rgba(255, 255, 255, 0.10);
+
+  /* Orange glow variants */
+  --accent-glow: rgba(249, 115, 22, 0.25);
+  --accent-dim: rgba(249, 115, 22, 0.1);
+
   /* Z-index layers */
   --z-navigation: 50;
   --z-grain: 9999;
@@ -28,8 +39,15 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Hide default scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
-  
+
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
   body {
     background-color: #000;
     color: #fff;
@@ -192,5 +210,54 @@
   /* Ticker spotlight effect */
   .in-spotlight .logo-img {
     @apply opacity-100 grayscale-0;
+  }
+
+  /* Glow effects */
+  .glow-orange {
+    box-shadow: 0 0 40px var(--accent-glow);
+  }
+
+  .glow-orange-sm {
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+
+  .glow-orange-subtle {
+    box-shadow: 0 0 60px var(--accent-dim);
+  }
+
+  /* Card lift effect */
+  .card-lift {
+    transition: all 0.3s var(--ease-apple);
+  }
+
+  .card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Diagonal section utilities */
+  .diagonal-section {
+    position: relative;
+  }
+
+  .diagonal-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    transform: skewY(-2deg);
+    transform-origin: top left;
+    z-index: -1;
+  }
+
+  /* Technical grid background */
+  .grid-bg {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .grid-bg-dense {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 }

@@ -4,47 +4,53 @@ import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 
 // Tech Stack - Engineering credibility logos
+// Arranged to alternate: colored, white, colored, white, etc.
+// White logos: Next.js, Vercel, GitHub
+// Colored logos: TypeScript, React, Node.js, Python, Supabase, PostgreSQL, AWS, Docker
 const techStackLogos = [
-  { name: 'Next.js', path: '/logos/nextjs.png' },
-  { name: 'TypeScript', path: '/logos/typescript.svg' },
-  { name: 'React', path: '/logos/react.svg' },
-  { name: 'Node.js', path: '/logos/nodejs.svg' },
-  { name: 'Python', path: '/logos/python.svg' },
-  { name: 'Supabase', path: '/logos/supabase.svg' },
-  { name: 'PostgreSQL', path: '/logos/postgresql.svg' },
-  { name: 'AWS', path: '/logos/aws.svg' },
-  { name: 'Vercel', path: '/logos/vercel.svg' },
-  { name: 'Docker', path: '/logos/docker.svg' },
-  { name: 'GitHub', path: '/logos/github.png' },
+  { name: 'TypeScript', path: '/logos/typescript.svg' }, // colored (blue)
+  { name: 'Next.js', path: '/logos/nextjs.png' }, // white
+  { name: 'React', path: '/logos/react.svg' }, // colored (blue)
+  { name: 'Vercel', path: '/logos/vercel.svg' }, // white
+  { name: 'Node.js', path: '/logos/nodejs.svg' }, // colored (green)
+  { name: 'GitHub', path: '/logos/github.png' }, // white
+  { name: 'Python', path: '/logos/python.svg' }, // colored (blue/yellow)
+  { name: 'Supabase', path: '/logos/supabase.svg' }, // colored (green)
+  { name: 'PostgreSQL', path: '/logos/postgresql.svg' }, // colored (blue)
+  { name: 'AWS', path: '/logos/aws.svg' }, // colored (orange)
+  { name: 'Docker', path: '/logos/docker.svg' }, // colored (blue)
 ]
 
 // Integrations - Business utility logos
+// Arranged to alternate: colored, white, colored, white, etc.
+// Pattern assumes roughly equal white/colored distribution
 const integrationsLogos = [
-  { name: 'HubSpot', path: '/logos/hubspot.png' },
-  { name: 'Xero', path: '/logos/xero.png' },
-  { name: 'Stripe', path: '/logos/stripe.svg' },
-  { name: 'Twilio', path: '/logos/twilio.svg' },
-  { name: 'WhatsApp', path: '/logos/whatsapp.svg' },
-  { name: 'Shopify', path: '/logos/shopify.svg' },
-  { name: 'Cal.com', path: '/logos/cal.svg' },
-  { name: 'Google', path: '/logos/google.png' },
-  { name: 'Zapier', path: '/logos/zapier.png' },
-  { name: 'Make', path: '/logos/make.png' },
-  { name: 'n8n', path: '/logos/n8n.svg' },
-  { name: 'Airtable', path: '/logos/airtable.png' },
-  { name: 'OpenAI', path: '/logos/openai.svg' },
-  { name: 'Claude', path: '/logos/claude.svg' },
-  { name: 'Anthropic', path: '/logos/anthropic.svg' },
-  { name: 'ElevenLabs', path: '/logos/elevenlabs.svg' },
-  { name: 'Retell', path: '/logos/retell.png' },
-  { name: 'VAPI', path: '/logos/VAPIFULL.png' },
+  { name: 'HubSpot', path: '/logos/hubspot.png' }, // colored (orange)
+  { name: 'Stripe', path: '/logos/stripe.svg' }, // white
+  { name: 'Xero', path: '/logos/xero.png' }, // colored (blue)
+  { name: 'Shopify', path: '/logos/shopify.svg' }, // white
+  { name: 'Twilio', path: '/logos/twilio.svg' }, // colored (red)
+  { name: 'OpenAI', path: '/logos/openai.svg' }, // white
+  { name: 'WhatsApp', path: '/logos/whatsapp.svg' }, // colored (green)
+  { name: 'Cal.com', path: '/logos/cal.svg' }, // white
+  { name: 'Google', path: '/logos/google.png' }, // colored (multicolor)
+  { name: 'Zapier', path: '/logos/zapier.png' }, // white
+  { name: 'n8n', path: '/logos/n8n.svg' }, // colored (pink)
+  { name: 'Make', path: '/logos/make.png' }, // white
+  { name: 'Claude', path: '/logos/claude.svg' }, // colored (orange)
+  { name: 'Airtable', path: '/logos/airtable.png' }, // white
+  { name: 'Anthropic', path: '/logos/anthropic.svg' }, // colored (tan)
+  { name: 'Retell', path: '/logos/retell.png' }, // white
+  { name: 'ElevenLabs', path: '/logos/elevenlabs.svg' }, // colored
+  { name: 'VAPI', path: '/logos/VAPIFULL.png' }, // white
 ]
 
 type Logo = { name: string; path: string }
 
-function LogoTicker({ logos }: { logos: Logo[] }) {
+function LogoTicker({ logos, speed = 'normal' }: { logos: Logo[]; speed?: 'normal' | 'fast' }) {
   const containerRef = useRef<HTMLDivElement>(null)
   const repeatedLogos = [...logos, ...logos, ...logos]
+  const animationClass = speed === 'fast' ? 'animate-ticker-fast' : 'animate-ticker'
 
   useEffect(() => {
     const container = containerRef.current
@@ -52,20 +58,36 @@ function LogoTicker({ logos }: { logos: Logo[] }) {
 
     const updateSpotlight = () => {
       const items = container.querySelectorAll('[data-logo-item]')
+
+      // Find the logo closest to center
       const centerX = window.innerWidth / 2
+      let closestLogo: Element | null = null
+      let smallestDistance = Infinity
 
       items.forEach((item) => {
         const rect = item.getBoundingClientRect()
-        const itemCenterX = rect.left + rect.width / 2
-        const distanceFromCenter = Math.abs(centerX - itemCenterX)
+        const logoCenter = rect.left + rect.width / 2
+        const distanceFromCenter = Math.abs(centerX - logoCenter)
 
-        // Spotlight radius - tight for single logo, with smooth handoff
-        const spotlightRadius = 100
+        if (distanceFromCenter < smallestDistance) {
+          smallestDistance = distanceFromCenter
+          closestLogo = item
+        }
+      })
 
-        if (distanceFromCenter < spotlightRadius) {
-          item.classList.add('in-spotlight')
+      // Apply color only to the closest logo
+      items.forEach((item) => {
+        const img = item.querySelector('.logo-img')
+        if (!img) return
+
+        if (item === closestLogo) {
+          // Show color
+          img.classList.remove('grayscale', 'opacity-60')
+          img.classList.add('grayscale-0', 'opacity-100')
         } else {
-          item.classList.remove('in-spotlight')
+          // Show grayscale
+          img.classList.add('grayscale', 'opacity-60')
+          img.classList.remove('grayscale-0', 'opacity-100')
         }
       })
     }
@@ -83,14 +105,14 @@ function LogoTicker({ logos }: { logos: Logo[] }) {
 
       <div
         ref={containerRef}
-        className="flex items-center animate-ticker relative z-[1]"
+        className={`flex items-center ${animationClass} relative z-[1]`}
         style={{ width: 'max-content' }}
       >
         {repeatedLogos.map((logo, index) => (
           <div
             key={index}
             data-logo-item
-            className="flex-shrink-0 px-8 md:px-10"
+            className="group flex-shrink-0 px-8 md:px-10"
           >
             <div className="h-12 w-32 flex items-center justify-center">
               <Image
@@ -98,7 +120,7 @@ function LogoTicker({ logos }: { logos: Logo[] }) {
                 alt={logo.name}
                 width={140}
                 height={48}
-                className="logo-img h-10 w-auto max-w-full object-contain opacity-60 grayscale transition-all duration-500"
+                className="logo-img h-10 w-auto max-w-full object-contain opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
                 unoptimized
               />
             </div>
@@ -112,7 +134,7 @@ function LogoTicker({ logos }: { logos: Logo[] }) {
 export function TechStackTicker() {
   return (
     <div className="py-6">
-      <LogoTicker logos={techStackLogos} />
+      <LogoTicker logos={techStackLogos} speed="fast" />
     </div>
   )
 }

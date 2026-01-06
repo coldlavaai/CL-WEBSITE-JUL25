@@ -30,29 +30,14 @@ export function Navigation() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
         isScrolled
-          ? 'bg-black/80 backdrop-blur-xl border-b border-white/5'
+          ? 'bg-black/80 backdrop-blur-xl'
           : 'bg-transparent'
       )}
     >
       <nav className="container-full">
-        <div className="grid grid-cols-3 items-center h-16 md:h-20">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="hover:opacity-70 transition-opacity"
-          >
-            <Image
-              src="/Cold Lava Logo/Cold Lava - Icon.png"
-              alt="Cold Lava"
-              width={60}
-              height={60}
-              className="h-14 w-auto"
-              priority
-            />
-          </Link>
-
-          {/* Desktop Navigation - Centered */}
-          <div className="hidden md:flex items-center justify-center gap-8">
+        <div className="flex items-center justify-end h-16 md:h-20">
+          {/* Desktop Navigation - Right aligned */}
+          <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -62,18 +47,6 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-          </div>
-
-          {/* CTA - Right aligned */}
-          <div className="hidden md:flex justify-end">
-            <Link
-              href="https://cal.com/coldlava/discovery-call"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm px-5 py-2.5 bg-white text-black rounded-full hover:bg-white/90 transition-colors duration-300"
-            >
-              Talk to us
-            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -114,7 +87,7 @@ export function Navigation() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-            className="md:hidden bg-black/95 backdrop-blur-xl border-b border-white/5 overflow-hidden"
+            className="md:hidden bg-black/95 backdrop-blur-xl overflow-hidden"
           >
             <div className="container-full py-6 flex flex-col gap-4">
               {navItems.map((item, i) => (
