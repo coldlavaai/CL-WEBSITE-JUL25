@@ -40,7 +40,37 @@ export function SmoothScroll({ children }: SmoothScrollProps) {
     // Disable GSAP's lag smoothing for smoother integration
     gsap.ticker.lagSmoothing(0)
 
+    // Handle anchor link clicks
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      const anchor = target.closest('a[href^="#"]')
+
+      if (anchor) {
+        const href = anchor.getAttribute('href')
+        if (href && href !== '#') {
+          e.preventDefault()
+          const targetElement = document.querySelector(href)
+
+          if (targetElement) {
+            lenis.scrollTo(targetElement, {
+              offset: -100, // Account for fixed header
+              duration: 1.2,
+            })
+          }
+        } else if (href === '#') {
+          // Scroll to top
+          e.preventDefault()
+          lenis.scrollTo(0, {
+            duration: 1.2,
+          })
+        }
+      }
+    }
+
+    document.addEventListener('click', handleAnchorClick)
+
     return () => {
+      document.removeEventListener('click', handleAnchorClick)
       gsap.ticker.remove(lenis.raf)
       lenis.destroy()
       delete (window as any).__lenis
