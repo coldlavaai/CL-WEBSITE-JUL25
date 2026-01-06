@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { FooterTicker } from './FooterTicker'
+import { ISSTracker } from './ISSTracker'
+import { MeetingsTicker } from './MeetingsTicker'
 
 export function Footer() {
   return (
@@ -50,9 +51,9 @@ export function Footer() {
       {/* Live Stats Ticker Row */}
       <div className="border-t border-white/5 bg-cyan-500/[0.01]">
         <div className="container-full">
-          <div className="flex items-center justify-center gap-8 py-4">
-            <FooterTicker />
-            {/* More tickers will go here */}
+          <div className="flex flex-wrap items-center justify-center gap-8 py-4">
+            <ISSTracker />
+            <MeetingsTicker />
           </div>
         </div>
       </div>
