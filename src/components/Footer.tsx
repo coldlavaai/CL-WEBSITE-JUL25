@@ -26,20 +26,25 @@ export function Footer() {
 
           {/* Links */}
           <div className="flex flex-wrap gap-6 md:gap-8 text-sm text-white/40">
-            <Link href="#process" className="hover:text-white transition-colors">
+            <Link href="#process" className="relative hover:text-white transition-colors group">
               Process
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#C9A962] transition-all duration-300 group-hover:w-full" />
             </Link>
-            <Link href="#services" className="hover:text-white transition-colors">
+            <Link href="#services" className="relative hover:text-white transition-colors group">
               Services
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#C9A962] transition-all duration-300 group-hover:w-full" />
             </Link>
-            <Link href="#bos" className="hover:text-white transition-colors">
+            <Link href="#bos" className="relative hover:text-white transition-colors group">
               BOS
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#C9A962] transition-all duration-300 group-hover:w-full" />
             </Link>
-            <Link href="#clients" className="hover:text-white transition-colors">
+            <Link href="#clients" className="relative hover:text-white transition-colors group">
               Clients
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#C9A962] transition-all duration-300 group-hover:w-full" />
             </Link>
-            <Link href="#contact" className="hover:text-white transition-colors">
+            <Link href="#contact" className="relative hover:text-white transition-colors group">
               Contact
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#C9A962] transition-all duration-300 group-hover:w-full" />
             </Link>
           </div>
         </div>
@@ -59,16 +64,19 @@ export function Footer() {
       <div className="border-t border-white/5">
         <div className="container-full py-3">
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-white/30">
-            <Link href="/privacy" className="hover:text-cyan-400 transition-colors">
+            <Link href="/privacy" className="relative hover:text-cyan-400 transition-colors group">
               Privacy Policy
+              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-cyan-400 transition-all duration-300 group-hover:w-full" />
             </Link>
             <span className="text-white/10">·</span>
-            <Link href="/terms" className="hover:text-cyan-400 transition-colors">
+            <Link href="/terms" className="relative hover:text-cyan-400 transition-colors group">
               Terms of Service
+              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-cyan-400 transition-all duration-300 group-hover:w-full" />
             </Link>
             <span className="text-white/10">·</span>
-            <Link href="/cookies" className="hover:text-cyan-400 transition-colors">
+            <Link href="/cookies" className="relative hover:text-cyan-400 transition-colors group">
               Cookie Policy
+              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-cyan-400 transition-all duration-300 group-hover:w-full" />
             </Link>
           </div>
         </div>
