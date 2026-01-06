@@ -1,21 +1,23 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { FooterTicker } from './FooterTicker'
 
 export function Footer() {
   return (
     <footer className="border-t border-white/5">
-      <div className="container-full py-12 md:py-16">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-          {/* Logo & Copyright */}
-          <div className="flex flex-col gap-3">
+      {/* Main Footer Content - Slim and Horizontal */}
+      <div className="container-full py-6">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          {/* Logo & Company Info - Inline */}
+          <div className="flex items-center gap-4">
             <Image
               src="/Cold Lava Logo/Cold Lava - Icon.png"
               alt="Cold Lava"
-              width={48}
-              height={48}
-              className="h-12 w-auto object-contain"
+              width={40}
+              height={40}
+              className="h-10 w-auto object-contain"
             />
-            <div className="text-sm text-white/30">
+            <div className="text-xs text-white/30 leading-tight">
               <div>© {new Date().getFullYear()} Cold Lava AI Ltd. United Kingdom.</div>
               <div>Company No. 16492732</div>
             </div>
@@ -41,6 +43,16 @@ export function Footer() {
             >
               hello@coldlava.ai
             </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Live Stats Ticker Row */}
+      <div className="border-t border-white/5 bg-cyan-500/[0.01]">
+        <div className="container-full">
+          <div className="flex items-center justify-center gap-8 py-4">
+            <FooterTicker />
+            {/* More tickers will go here */}
           </div>
         </div>
       </div>
