@@ -580,9 +580,9 @@ export default function Home() {
                 className="group relative inline-block"
               >
                 {/* Architectural frame that expands on hover */}
-                <div className="absolute -inset-2 border border-cyan-500/20 group-hover:border-cyan-500/30 transition-all duration-500" />
-                <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-cyan-500/40 group-hover:border-cyan-500/60 transition-all duration-500" />
-                <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-cyan-500/40 group-hover:border-cyan-500/60 transition-all duration-500" />
+                <div className="absolute -inset-2 border border-[#C9A962]/20 group-hover:border-[#C9A962]/30 transition-all duration-500" />
+                <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-[#C9A962]/40 group-hover:border-[#C9A962]/60 transition-all duration-500" />
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-[#C9A962]/40 group-hover:border-[#C9A962]/60 transition-all duration-500" />
 
                 {/* Button */}
                 <div className="relative px-8 py-4 bg-white text-black font-medium overflow-hidden">
@@ -765,9 +765,9 @@ export default function Home() {
                 className="group relative inline-block"
               >
                 {/* Architectural frame that expands on hover */}
-                <div className="absolute -inset-2 border border-cyan-500/20 group-hover:border-cyan-500/30 transition-all duration-500" />
-                <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-cyan-500/40 group-hover:border-cyan-500/60 transition-all duration-500" />
-                <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-cyan-500/40 group-hover:border-cyan-500/60 transition-all duration-500" />
+                <div className="absolute -inset-2 border border-[#C9A962]/20 group-hover:border-[#C9A962]/30 transition-all duration-500" />
+                <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-[#C9A962]/40 group-hover:border-[#C9A962]/60 transition-all duration-500" />
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-[#C9A962]/40 group-hover:border-[#C9A962]/60 transition-all duration-500" />
 
                 {/* Button */}
                 <div className="relative px-8 py-4 bg-white text-black font-medium overflow-hidden">
@@ -983,9 +983,9 @@ export default function Home() {
                 className="group relative inline-block w-full"
               >
                 {/* Architectural frame that expands on hover */}
-                <div className="absolute -inset-2 border border-cyan-500/20 group-hover:border-cyan-500/30 transition-all duration-500" />
-                <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-cyan-500/40 group-hover:border-cyan-500/60 transition-all duration-500" />
-                <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-cyan-500/40 group-hover:border-cyan-500/60 transition-all duration-500" />
+                <div className="absolute -inset-2 border border-[#C9A962]/20 group-hover:border-[#C9A962]/30 transition-all duration-500" />
+                <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-[#C9A962]/40 group-hover:border-[#C9A962]/60 transition-all duration-500" />
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-[#C9A962]/40 group-hover:border-[#C9A962]/60 transition-all duration-500" />
 
                 {/* Button */}
                 <div className="relative px-8 py-5 bg-white text-black font-medium overflow-hidden">
@@ -1010,9 +1010,9 @@ export default function Home() {
                 className="group relative inline-block w-full"
               >
                 {/* Architectural frame that expands on hover */}
-                <div className="absolute -inset-2 border border-cyan-500/20 group-hover:border-cyan-500/30 transition-all duration-500" />
-                <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-cyan-500/40 group-hover:border-cyan-500/60 transition-all duration-500" />
-                <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-cyan-500/40 group-hover:border-cyan-500/60 transition-all duration-500" />
+                <div className="absolute -inset-2 border border-[#C9A962]/20 group-hover:border-[#C9A962]/30 transition-all duration-500" />
+                <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-[#C9A962]/40 group-hover:border-[#C9A962]/60 transition-all duration-500" />
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-[#C9A962]/40 group-hover:border-[#C9A962]/60 transition-all duration-500" />
 
                 {/* Button */}
                 <div className="relative px-8 py-5 bg-white text-black font-medium overflow-hidden">
