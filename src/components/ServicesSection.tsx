@@ -47,22 +47,22 @@ const services = [
   },
   {
     num: '03',
-    title: 'Workflows that run without you',
+    title: 'Make the tools you use work together',
     problem: 'Your team wastes hours on copy-paste between systems. Data gets lost in the gaps.',
-    description: 'Connect systems, eliminate manual tasks, and build processes that scale without adding headcount.',
+    description: 'Connect the platforms you already use through intelligent workflows. No need to rip and replace — just make everything talk to each other.',
     details: [
-      'API integrations',
-      'Data synchronization',
+      'Connect Google Sheets, Xero, HubSpot, etc.',
+      'Two-way data sync across platforms',
       'Email and SMS automation',
-      'Document generation',
-      'Payment processing',
-      'Notification systems'
+      'Auto-generate documents and invoices',
+      'Payment processing workflows',
+      'Smart notification systems'
     ],
     solutions: [
-      'Sync leads from ads to CRM instantly',
-      'Auto-generate quotes and invoices',
-      'Send follow-up sequences automatically',
-      'Update records across all platforms'
+      'Leads from ads flow into your existing systems automatically',
+      'Job updates sync across all your tools in real-time',
+      'Invoices generate and send without manual work',
+      'Everyone stays updated without checking five apps'
     ]
   },
   {
