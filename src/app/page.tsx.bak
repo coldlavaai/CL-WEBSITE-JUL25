@@ -1,0 +1,1103 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import { FadeIn, TechStackTicker, IntegrationsTicker, GridOverlay, TechnicalLabel, BOSVisual, MouseCoordinates, ScrollProgressBar } from '@/components'
+
+const services = [
+  {
+    num: '01',
+    title: 'Business systems built to spec',
+    description: 'CRMs, platforms, and internal tools designed around your workflows.',
+    details: [
+      'Custom CRM and pipeline management',
+      'Client portals and dashboards',
+      'Internal automation tools',
+      'Database design and migration'
+    ],
+    featured: true
+  },
+  {
+    num: '02',
+    title: 'Voice and chat agents that work 24/7',
+    description: 'Custom AI that handles calls, qualifies leads, and books appointments.',
+    details: [
+      'Inbound call handling',
+      'Lead qualification and routing',
+      'Appointment scheduling',
+      'Multi-language support'
+    ]
+  },
+  {
+    num: '03',
+    title: 'Workflows that run without you',
+    description: 'Connect systems, eliminate manual tasks, and build processes that scale.',
+    details: [
+      'API integrations',
+      'Data synchronization',
+      'Email and SMS automation',
+      'Document generation'
+    ]
+  },
+  {
+    num: '04',
+    title: 'AI strategy without the jargon',
+    description: 'Assess operations, identify opportunities, and build executable roadmaps.',
+    details: [
+      'Process audit and mapping',
+      'ROI analysis and forecasting',
+      'Technology selection',
+      'Implementation planning'
+    ]
+  },
+]
+
+const process = [
+  { num: '01', title: 'Diagnose', desc: 'Understanding your business, not just requirements.' },
+  { num: '02', title: 'Design', desc: 'Clear scope, timeline, and cost before any code.' },
+  { num: '03', title: 'Build', desc: 'Short cycles with regular check-ins. Weekly progress.' },
+  { num: '04', title: 'Support', desc: 'Launch isn\'t the end. We optimise as you grow.' },
+]
+
+const testimonials = [
+  {
+    quote: 'Things have completely changed for the better. They helped us automate our whole sales process and built us a website that represents the business brilliantly.',
+    author: 'Jason Wides',
+    company: 'Greenstar Solar',
+  },
+  {
+    quote: 'We have an AI assistant who answers the phone, grabs details and books jobs. We capture every client possible. Incredibly affordable compared to a full time member of staff.',
+    author: 'Austin Eszcori',
+    company: 'Detail Dynamics',
+  },
+  {
+    quote: 'Working with Cold Lava has allowed us to rethink our client delivery systems and reshape the way our business processes and displays data.',
+    author: 'Harry Bennett',
+    company: 'LCB',
+  },
+  {
+    quote: 'The team\'s knowledge of AI and system development coupled with their work ethic made them the perfect partners to tackle our team and data challenges. Very pleased.',
+    author: 'Mat Cunningham',
+    company: 'Upmarket Hotels & Leisure',
+  },
+  {
+    quote: 'Incredibly efficient, knowledgeable, and easy to work with. Delivered everything on time, and often ahead of schedule. The end result far exceeded our expectations.',
+    author: 'Jack Castle',
+    company: '',
+  },
+]
+
+export default function Home() {
+  return (
+    <div className="relative">
+      {/* Scroll Progress Bar */}
+      <ScrollProgressBar />
+
+      {/* Interactive Mouse Coordinates */}
+      <MouseCoordinates />
+
+      {/* HERO - Massive Typography */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <GridOverlay spacing={32} opacity={0.015} />
+
+        {/* Technical Annotations */}
+        <TechnicalLabel position="top-right">v2.0.26</TechnicalLabel>
+        <TechnicalLabel position="bottom-left">EST. 2024</TechnicalLabel>
+        <TechnicalLabel position="bottom-right">Liverpool, UK</TechnicalLabel>
+
+        {/* Orange glow (subtle) */}
+        <div className="absolute top-1/4 -left-1/4 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-3xl" />
+
+        <div className="container-default relative z-10 py-32">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-6xl"
+          >
+            {/* Eyebrow */}
+            <p className="font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-white/30 mb-12">
+              AI Consultancy & Software Development
+            </p>
+
+            {/* MASSIVE Headline */}
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-[-0.03em] leading-[0.9] mb-12 max-w-5xl">
+              We Build The{' '}
+              <span className="block text-white/40 italic font-light">Systems</span>
+              <span className="block">Your Business</span>
+              <span className="block relative">
+                Actually Needs
+                <span className="absolute -right-4 top-0 w-1 h-full bg-cyan-500 animate-blink" />
+              </span>
+            </h1>
+
+            {/* Subhead */}
+            <p className="text-xl md:text-2xl text-white/50 max-w-2xl mb-16 leading-relaxed font-light">
+              Custom software, AI agents, and automation for UK businesses ready to scale beyond generic tools.
+            </p>
+
+            {/* CTA */}
+            <motion.div
+              className="mb-20"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+            >
+              <a
+                href="https://cal.com/coldlava/discovery-call"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-block"
+              >
+                {/* Architectural frame that expands on hover */}
+                <motion.div
+                  className="absolute -inset-2 border border-cyan-500/30 group-hover:border-cyan-500/30 transition-all duration-500"
+                  initial={{ borderColor: 'rgba(6, 182, 212, 0.3)' }}
+                  animate={{ borderColor: 'rgba(6, 182, 212, 0)' }}
+                  transition={{ delay: 2, duration: 1 }}
+                />
+                <motion.div
+                  className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-cyan-500/60 group-hover:border-cyan-500/60 transition-all duration-500"
+                  initial={{ borderColor: 'rgba(6, 182, 212, 0.6)' }}
+                  animate={{ borderColor: 'rgba(6, 182, 212, 0)' }}
+                  transition={{ delay: 2, duration: 1 }}
+                />
+                <motion.div
+                  className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-cyan-500/60 group-hover:border-cyan-500/60 transition-all duration-500"
+                  initial={{ borderColor: 'rgba(6, 182, 212, 0.6)' }}
+                  animate={{ borderColor: 'rgba(6, 182, 212, 0)' }}
+                  transition={{ delay: 2, duration: 1 }}
+                />
+
+                {/* Button */}
+                <div className="relative px-10 py-5 bg-white text-black font-medium overflow-hidden">
+                  {/* Initial load animation - cyan sweep */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-cyan-400"
+                    initial={{ x: '0%' }}
+                    animate={{ x: '-100%' }}
+                    transition={{ delay: 2, duration: 0.8, ease: "easeInOut" }}
+                  />
+
+                  {/* Hover effect - cyan sweep */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-cyan-400 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
+
+                  {/* Text */}
+                  <span className="relative z-10 flex items-center gap-3 group-hover:text-black transition-colors duration-300">
+                    <span>Talk to us</span>
+                    <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </span>
+
+                  {/* Scan line effect */}
+                  <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12" />
+                </div>
+              </a>
+            </motion.div>
+
+            {/* Tech Stack Ticker */}
+            <div className="mt-20">
+              <p className="font-mono text-[10px] uppercase tracking-wider text-white/20 mb-4">
+                Modern stack. Serious security. UK-based.
+              </p>
+              <TechStackTicker />
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Dimension line (decorative) */}
+        <div className="absolute right-0 top-1/2 w-px h-32 bg-cyan-500/20" />
+      </section>
+
+      {/* OLIVER'S QUOTE - Architectural Statement */}
+      <section className="relative py-24 md:py-32 border-t border-white/5 overflow-hidden">
+        <div className="container-default max-w-6xl relative">
+          {/* Architectural grid overlay */}
+          <div className="absolute inset-0 opacity-[0.02]" style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+            backgroundSize: '60px 60px'
+          }} />
+
+          {/* Dimension line - left */}
+          <motion.div
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-cyan-500/30 to-transparent origin-top"
+          />
+
+          {/* Dimension line - right */}
+          <motion.div
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute right-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-cyan-500/30 to-transparent origin-top"
+          />
+
+          <div className="relative">
+            {/* Technical annotation */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mb-8 flex items-center gap-4"
+            >
+              <div className="h-px w-12 bg-cyan-500/40" />
+              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-cyan-500/60">
+                Philosophy / 001
+              </span>
+            </motion.div>
+
+            {/* Main quote */}
+            <motion.blockquote
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="relative"
+            >
+              <p className="text-3xl md:text-5xl lg:text-6xl font-light leading-[1.2] tracking-tight text-white/90 italic mb-8 max-w-5xl">
+                "Custom solutions for how <span className="text-cyan-400">you work</span>, not how Silicon Valley thinks you should."
+              </p>
+
+              {/* Attribution with architectural detail */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="flex items-center gap-6"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-cyan-500 rounded-full" />
+                  <div className="h-px w-20 bg-white/20" />
+                </div>
+                <cite className="not-italic">
+                  <span className="text-white/90 font-medium">Oliver</span>
+                  <span className="text-white/40 font-mono text-sm ml-2">/ Head Developer</span>
+                </cite>
+              </motion.div>
+            </motion.blockquote>
+
+            {/* Decorative corner brackets */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 1 }}
+              className="absolute -top-4 -left-4 w-8 h-8 border-l-2 border-t-2 border-cyan-500/20"
+            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 1.1 }}
+              className="absolute -bottom-4 -right-4 w-8 h-8 border-r-2 border-b-2 border-cyan-500/20"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS - Circular Flow */}
+      <section className="py-32 border-t border-white/5 relative overflow-hidden">
+        <GridOverlay spacing={32} opacity={0.015} />
+
+        <div className="container-default relative">
+          {/* Section Header */}
+          <div className="mb-20 max-w-3xl">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="h-px w-12 bg-cyan-500/40" />
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/30">
+                Process / Methodology
+              </p>
+              <div className="h-px flex-1 bg-gradient-to-r from-cyan-500/20 to-transparent" />
+            </div>
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
+              No surprises.
+              <br />
+              No black boxes.
+            </h2>
+          </div>
+
+          {/* Circular Flow Visualization */}
+          <div className="relative mx-auto max-w-5xl">
+            {/* Center circle container */}
+            <div className="relative aspect-square w-full max-w-2xl mx-auto">
+              {/* Outer orbital ring - SVG */}
+              <svg
+                className="absolute inset-0 w-full h-full -rotate-90"
+                viewBox="0 0 400 400"
+              >
+                {/* Background circle */}
+                <circle
+                  cx="200"
+                  cy="200"
+                  r="160"
+                  fill="none"
+                  stroke="rgba(6, 182, 212, 0.05)"
+                  strokeWidth="2"
+                />
+
+                {/* Animated flow circle */}
+                <motion.circle
+                  cx="200"
+                  cy="200"
+                  r="160"
+                  fill="none"
+                  stroke="url(#gradient)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeDasharray="1005"
+                  initial={{ strokeDashoffset: 1005 }}
+                  animate={{
+                    strokeDashoffset: [1005, 0],
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                />
+
+                {/* Gradient definition for the stroke */}
+                <defs>
+                  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="rgba(6, 182, 212, 0)" />
+                    <stop offset="50%" stopColor="rgba(6, 182, 212, 0.6)" />
+                    <stop offset="100%" stopColor="rgba(6, 182, 212, 0)" />
+                  </linearGradient>
+                </defs>
+
+                {/* Connection lines from center */}
+                {process.map((step, i) => {
+                  const angle = ([0, 90, 180, 270][i] - 90) * (Math.PI / 180)
+                  const x = 200 + Math.cos(angle) * 160
+                  const y = 200 + Math.sin(angle) * 160
+
+                  return (
+                    <motion.line
+                      key={i}
+                      x1="200"
+                      y1="200"
+                      x2={x}
+                      y2={y}
+                      stroke="rgba(6, 182, 212, 0.1)"
+                      strokeWidth="1"
+                      strokeDasharray="4 4"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.2 }}
+                    />
+                  )
+                })}
+              </svg>
+
+              {/* Animated orbiting particle */}
+              <motion.div
+                className="absolute top-1/2 left-1/2 w-3 h-3"
+                style={{
+                  x: '-50%',
+                  y: '-50%',
+                }}
+                animate={{
+                  rotate: 360,
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              >
+                <div
+                  className="w-3 h-3 rounded-full bg-cyan-500"
+                  style={{
+                    transform: 'translateX(160px)',
+                    boxShadow: '0 0 20px rgba(6, 182, 212, 0.8), 0 0 40px rgba(6, 182, 212, 0.4)'
+                  }}
+                />
+              </motion.div>
+
+              {/* Center core with philosophy */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full border border-white/5 bg-black/40 backdrop-blur-sm flex items-center justify-center"
+              >
+                {/* Inner glow */}
+                <div className="absolute inset-0 rounded-full bg-cyan-500/5 blur-xl" />
+
+                {/* Corner brackets */}
+                <div className="absolute top-4 left-4 w-6 h-6 border-l border-t border-cyan-500/30" />
+                <div className="absolute top-4 right-4 w-6 h-6 border-r border-t border-cyan-500/30" />
+                <div className="absolute bottom-4 left-4 w-6 h-6 border-l border-b border-cyan-500/30" />
+                <div className="absolute bottom-4 right-4 w-6 h-6 border-r border-b border-cyan-500/30" />
+
+                <div className="relative text-center px-6">
+                  <p className="font-mono text-[10px] text-cyan-500/60 mb-2 uppercase tracking-wider">
+                    Philosophy
+                  </p>
+                  <p className="font-mono text-xs text-white/60 leading-relaxed">
+                    We optimise for{' '}
+                    <span className="text-cyan-500/90">good</span>
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Process steps positioned around the circle */}
+              {process.map((step, i) => {
+                const angles = [0, 90, 180, 270]
+                const angle = (angles[i] - 90) * (Math.PI / 180)
+                const radius = 200
+                const x = Math.cos(angle) * radius
+                const y = Math.sin(angle) * radius
+
+                const positionClass =
+                  angles[i] === 0 ? '-translate-x-1/2 -translate-y-full -top-8' :
+                  angles[i] === 90 ? 'translate-x-8 -translate-y-1/2' :
+                  angles[i] === 180 ? '-translate-x-1/2 translate-y-8' :
+                  '-translate-x-full -translate-y-1/2 -left-8'
+
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.15, duration: 0.6 }}
+                    className={`absolute top-1/2 left-1/2 ${positionClass} group cursor-default`}
+                    style={{
+                      marginLeft: `${x}px`,
+                      marginTop: `${y}px`,
+                    }}
+                  >
+                    {/* Card */}
+                    <div className="relative bg-black/60 backdrop-blur-sm border border-white/10 p-6 min-w-[240px] group-hover:border-cyan-500/30 transition-all duration-500">
+                      {/* Corner accents */}
+                      <div className="absolute -top-1 -left-1 w-3 h-3 border-l-2 border-t-2 border-cyan-500/40" />
+                      <div className="absolute -bottom-1 -right-1 w-3 h-3 border-r-2 border-b-2 border-cyan-500/40" />
+
+                      {/* Step number with bracket */}
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="flex items-center gap-2">
+                          <div className="w-1 h-6 bg-cyan-500/30" />
+                          <span className="font-mono text-xs text-cyan-500/80 tracking-wider">
+                            {step.num}
+                          </span>
+                        </div>
+                        <div className="flex-1 h-px bg-gradient-to-r from-cyan-500/20 to-transparent" />
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-xl font-bold mb-2 group-hover:text-cyan-500/90 transition-colors duration-500">
+                        {step.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-white/50 text-sm leading-relaxed">
+                        {step.desc}
+                      </p>
+
+                      {/* Subtle glow on hover */}
+                      <div className="absolute inset-0 bg-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                    </div>
+
+                    {/* Connection indicator dot */}
+                    <div
+                      className="absolute w-2 h-2 bg-cyan-500 rounded-full"
+                      style={{
+                        top: angles[i] === 0 ? '100%' :
+                             angles[i] === 90 ? '50%' :
+                             angles[i] === 180 ? '0%' :
+                             '50%',
+                        left: angles[i] === 0 ? '50%' :
+                              angles[i] === 90 ? '0%' :
+                              angles[i] === 180 ? '50%' :
+                              '100%',
+                        transform: 'translate(-50%, -50%)',
+                        boxShadow: '0 0 10px rgba(6, 182, 212, 0.6)'
+                      }}
+                    />
+                  </motion.div>
+                )
+              })}
+            </div>
+
+            {/* Bottom annotation */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.8 }}
+              className="text-center mt-20"
+            >
+              <div className="inline-flex items-center gap-3">
+                <div className="h-px w-8 bg-cyan-500/20" />
+                <p className="font-mono text-xs text-white/40 uppercase tracking-wider">
+                  Continuous Development Cycle
+                </p>
+                <div className="h-px w-8 bg-cyan-500/20" />
+              </div>
+            </motion.div>
+
+            {/* Philosophy callout below */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 1 }}
+              className="relative border border-white/5 p-8 md:p-10 mt-16 max-w-2xl mx-auto"
+            >
+              {/* Architectural annotation */}
+              <div className="absolute -top-3 left-8 bg-black px-3">
+                <span className="font-mono text-[9px] text-cyan-500/40 uppercase tracking-wider">
+                  Philosophy / 002
+                </span>
+              </div>
+
+              {/* Corner brackets */}
+              <div className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-cyan-500/20" />
+              <div className="absolute top-0 right-0 w-6 h-6 border-r-2 border-t-2 border-cyan-500/20" />
+              <div className="absolute bottom-0 left-0 w-6 h-6 border-l-2 border-b-2 border-cyan-500/20" />
+              <div className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-cyan-500/20" />
+
+              <p className="font-mono text-base md:text-lg text-white/50 text-center leading-relaxed">
+                Good, fast, cheap. Pick two. We optimise for <span className="text-cyan-500/80">good</span>.
+              </p>
+
+              {/* Dimension markers */}
+              <div className="absolute -left-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-1">
+                <div className="w-px h-4 bg-cyan-500/20" />
+                <div className="w-2 h-px bg-cyan-500/20" />
+                <div className="w-px h-4 bg-cyan-500/20" />
+              </div>
+              <div className="absolute -right-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-1">
+                <div className="w-px h-4 bg-cyan-500/20" />
+                <div className="w-2 h-px bg-cyan-500/20" />
+                <div className="w-px h-4 bg-cyan-500/20" />
+              </div>
+            </motion.div>
+
+            {/* Testimonial */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+              className="mt-16 md:mt-20 max-w-3xl mx-auto relative"
+            >
+              <div className="absolute -top-4 -left-4 text-6xl text-cyan-500/10 font-serif leading-none">"</div>
+
+              <p className="text-white/50 italic text-base md:text-lg leading-relaxed mb-4 pl-8">
+                The team&apos;s knowledge of AI and system development coupled with their work ethic made them the perfect partners to tackle our team and data challenges.
+              </p>
+
+              <div className="flex items-center gap-3 pl-8">
+                <div className="h-px w-8 bg-cyan-500/30" />
+                <p className="text-white/30 text-sm font-mono">Mat Cunningham, Upmarket Hotels & Leisure</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES - Architectural Grid */}
+      <section id="services" className="py-32 border-t border-white/5 relative overflow-hidden">
+        <GridOverlay spacing={32} opacity={0.01} />
+
+        <div className="container-default relative">
+          {/* Section Header with architectural detail */}
+          <div className="mb-20">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="h-px w-12 bg-cyan-500/40" />
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/30">
+                Services / Capabilities
+              </p>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight max-w-3xl">
+              Systems that work around your business
+            </h2>
+          </div>
+
+          {/* Service Grid */}
+          <div className="grid md:grid-cols-2 gap-8">
+            {services.map((service, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+                className="group relative"
+              >
+                {/* Card container */}
+                <div className="relative h-full bg-white/[0.01] border border-white/5 p-8 hover:bg-white/[0.02] transition-all duration-500">
+                  {/* Corner brackets - animate on view */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 + 0.3 }}
+                    className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-cyan-500/30"
+                  />
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 + 0.3 }}
+                    className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-cyan-500/30"
+                  />
+
+                  {/* Step indicator with architectural frame */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="relative">
+                      {/* Bracket */}
+                      <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-2 h-8 border-l border-t border-b border-cyan-500/20" />
+
+                      <span className="font-mono text-sm text-cyan-500/80 tracking-wider">
+                        {step.num}
+                      </span>
+                    </div>
+
+                    {/* Dimension line */}
+                    <div className="flex-1 h-px bg-gradient-to-r from-cyan-500/30 via-cyan-500/10 to-transparent" />
+
+                    {/* Phase indicator */}
+                    <span className="font-mono text-[9px] text-white/20 uppercase tracking-wider">
+                      Phase {i + 1}
+                    </span>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-3xl font-bold mb-4 group-hover:text-cyan-500/90 transition-colors duration-500">
+                    {step.title}
+                  </h3>
+                  <p className="text-white/60 text-base leading-relaxed">
+                    {step.desc}
+                  </p>
+
+                  {/* Subtle grid overlay on hover */}
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-[0.015] transition-opacity duration-500 pointer-events-none"
+                    style={{
+                      backgroundImage: `
+                        linear-gradient(to right, rgba(6, 182, 212, 0.1) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(6, 182, 212, 0.1) 1px, transparent 1px)
+                      `,
+                      backgroundSize: '20px 20px'
+                    }}
+                  />
+
+                  {/* Progress indicator */}
+                  <div className="absolute -bottom-px left-0 h-px bg-gradient-to-r from-cyan-500/40 to-transparent transition-all duration-500 w-0 group-hover:w-full" />
+                </div>
+
+                {/* Connection arrows for desktop */}
+                {i < process.length - 1 && i % 2 === 1 && (
+                  <div className="hidden md:block absolute -bottom-3 left-1/2 -translate-x-1/2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-cyan-500/20">
+                      <path d="M12 5L12 19M12 19L7 14M12 19L17 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square"/>
+                    </svg>
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Philosophy callout */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative border border-white/5 p-8 md:p-12 mt-20"
+          >
+            {/* Architectural annotation */}
+            <div className="absolute -top-3 left-8 bg-black px-3">
+              <span className="font-mono text-[9px] text-cyan-500/40 uppercase tracking-wider">
+                Philosophy / 002
+              </span>
+            </div>
+
+            {/* Corner brackets */}
+            <div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-cyan-500/20" />
+            <div className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-cyan-500/20" />
+            <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-cyan-500/20" />
+            <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-cyan-500/20" />
+
+            <p className="font-mono text-base md:text-lg text-white/50 text-center leading-relaxed max-w-2xl mx-auto">
+              Good, fast, cheap. Pick two. We optimise for <span className="text-cyan-500/80">good</span>.
+            </p>
+
+            {/* Dimension markers */}
+            <div className="absolute -left-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-1">
+              <div className="w-px h-4 bg-cyan-500/20" />
+              <div className="w-2 h-px bg-cyan-500/20" />
+              <div className="w-px h-4 bg-cyan-500/20" />
+            </div>
+            <div className="absolute -right-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-1">
+              <div className="w-px h-4 bg-cyan-500/20" />
+              <div className="w-2 h-px bg-cyan-500/20" />
+              <div className="w-px h-4 bg-cyan-500/20" />
+            </div>
+          </motion.div>
+
+          {/* Testimonial callout */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mt-16 md:mt-20 max-w-3xl mx-auto relative"
+          >
+            {/* Quote marks as architectural elements */}
+            <div className="absolute -top-4 -left-4 text-6xl text-cyan-500/10 font-serif leading-none">"</div>
+
+            <p className="text-white/50 italic text-base md:text-lg leading-relaxed mb-4 pl-8">
+              The team&apos;s knowledge of AI and system development coupled with their work ethic made them the perfect partners to tackle our team and data challenges.
+            </p>
+
+            <div className="flex items-center gap-3 pl-8">
+              <div className="h-px w-8 bg-cyan-500/30" />
+              <p className="text-white/30 text-sm font-mono">Mat Cunningham, Upmarket Hotels & Leisure</p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SERVICES - Architectural Grid */}
+      <section id="services" className="py-32 border-t border-white/5 relative overflow-hidden">
+        <GridOverlay spacing={32} opacity={0.01} />
+
+        <div className="container-default relative">
+          {/* Section Header with architectural detail */}
+          <div className="mb-20">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="h-px w-12 bg-cyan-500/40" />
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/30">
+                Services / Capabilities
+              </p>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight max-w-3xl">
+              Systems that work around your business
+            </h2>
+          </div>
+
+          {/* Service Grid */}
+          <div className="grid md:grid-cols-2 gap-8">
+            {services.map((service, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative"
+              >
+                {/* Architectural frame */}
+                <div className="relative h-full bg-white/[0.01] border border-white/5 p-8 hover:border-cyan-500/20 transition-all duration-700">
+                  {/* Corner brackets */}
+                  <div className="absolute top-0 left-0 w-4 h-4 border-l border-t border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 right-0 w-4 h-4 border-r border-b border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  {/* Service number */}
+                  <div className="absolute -top-3 left-6 bg-black px-2">
+                    <span className="font-mono text-[10px] text-cyan-500/60">{service.num}</span>
+                  </div>
+
+                  {/* Content */}
+                  <div className="relative">
+                    <h3 className="text-2xl font-semibold mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                      {service.title}
+                    </h3>
+
+                    <p className="text-white/50 mb-6 leading-relaxed">
+                      {service.description}
+                    </p>
+
+                    {/* Separator */}
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="w-6 h-px bg-cyan-500/30" />
+                      <span className="font-mono text-[9px] text-cyan-500/40 uppercase tracking-wider">Includes</span>
+                      <div className="flex-1 h-px bg-gradient-to-r from-cyan-500/20 to-transparent" />
+                    </div>
+
+                    {/* Details list */}
+                    <ul className="space-y-2">
+                      {service.details.map((detail, idx) => (
+                        <li key={idx} className="flex items-start gap-3 text-sm text-white/60">
+                          <div className="w-1 h-1 bg-cyan-500/40 rounded-full mt-2 flex-shrink-0" />
+                          <span className="leading-relaxed">{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Hover grid effect */}
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-[0.02] transition-opacity duration-700 pointer-events-none"
+                    style={{
+                      backgroundImage: 'linear-gradient(rgba(6,182,212,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.3) 1px, transparent 1px)',
+                      backgroundSize: '20px 20px'
+                    }}
+                  />
+                </div>
+
+                {/* Dimension line indicator */}
+                {i % 2 === 0 && (
+                  <div className="absolute -right-4 top-1/2 w-px h-12 bg-gradient-to-b from-transparent via-cyan-500/20 to-transparent" />
+                )}
+              </motion.div>
+            ))}
+          </div>
+
+          {/* One-liner testimonial */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-16 md:mt-20 max-w-3xl mx-auto"
+          >
+            <p className="text-white/40 italic text-base md:text-lg leading-relaxed mb-3">
+              "They helped us automate our whole sales process and built us a website that represents the business brilliantly."
+            </p>
+            <p className="text-white/30 text-sm">— Jason Wides, Greenstar Solar</p>
+          </motion.div>
+        </div>
+
+        {/* Background architectural elements */}
+        <div className="absolute top-1/4 left-0 w-px h-1/3 bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent" />
+      </section>
+
+      {/* BOS - Full Width Dramatic */}
+      <section id="bos" className="py-40 border-t border-white/5 relative overflow-hidden bg-white/[0.01]">
+        <GridOverlay spacing={24} opacity={0.02} />
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent" />
+
+        <div className="container-default relative">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            {/* Left - Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-block px-3 py-1 border border-cyan-500/30 bg-cyan-500/5 mb-8">
+                <span className="font-mono text-xs text-cyan-500 uppercase tracking-wider">
+                  Coming 2026
+                </span>
+              </div>
+
+              <h2 className="text-6xl md:text-8xl font-bold mb-4 tracking-tight">
+                BOS
+              </h2>
+              <p className="text-3xl text-white/40 mb-8 font-light">
+                Business Operating System
+              </p>
+
+              <p className="text-xl text-white/60 mb-10 leading-relaxed max-w-xl">
+                We built BOS because CRMs are broken. An AI-native operating system designed for how modern businesses actually run.
+              </p>
+
+              <ul className="space-y-4 mb-12">
+                {[
+                  'Not another CRM. A complete operating system.',
+                  'AI built in from the start, not bolted on.',
+                  'One system instead of twelve integrations.',
+                  'Built for operators, not administrators.',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="text-cyan-500 mt-1">→</span>
+                    <span className="text-white/50">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="https://cal.com/coldlava/discovery-call"
+                className="inline-block px-8 py-4 bg-cyan-500 text-white font-medium hover:bg-cyan-600 transition-colors"
+              >
+                Join waitlist
+              </a>
+            </motion.div>
+
+            {/* Right - Visual */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <BOSVisual />
+            </motion.div>
+          </div>
+
+          {/* One-liner testimonial */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-16 md:mt-20 max-w-3xl mx-auto"
+          >
+            <p className="text-white/40 italic text-base md:text-lg leading-relaxed mb-3">
+              "Working with Cold Lava has allowed us to rethink our client delivery systems and reshape the way our business processes and displays data."
+            </p>
+            <p className="text-white/30 text-sm">— Harry Bennett, LCB</p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* INTEGRATIONS */}
+      <section className="py-20 border-t border-white/5">
+        <div className="container-default">
+          <p className="font-mono text-xs text-white/20 text-center uppercase tracking-wider mb-8">
+            We integrate with the tools you already use
+          </p>
+          <IntegrationsTicker />
+        </div>
+      </section>
+
+      {/* TESTIMONIALS - Architectural Blueprint */}
+      <section id="work" className="relative py-32 border-t border-white/5 overflow-hidden">
+        <div className="container-default">
+          {/* Section Header */}
+          <div className="mb-20">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="h-px w-12 bg-cyan-500/40" />
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/30">
+                Client Testimonials
+              </p>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
+              Satisfied customers
+            </h2>
+          </div>
+
+          {/* Architectural Testimonial Grid */}
+          <div className="grid md:grid-cols-12 gap-6 auto-rows-fr">
+            {testimonials.map((t, i) => {
+              // Architectural layout pattern: varied sizes for visual interest
+              const layouts = [
+                'md:col-span-8', // Wide
+                'md:col-span-4', // Narrow
+                'md:col-span-5', // Medium
+                'md:col-span-7', // Medium-wide
+                'md:col-span-12', // Full width
+              ]
+
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{
+                    duration: 0.7,
+                    delay: i * 0.1,
+                    ease: [0.22, 1, 0.36, 1]
+                  }}
+                  className={`group relative ${layouts[i]} h-full`}
+                >
+                  {/* Architectural frame */}
+                  <div className="relative h-full bg-white/[0.01] border border-white/5 p-6 md:p-7 hover:border-cyan-500/20 transition-all duration-700">
+                    {/* Corner brackets */}
+                    <div className="absolute top-0 left-0 w-6 h-6 border-l border-t border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute top-0 right-0 w-6 h-6 border-r border-t border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute bottom-0 left-0 w-6 h-6 border-l border-b border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute bottom-0 right-0 w-6 h-6 border-r border-b border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                    {/* Testimonial number */}
+                    <div className="absolute -top-3 left-6 bg-black px-2">
+                      <span className="font-mono text-[10px] text-cyan-500/60">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                    </div>
+
+                    {/* Quote */}
+                    <blockquote className="relative mb-6">
+                      <div className="absolute -left-2 top-0 text-6xl text-cyan-500/10 leading-none font-serif">"</div>
+                      <p className={`relative text-white/70 italic leading-relaxed ${i === 4 ? 'text-xl md:text-2xl' : 'text-lg md:text-xl'}`}>
+                        {t.quote}
+                      </p>
+                    </blockquote>
+
+                    {/* Attribution with architectural line */}
+                    <div className="flex items-center gap-4 mt-auto">
+                      <div className="flex-shrink-0 w-1 h-1 bg-cyan-500 rounded-full" />
+                      <div className="flex-grow h-px bg-gradient-to-r from-white/10 to-transparent" />
+                      <cite className="not-italic flex-shrink-0">
+                        <div className="text-right">
+                          <div className="text-white/90 font-medium">{t.author}</div>
+                          {t.company && (
+                            <div className="text-white/40 font-mono text-xs mt-1">{t.company}</div>
+                          )}
+                        </div>
+                      </cite>
+                    </div>
+                  </div>
+
+                  {/* Subtle grid overlay on hover */}
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-[0.03] transition-opacity duration-700 pointer-events-none"
+                    style={{
+                      backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+                      backgroundSize: '20px 20px'
+                    }}
+                  />
+                </motion.div>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* Background architectural elements */}
+        <div className="absolute top-1/4 right-0 w-px h-1/2 bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent" />
+        <div className="absolute top-1/2 left-0 w-px h-1/4 bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent" />
+      </section>
+
+      {/* CONTACT - Split */}
+      <section id="contact" className="py-32 border-t border-white/5 relative">
+        <GridOverlay spacing={32} opacity={0.015} />
+
+        <div className="container-default relative">
+          <div className="grid md:grid-cols-2 gap-20">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-wider text-white/30 mb-4">
+                Contact
+              </p>
+              <h2 className="text-5xl md:text-7xl font-bold mb-8">
+                Let's talk
+              </h2>
+              <p className="text-xl text-white/50 mb-6">
+                Ready to build something? Book a discovery call or send us a message.
+              </p>
+              <p className="text-white/40">
+                No pitch decks, no pressure.
+              </p>
+            </div>
+
+            <div className="flex flex-col justify-center gap-4">
+              <a
+                href="https://cal.com/coldlava/discovery-call"
+                className="w-full px-8 py-5 bg-white text-black text-center font-medium hover:bg-cyan-500 hover:text-white transition-all duration-300"
+              >
+                Book a discovery call
+              </a>
+              <a
+                href="mailto:hello@coldlava.ai"
+                className="w-full px-8 py-5 border border-white/10 text-center font-mono text-sm hover:border-white/30 transition-colors"
+              >
+                hello@coldlava.ai
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}

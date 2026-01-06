@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { FadeIn, TechStackTicker, IntegrationsTicker, GridOverlay, TechnicalLabel, BOSVisual, MouseCoordinates, ScrollProgressBar } from '@/components'
+import { FadeIn, TechStackTicker, IntegrationsTicker, GridOverlay, TechnicalLabel, BOSVisual, BOSScreenshotCarousel, MouseCoordinates, ScrollProgressBar } from '@/components'
 
 const services = [
   {
@@ -990,7 +990,7 @@ export default function Home() {
             >
               <div className="inline-block px-3 py-1 border border-cyan-500/30 bg-cyan-500/5 mb-8">
                 <span className="font-mono text-xs text-cyan-500 uppercase tracking-wider">
-                  Coming 2026
+                  Flagship Product
                 </span>
               </div>
 
@@ -1002,15 +1002,15 @@ export default function Home() {
               </p>
 
               <p className="text-xl text-white/60 mb-10 leading-relaxed max-w-xl">
-                We built BOS because CRMs are broken. An AI-native operating system designed for how modern businesses actually run.
+                Stop bending your business to fit off-the-shelf software. BOS is built around you—like an exoskeleton. Custom-fitted to your processes, not some San Francisco tech team's idea of how you should work.
               </p>
 
               <ul className="space-y-4 mb-12">
                 {[
-                  'Not another CRM. A complete operating system.',
-                  'AI built in from the start, not bolted on.',
-                  'One system instead of twelve integrations.',
-                  'Built for operators, not administrators.',
+                  'Built from the ground up for your business. Not configured, built.',
+                  'Manages your entire operation. Not just customers.',
+                  'Does exactly what you need. Nothing you don\'t.',
+                  'One integrated system. Not twelve apps held together with duct tape.',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <span className="text-cyan-500 mt-1">→</span>
@@ -1023,18 +1023,49 @@ export default function Home() {
                 href="https://cal.com/coldlava/discovery-call"
                 className="inline-block px-8 py-4 bg-cyan-500 text-white font-medium hover:bg-cyan-600 transition-colors"
               >
-                Join waitlist
+                Talk to us
               </a>
             </motion.div>
 
-            {/* Right - Visual */}
+            {/* Right - Screenshots & Capabilities */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              className="space-y-8"
             >
-              <BOSVisual />
+              <BOSScreenshotCarousel />
+
+              {/* System Capabilities - BOS vs CRM */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="pt-6 border-t border-white/5"
+              >
+                <p className="font-mono text-[10px] uppercase tracking-wider text-white/30 mb-4">
+                  Why BOS vs Traditional CRM
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    { label: 'AI Integration', value: 'Native multi-agent' },
+                    { label: 'Customization', value: 'Built for you' },
+                    { label: 'Features', value: 'Zero bloat' },
+                    { label: 'Architecture', value: 'Fully modular' },
+                  ].map((spec, i) => (
+                    <div key={i} className="space-y-1">
+                      <p className="text-[10px] text-white/30 font-mono uppercase tracking-wider">
+                        {spec.label}
+                      </p>
+                      <p className="text-sm text-cyan-500/80 font-medium leading-tight">
+                        {spec.value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
             </motion.div>
           </div>
 
