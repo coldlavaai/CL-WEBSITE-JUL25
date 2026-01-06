@@ -32,9 +32,14 @@ export function ISSTracker() {
         const issData = await issResponse.json()
         const { latitude, longitude } = issData
 
-        // Convert to location name using BigDataCloud
+        // Convert to location name using geocode.xyz
         const geoResponse = await fetch(
-          `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+          `https://geocode.xyz/${latitude},${longitude}?json=1`,
+          {
+            headers: {
+              'User-Agent': 'ColdLava-ISS-Tracker/1.0'
+            }
+          }
         )
 
         if (!geoResponse.ok) {
@@ -43,13 +48,18 @@ export function ISSTracker() {
 
         const geoData = await geoResponse.json()
 
-        // Get the best available name
-        const locationName =
-          geoData.countryName ||
-          geoData.locality ||
-          geoData.principalSubdivision ||
-          geoData.ocean ||
-          'International Waters'
+        // Get the best available location name
+        let locationName = 'International Waters'
+
+        if (geoData.country) {
+          locationName = geoData.country
+        } else if (geoData.suggestion?.region) {
+          locationName = geoData.suggestion.region
+        } else if (geoData.suggestion?.territory) {
+          locationName = geoData.suggestion.territory
+        } else if (geoData.ocean) {
+          locationName = geoData.ocean
+        }
 
         setLocation(locationName)
       } catch (error) {
