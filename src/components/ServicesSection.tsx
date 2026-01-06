@@ -89,7 +89,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-32 border-t border-white/5 relative overflow-hidden">
+    <section id="services" className="py-24 border-t border-white/5 relative overflow-hidden">
       <GridOverlay spacing={32} opacity={0.01} />
 
       <div className="container-default relative">
@@ -99,7 +99,7 @@ export function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-20"
+          className="mb-14"
         >
           <div className="flex items-center gap-4 mb-4">
             <div className="h-px w-12 bg-cyan-500/40" />
@@ -124,7 +124,7 @@ export function ServicesSection() {
         </div>
 
         {/* Asymmetric Service Layout */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 relative">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 relative">
           {/* Y-axis dimension markers */}
           <div className="absolute -left-16 top-0 bottom-0 hidden xl:flex flex-col justify-between py-4 pointer-events-none">
             <div className="flex items-center gap-2">
@@ -142,7 +142,7 @@ export function ServicesSection() {
           </div>
 
           {/* Left Column - Featured + Consulting */}
-          <div className="space-y-8 lg:space-y-12">
+          <div className="space-y-6 lg:space-y-8">
             {/* Featured Service - Business Systems */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -164,7 +164,7 @@ export function ServicesSection() {
             </div>
 
             {/* Main card */}
-            <div className="relative h-full bg-gradient-to-br from-white/[0.02] to-white/[0.01] border border-white/10 p-8 lg:p-10 overflow-hidden">
+            <div className="relative h-full bg-gradient-to-br from-white/[0.02] to-white/[0.01] border border-white/10 p-6 lg:p-8 overflow-hidden">
               {/* Animated scan line */}
               <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent translate-y-0 group-hover:translate-y-full transition-transform duration-[3000ms] ease-linear" />
 
@@ -175,29 +175,29 @@ export function ServicesSection() {
               </div>
 
               {/* Content */}
-              <h3 className="text-3xl lg:text-4xl font-bold mb-4 group-hover:text-cyan-400 transition-colors duration-300">
+              <h3 className="text-3xl lg:text-4xl font-bold mb-3 group-hover:text-cyan-400 transition-colors duration-300">
                 {services[0].title}
               </h3>
 
               {/* Problem statement */}
-              <div className="mb-6 p-4 border-l-2 border-cyan-500/30 bg-cyan-500/5">
-                <span className="font-mono text-[8px] text-cyan-500/60 uppercase tracking-wider block mb-2">Problem</span>
+              <div className="mb-4 p-3 border-l-2 border-cyan-500/30 bg-cyan-500/5">
+                <span className="font-mono text-[8px] text-cyan-500/60 uppercase tracking-wider block mb-1.5">Problem</span>
                 <p className="text-white/70 text-sm leading-relaxed">{services[0].problem}</p>
               </div>
 
-              <p className="text-white/60 mb-8 leading-relaxed text-lg">
+              <p className="text-white/60 mb-6 leading-relaxed text-lg">
                 {services[0].description}
               </p>
 
               {/* Technical divider */}
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-px bg-cyan-500/40" />
                 <span className="font-mono text-[9px] text-cyan-500/40 uppercase tracking-wider">Capabilities</span>
                 <div className="flex-1 h-px bg-gradient-to-r from-cyan-500/20 to-transparent" />
               </div>
 
               {/* Capability grid */}
-              <div className="grid grid-cols-2 gap-3 mb-8">
+              <div className="grid grid-cols-2 gap-2.5 mb-6">
                 {services[0].details.map((detail, idx) => (
                   <motion.div
                     key={idx}
@@ -214,8 +214,8 @@ export function ServicesSection() {
               </div>
 
               {/* Solutions section */}
-              <div className="mb-8">
-                <div className="flex items-center gap-3 mb-4">
+              <div className="mb-6">
+                <div className="flex items-center gap-3 mb-3">
                   <div className="w-8 h-px bg-green-500/40" />
                   <span className="font-mono text-[9px] text-green-500/40 uppercase tracking-wider">Solutions</span>
                   <div className="flex-1 h-px bg-gradient-to-r from-green-500/20 to-transparent" />
@@ -283,9 +283,9 @@ export function ServicesSection() {
               {/* Dimension line connector from featured card */}
               <div className="absolute -top-6 left-1/2 w-px h-4 bg-gradient-to-b from-cyan-500/30 to-transparent hidden lg:block" />
 
-              <div className="relative bg-white/[0.01] border border-white/5 p-6 lg:p-8 hover:border-white/10 transition-all duration-500 overflow-hidden">
+              <div className="relative bg-white/[0.01] border border-white/5 p-5 lg:p-6 hover:border-white/10 transition-all duration-500 overflow-hidden">
                 {/* Status indicator */}
-                <div className="flex items-center gap-2 mb-4">
+                <div className="flex items-center gap-2 mb-3">
                   <div className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse" />
                   <span className="font-mono text-[8px] text-white/30 uppercase tracking-wider">Advisory</span>
                 </div>
@@ -300,12 +300,12 @@ export function ServicesSection() {
                   <p className="text-white/70 text-xs leading-relaxed">{services[3].problem}</p>
                 </div>
 
-                <p className="text-white/50 mb-5 leading-relaxed">
+                <p className="text-white/50 mb-4 leading-relaxed">
                   {services[3].description}
                 </p>
 
                 {/* Compact capabilities */}
-                <div className="mb-5">
+                <div className="mb-4">
                   <div className="flex items-center gap-2 mb-3">
                     <div className="w-6 h-px bg-cyan-500/30" />
                     <span className="font-mono text-[8px] text-cyan-500/40 uppercase tracking-wider">Capabilities</span>
@@ -353,7 +353,7 @@ export function ServicesSection() {
           </div>
 
           {/* Right Column - Stacked Services */}
-          <div className="space-y-8 lg:space-y-12">
+          <div className="space-y-6 lg:space-y-8">
             {/* Voice/Chat Agents */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
@@ -396,12 +396,12 @@ export function ServicesSection() {
                   <p className="text-white/70 text-xs leading-relaxed">{services[1].problem}</p>
                 </div>
 
-                <p className="text-white/50 mb-5 leading-relaxed">
+                <p className="text-white/50 mb-4 leading-relaxed">
                   {services[1].description}
                 </p>
 
                 {/* Compact capabilities */}
-                <div className="mb-5">
+                <div className="mb-4">
                   <div className="flex items-center gap-2 mb-3">
                     <div className="w-6 h-px bg-cyan-500/30" />
                     <span className="font-mono text-[8px] text-cyan-500/40 uppercase tracking-wider">Capabilities</span>
@@ -469,9 +469,9 @@ export function ServicesSection() {
                 <span className="font-mono text-[8px] text-white/15">[1.0, 0.33]</span>
               </div>
 
-              <div className="relative bg-white/[0.01] border border-white/5 p-6 lg:p-8 hover:border-white/10 transition-all duration-500 overflow-hidden">
+              <div className="relative bg-white/[0.01] border border-white/5 p-5 lg:p-6 hover:border-white/10 transition-all duration-500 overflow-hidden">
                 {/* Status indicator */}
-                <div className="flex items-center gap-2 mb-4">
+                <div className="flex items-center gap-2 mb-3">
                   <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full animate-pulse" />
                   <span className="font-mono text-[8px] text-white/30 uppercase tracking-wider">Automated</span>
                 </div>
@@ -486,12 +486,12 @@ export function ServicesSection() {
                   <p className="text-white/70 text-xs leading-relaxed">{services[2].problem}</p>
                 </div>
 
-                <p className="text-white/50 mb-5 leading-relaxed">
+                <p className="text-white/50 mb-4 leading-relaxed">
                   {services[2].description}
                 </p>
 
                 {/* Compact capabilities */}
-                <div className="mb-5">
+                <div className="mb-4">
                   <div className="flex items-center gap-2 mb-3">
                     <div className="w-6 h-px bg-cyan-500/30" />
                     <span className="font-mono text-[8px] text-cyan-500/40 uppercase tracking-wider">Capabilities</span>
