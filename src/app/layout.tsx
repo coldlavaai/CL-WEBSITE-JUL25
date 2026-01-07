@@ -6,6 +6,9 @@ import { DynamicFavicon } from '@/components/DynamicFavicon'
 import { OrganizationSchema, LocalBusinessSchema, ServiceSchema, WebsiteSchema } from '@/components/StructuredData'
 import '@/styles/globals.css'
 
+// Export Web Vitals reporting for Next.js
+export { reportWebVitals } from '@/lib/analytics'
+
 const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
