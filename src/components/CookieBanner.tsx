@@ -4,13 +4,34 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 
+// Safe localStorage wrapper - handles private browsing, quota exceeded, etc.
+const safeLocalStorage = {
+  getItem: (key: string): string | null => {
+    try {
+      return localStorage.getItem(key)
+    } catch (e) {
+      console.warn('localStorage access denied:', e)
+      return null
+    }
+  },
+  setItem: (key: string, value: string): boolean => {
+    try {
+      localStorage.setItem(key, value)
+      return true
+    } catch (e) {
+      console.warn('localStorage write failed:', e)
+      return false
+    }
+  }
+}
+
 export function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false)
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
-    const consent = localStorage.getItem('cookie_consent')
+    const consent = safeLocalStorage.getItem('cookie_consent')
     if (!consent) {
       // Show banner after a short delay for better UX
       setTimeout(() => setShowBanner(true), 1500)
@@ -18,8 +39,8 @@ export function CookieBanner() {
   }, [])
 
   const acceptCookies = () => {
-    localStorage.setItem('cookie_consent', 'accepted')
-    localStorage.setItem('cookie_consent_date', new Date().toISOString())
+    safeLocalStorage.setItem('cookie_consent', 'accepted')
+    safeLocalStorage.setItem('cookie_consent_date', new Date().toISOString())
     setShowBanner(false)
 
     // Initialize analytics if needed
@@ -29,8 +50,8 @@ export function CookieBanner() {
   }
 
   const declineCookies = () => {
-    localStorage.setItem('cookie_consent', 'declined')
-    localStorage.setItem('cookie_consent_date', new Date().toISOString())
+    safeLocalStorage.setItem('cookie_consent', 'declined')
+    safeLocalStorage.setItem('cookie_consent_date', new Date().toISOString())
     setShowBanner(false)
 
     // Disable analytics

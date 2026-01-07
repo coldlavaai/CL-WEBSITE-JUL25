@@ -77,9 +77,13 @@ export function WaveOrbPhysics({ isAnimating = false }: WaveOrbPhysicsProps) {
     if (!isAnimating || pathPoints.length === 0) return
 
     let startTime: number | null = null
+    let rafId: number | null = null
+    let isMounted = true
     const duration = 12000 // 12 seconds
 
     const animate = (timestamp: number) => {
+      if (!isMounted) return // Stop if component unmounted
+
       if (!startTime) startTime = timestamp
       const elapsed = timestamp - startTime
       const newProgress = (elapsed % duration) / duration
@@ -87,11 +91,17 @@ export function WaveOrbPhysics({ isAnimating = false }: WaveOrbPhysicsProps) {
       progress.set(newProgress)
       progressRef.current = newProgress
 
-      requestAnimationFrame(animate)
+      rafId = requestAnimationFrame(animate)
     }
 
-    const animationFrame = requestAnimationFrame(animate)
-    return () => cancelAnimationFrame(animationFrame)
+    rafId = requestAnimationFrame(animate)
+
+    return () => {
+      isMounted = false
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId)
+      }
+    }
   }, [isAnimating, pathPoints, progress])
 
   // Transform progress to position

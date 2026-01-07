@@ -54,11 +54,12 @@ export function BOSScreenshotCarousel() {
   // Auto-advance carousel every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      handleNext()
+      setDirection(1)
+      setCurrentIndex((prev) => (prev + 1) % screenshots.length)
     }, 5000)
 
     return () => clearInterval(interval)
-  }, [currentIndex])
+  }, []) // Empty deps - use functional state update to avoid stale closures
 
   const handleNext = () => {
     setDirection(1)
