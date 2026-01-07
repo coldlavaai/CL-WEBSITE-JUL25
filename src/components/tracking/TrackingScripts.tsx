@@ -13,6 +13,7 @@ export function TrackingScripts() {
   const pathname = usePathname()
   const enableTracking = process.env.NEXT_PUBLIC_ENABLE_TRACKING !== 'false'
 
+  const ga4Id = process.env.NEXT_PUBLIC_GA4_ID
   const fbPixelId = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID
   const linkedinPartnerId = process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID
   const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID
@@ -40,6 +41,31 @@ export function TrackingScripts() {
 
   return (
     <>
+      {/* Google Analytics 4 */}
+      {ga4Id && (
+        <>
+          <Script
+            id="google-analytics"
+            strategy="afterInteractive"
+            src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}
+          />
+          <Script
+            id="google-analytics-init"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${ga4Id}', {
+                  page_path: window.location.pathname,
+                });
+              `,
+            }}
+          />
+        </>
+      )}
+
       {/* Facebook Pixel */}
       {fbPixelId && (
         <>
