@@ -15,8 +15,50 @@ interface ISSResponse {
   timestamp: number
 }
 
-// Rate limiter for geocoding API (1 call per second max)
-const geocodeRateLimiter = new RateLimiter(1)
+// Rate limiter for geocoding API (1 call per 2 seconds)
+const geocodeRateLimiter = new RateLimiter(0.5)
+
+// Cache for geocoding results (avoid redundant API calls)
+let geocodeCache: { [key: string]: string } = {}
+let lastGeocodedCoords: { lat: number; lon: number } | null = null
+
+/**
+ * Check if coordinates have changed significantly (>100km)
+ * Avoids unnecessary geocoding calls for small position changes
+ */
+function hasCoordinatesChangedSignificantly(lat: number, lon: number): boolean {
+  if (!lastGeocodedCoords) return true
+
+  const latDiff = Math.abs(lat - lastGeocodedCoords.lat)
+  const lonDiff = Math.abs(lon - lastGeocodedCoords.lon)
+
+  // ~1 degree = ~111km, so 1 degree threshold = ~111km movement
+  return latDiff > 1 || lonDiff > 1
+}
+
+/**
+ * Fallback: Determine ocean or continent from coordinates
+ */
+function getOceanOrContinent(lat: number, lon: number): string {
+  // Simplified ocean/continent detection based on coordinate ranges
+
+  // Over land (rough approximations)
+  if (lat > 24 && lat < 50 && lon > -125 && lon < -65) return 'North America'
+  if (lat > -35 && lat < 15 && lon > -82 && lon < -34) return 'South America'
+  if (lat > 35 && lat < 71 && lon > -10 && lon < 40) return 'Europe'
+  if (lat > -35 && lat < 37 && lon > -20 && lon < 60) return 'Africa'
+  if (lat > 8 && lat < 55 && lon > 60 && lon < 150) return 'Asia'
+  if (lat > -45 && lat < -10 && lon > 110 && lon < 155) return 'Australia'
+
+  // Over oceans
+  if (lon > -180 && lon < -70) return 'Pacific Ocean'
+  if (lon > -70 && lon < 20) return 'Atlantic Ocean'
+  if (lon > 20 && lon < 120 && lat < 35) return 'Indian Ocean'
+  if (lat > 60) return 'Arctic Ocean'
+  if (lat < -60) return 'Southern Ocean'
+
+  return 'International Waters'
+}
 
 export function ISSTracker() {
   const [location, setLocation] = useState<string>('')
@@ -27,8 +69,7 @@ export function ISSTracker() {
 
     const fetchISSLocation = async () => {
       try {
-        // Get ISS coordinates (using HTTPS to avoid mixed content blocking)
-        // Timeout after 8 seconds to prevent hanging
+        // Get ISS coordinates
         const issResponse = await fetchWithTimeout(
           'https://api.wheretheiss.at/v1/satellites/25544',
           {},
@@ -42,60 +83,77 @@ export function ISSTracker() {
         const issData = await issResponse.json()
         const { latitude, longitude } = issData
 
-        // Convert to location name using geocode.xyz
-        // Rate limited + timeout to prevent API abuse and hanging
-        const geoResponse = await geocodeRateLimiter.throttle(() =>
-          fetchWithTimeout(
-            `https://geocode.xyz/${latitude},${longitude}?json=1`,
-            {
-              headers: {
-                'User-Agent': 'ColdLava-ISS-Tracker/1.0'
-              }
-            },
-            8000
+        // Round to 1 decimal place for cache key (reduces API calls)
+        const lat = Math.round(latitude * 10) / 10
+        const lon = Math.round(longitude * 10) / 10
+        const cacheKey = `${lat},${lon}`
+
+        // Check cache first
+        if (geocodeCache[cacheKey]) {
+          setLocation(geocodeCache[cacheKey])
+          return
+        }
+
+        // Only geocode if coordinates changed significantly (>100km)
+        if (!hasCoordinatesChangedSignificantly(lat, lon)) {
+          // Use fallback based on coordinates
+          const fallbackLocation = getOceanOrContinent(lat, lon)
+          setLocation(fallbackLocation)
+          return
+        }
+
+        // Update last geocoded coordinates
+        lastGeocodedCoords = { lat, lon }
+
+        // Try OpenStreetMap Nominatim (free, more generous than geocode.xyz)
+        try {
+          const geoResponse = await geocodeRateLimiter.throttle(() =>
+            fetchWithTimeout(
+              `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`,
+              {
+                headers: {
+                  'User-Agent': 'ColdLava-ISS-Tracker/1.0',
+                },
+              },
+              8000
+            )
           )
-        )
 
-        if (!geoResponse.ok) {
-          throw new Error(`Geocoding API returned ${geoResponse.status}`)
-        }
+          if (geoResponse.ok) {
+            const geoData = await geoResponse.json()
 
-        const geoData = await geoResponse.json()
+            // Extract location from Nominatim response
+            const address = geoData.address || {}
+            let locationName = 'International Waters'
 
-        // Helper to safely extract string values (API sometimes returns empty objects {})
-        const getStringValue = (value: any): string | null => {
-          if (typeof value === 'string' && value.trim().length > 0) {
-            return value.trim()
+            if (address.country) {
+              locationName = address.country
+            } else if (address.state) {
+              locationName = address.state
+            } else if (address.ocean) {
+              locationName = address.ocean
+            } else if (address.sea) {
+              locationName = address.sea
+            } else if (geoData.display_name) {
+              // Use display_name as last resort (parse it)
+              const parts = geoData.display_name.split(',')
+              locationName = parts[parts.length - 1].trim() || 'International Waters'
+            }
+
+            // Cache the result
+            geocodeCache[cacheKey] = locationName
+            setLocation(locationName)
+          } else {
+            throw new Error('Geocoding failed')
           }
-          return null
+        } catch (geoError) {
+          // Fallback to coordinate-based detection
+          const fallbackLocation = getOceanOrContinent(lat, lon)
+          geocodeCache[cacheKey] = fallbackLocation
+          setLocation(fallbackLocation)
         }
-
-        // Get the best available location name from actual API fields
-        let locationName = 'International Waters'
-
-        // Check actual API response fields in priority order
-        const country = getStringValue(geoData.country)
-        const region = getStringValue(geoData.region)
-        const state = getStringValue(geoData.state)
-        const city = getStringValue(geoData.city)
-        const ocean = getStringValue(geoData.ocean)
-
-        if (country) {
-          locationName = country
-        } else if (region) {
-          locationName = region
-        } else if (state) {
-          locationName = state
-        } else if (city) {
-          locationName = city
-        } else if (ocean) {
-          locationName = ocean
-        }
-
-        setLocation(locationName)
       } catch (error) {
         console.error('Failed to fetch ISS location:', error)
-        // Fallback to coordinates if geocoding fails
         setLocation('Orbiting Earth')
       }
     }
@@ -103,8 +161,8 @@ export function ISSTracker() {
     // Fetch immediately
     fetchISSLocation()
 
-    // Then every 5 seconds (ISS moves fast!)
-    const interval = setInterval(fetchISSLocation, 5000)
+    // Then every 10 seconds (reduced from 5 to limit API calls)
+    const interval = setInterval(fetchISSLocation, 10000)
 
     return () => clearInterval(interval)
   }, [])

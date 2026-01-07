@@ -29,11 +29,11 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live",
+              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://snap.licdn.com https://www.clarity.ms",
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: https: blob:",
               "font-src 'self' data:",
-              "connect-src 'self' https://api.wheretheiss.at https://geocode.xyz https://vercel.live",
+              "connect-src 'self' https://api.wheretheiss.at https://nominatim.openstreetmap.org https://vercel.live https://www.google-analytics.com https://analytics.google.com https://www.facebook.com https://connect.facebook.net https://px.ads.linkedin.com https://www.clarity.ms",
               "frame-src 'self' https://cal.com",
               "object-src 'none'",
               "base-uri 'self'",
