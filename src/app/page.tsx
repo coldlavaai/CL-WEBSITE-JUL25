@@ -545,7 +545,7 @@ export default function Home() {
         <div className="absolute top-1/4 -left-1/4 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-cyan-500/5 rounded-full blur-3xl" />
 
         <div className="container-default relative z-10 py-16">
-          <div className="max-w-6xl">
+          <div className="max-w-full md:max-w-6xl overflow-hidden">
             {/* Eyebrow */}
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -572,7 +572,7 @@ export default function Home() {
                 duration: 0.6,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="text-[15px] md:text-lg lg:text-xl text-white/50 md:max-w-2xl mb-10 leading-relaxed font-light pr-4"
+              className="text-[15px] md:text-lg lg:text-xl text-white/50 max-w-full md:max-w-2xl mb-10 leading-relaxed font-light"
             >
               Custom software, AI agents, and automation for UK businesses ready to scale beyond generic tools.
             </motion.p>
