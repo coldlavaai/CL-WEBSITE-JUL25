@@ -7,7 +7,7 @@ import { LeadCaptureModal } from './LeadCaptureModal'
  * Automatically triggers lead capture modal based on configuration
  */
 export function LeadCaptureProvider() {
-  const enableLeadCapture = process.env.NEXT_PUBLIC_ENABLE_LEAD_CAPTURE !== 'false'
+  const enableLeadCapture = false // Disabled — was: process.env.NEXT_PUBLIC_ENABLE_LEAD_CAPTURE !== 'false'
   const triggerType = (process.env.NEXT_PUBLIC_LEAD_CAPTURE_TRIGGER as 'time' | 'scroll' | 'exit') || 'time'
   const delaySeconds = parseInt(process.env.NEXT_PUBLIC_LEAD_CAPTURE_DELAY || '30')
 
