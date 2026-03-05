@@ -572,7 +572,7 @@ export default function Home() {
                 duration: 0.6,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="text-sm md:text-lg lg:text-xl text-white/50 max-w-[85vw] sm:max-w-md md:max-w-2xl mb-10 leading-relaxed font-light mx-auto"
+              className="text-sm md:text-lg lg:text-xl text-white/50 max-w-[90%] md:max-w-2xl mb-10 leading-relaxed font-light"
             >
               Custom software, AI agents, and automation for UK businesses ready to scale beyond generic tools.
             </motion.p>
