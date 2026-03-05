@@ -534,7 +534,7 @@ export default function Home() {
       <MouseCoordinates />
 
       {/* HERO - Compact & Impactful */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[85dvh] flex items-center overflow-hidden">
         <GridOverlay spacing={32} opacity={0.015} />
 
         {/* Technical Annotations */}
@@ -542,7 +542,7 @@ export default function Home() {
         <TechnicalLabel position="bottom-right">United Kingdom</TechnicalLabel>
 
         {/* Subtle glow */}
-        <div className="absolute top-1/4 -left-1/4 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 -left-1/4 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-cyan-500/5 rounded-full blur-3xl" />
 
         <div className="container-default relative z-10 py-16">
           <div className="max-w-6xl">
@@ -638,11 +638,11 @@ export default function Home() {
         </div>
 
         {/* Dimension line (decorative) */}
-        <div className="absolute right-0 top-1/2 w-px h-32 bg-cyan-500/20" />
+        <div className="absolute right-0 top-1/2 w-px h-32 bg-cyan-500/20 hidden md:block" />
       </section>
 
       {/* OLIVER'S QUOTE - Architectural Statement */}
-      <section className="relative py-24 md:py-32 border-t border-white/5 overflow-hidden">
+      <section className="relative py-16 md:py-32 border-t border-white/5 overflow-hidden">
         <div className="container-default max-w-6xl relative">
           {/* Architectural grid overlay */}
           <div className="absolute inset-0 opacity-[0.02]" style={{
@@ -656,7 +656,7 @@ export default function Home() {
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-cyan-500/30 to-transparent origin-top"
+            className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-cyan-500/30 to-transparent origin-top hidden md:block"
           />
 
           {/* Dimension line - right */}
@@ -665,7 +665,7 @@ export default function Home() {
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute right-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-cyan-500/30 to-transparent origin-top"
+            className="absolute right-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-cyan-500/30 to-transparent origin-top hidden md:block"
           />
 
           {/* Philosophy/001 - Box Style */}
@@ -674,7 +674,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative border border-white/5 p-8 md:p-12 max-w-5xl mx-auto"
+            className="relative border border-white/5 p-6 md:p-12 max-w-5xl mx-auto"
           >
             {/* Architectural annotation */}
             <div className="absolute -top-3 left-8 bg-black px-3">
@@ -691,9 +691,9 @@ export default function Home() {
 
             {/* Main quote */}
             <blockquote className="relative text-center">
-              <div className="absolute -top-6 left-1/2 -translate-x-1/2 text-8xl text-cyan-500/10 font-serif leading-none">"</div>
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2 text-6xl md:text-8xl text-cyan-500/10 font-serif leading-none">"</div>
 
-              <p className="text-2xl md:text-4xl lg:text-5xl font-light leading-[1.25] tracking-tight text-white/90 italic mb-8">
+              <p className="text-xl md:text-4xl lg:text-5xl font-light leading-[1.25] tracking-tight text-white/90 italic mb-8">
                 Custom solutions for how <span className="text-cyan-400">you work</span>, not how Silicon Valley thinks you should.
               </p>
 
@@ -708,13 +708,13 @@ export default function Home() {
               </div>
             </blockquote>
 
-            {/* Dimension markers */}
-            <div className="absolute -left-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-1">
+            {/* Dimension markers - Hidden on mobile to prevent overflow */}
+            <div className="absolute -left-4 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-center gap-1">
               <div className="w-px h-4 bg-cyan-500/20" />
               <div className="w-2 h-px bg-cyan-500/20" />
               <div className="w-px h-4 bg-cyan-500/20" />
             </div>
-            <div className="absolute -right-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-1">
+            <div className="absolute -right-4 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-center gap-1">
               <div className="w-px h-4 bg-cyan-500/20" />
               <div className="w-2 h-px bg-cyan-500/20" />
               <div className="w-px h-4 bg-cyan-500/20" />
@@ -748,10 +748,10 @@ export default function Home() {
                 </span>
               </div>
 
-              <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-3 md:mb-4 tracking-tight">
+              <h2 className="text-4xl md:text-7xl lg:text-8xl font-bold mb-3 md:mb-4 tracking-tight">
                 BOS
               </h2>
-              <p className="text-2xl md:text-3xl text-white/40 mb-6 md:mb-8 font-light">
+              <p className="text-xl md:text-3xl text-white/40 mb-6 md:mb-8 font-light">
                 Business Operating System
               </p>
 
@@ -861,7 +861,7 @@ export default function Home() {
       </section>
 
       {/* INTEGRATIONS */}
-      <section className="py-20 border-t border-white/5">
+      <section className="py-12 md:py-20 border-t border-white/5">
         <div className="container-default">
           <p className="font-mono text-xs text-white/20 text-center uppercase tracking-wider mb-8">
             We integrate with the tools <span className="text-cyan-500">you already use</span>
@@ -871,23 +871,23 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS - Architectural Blueprint */}
-      <section id="clients" className="relative py-24 border-t border-white/5 overflow-hidden">
+      <section id="clients" className="relative py-16 md:py-24 border-t border-white/5 overflow-hidden">
         <div className="container-default">
           {/* Section Header */}
-          <div className="mb-16">
+          <div className="mb-10 md:mb-16">
             <div className="flex items-center gap-4 mb-4">
               <div className="h-px w-12 bg-cyan-500/40" />
               <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/30">
                 Client Testimonials
               </p>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight">
               Working with Cold Lava
             </h2>
           </div>
 
           {/* Architectural Testimonial Grid */}
-          <div className="grid md:grid-cols-12 gap-5 auto-rows-min">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-5 auto-rows-min">
             {testimonials.map((t, i) => {
               // Architectural layout pattern: varied sizes for visual interest
               const layouts = [
@@ -964,8 +964,8 @@ export default function Home() {
         </div>
 
         {/* Background architectural elements */}
-        <div className="absolute top-1/4 right-0 w-px h-1/2 bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent" />
-        <div className="absolute top-1/2 left-0 w-px h-1/4 bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent" />
+        <div className="absolute top-1/4 right-0 w-px h-1/2 bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent hidden md:block" />
+        <div className="absolute top-1/2 left-0 w-px h-1/4 bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent hidden md:block" />
       </section>
 
 
@@ -979,7 +979,7 @@ export default function Home() {
               <p className="font-mono text-[10px] md:text-xs uppercase tracking-wider text-white/30 mb-3 md:mb-4">
                 Contact
               </p>
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8">
+              <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 md:mb-8">
                 Let's <span className="text-cyan-500">talk</span>
               </h2>
               <p className="text-lg md:text-xl text-white/50 mb-4 md:mb-6 leading-relaxed">

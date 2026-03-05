@@ -150,7 +150,7 @@ export function BOSScreenshotCarousel() {
           {/* Navigation arrows - minimal and precise */}
           <button
             onClick={handlePrev}
-            className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center bg-black/60 border border-white/10 hover:border-cyan-500/60 hover:bg-black/80 transition-all group rounded"
+            className="absolute left-2 md:left-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 md:w-10 md:h-10 flex items-center justify-center bg-black/60 border border-white/10 hover:border-cyan-500/60 hover:bg-black/80 transition-all group rounded"
             aria-label="Previous screenshot"
           >
             <svg
@@ -165,7 +165,7 @@ export function BOSScreenshotCarousel() {
 
           <button
             onClick={handleNext}
-            className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center bg-black/60 border border-white/10 hover:border-cyan-500/60 hover:bg-black/80 transition-all group rounded"
+            className="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 md:w-10 md:h-10 flex items-center justify-center bg-black/60 border border-white/10 hover:border-cyan-500/60 hover:bg-black/80 transition-all group rounded"
             aria-label="Next screenshot"
           >
             <svg
@@ -215,12 +215,12 @@ export function BOSScreenshotCarousel() {
             </motion.div>
 
             {/* Minimal dot navigation */}
-            <div className="flex items-center gap-2 pt-1">
+            <div className="flex items-center gap-1 md:gap-2 pt-1">
               {screenshots.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => handleDotClick(index)}
-                  className="group relative"
+                  className="group relative p-1.5 md:p-0"
                   aria-label={`Go to screenshot ${index + 1}`}
                 >
                   <div

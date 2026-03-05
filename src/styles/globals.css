@@ -76,6 +76,7 @@
     background-color: #000;
     color: #fff;
     font-feature-settings: 'ss01' on, 'ss02' on, 'cv01' on;
+    overflow-x: hidden;
   }
 
   /* Selection styling */
@@ -94,19 +95,19 @@
 @layer components {
   /* Container with Apple-style max-widths */
   .container-narrow {
-    @apply mx-auto px-6 max-w-3xl;
+    @apply mx-auto px-4 md:px-6 max-w-3xl;
   }
   
   .container-default {
-    @apply mx-auto px-6 max-w-5xl;
+    @apply mx-auto px-4 md:px-6 max-w-5xl;
   }
   
   .container-wide {
-    @apply mx-auto px-6 max-w-7xl;
+    @apply mx-auto px-4 md:px-6 max-w-7xl;
   }
   
   .container-full {
-    @apply mx-auto px-6 max-w-[1440px];
+    @apply mx-auto px-4 md:px-6 max-w-[1440px];
   }
 
   /* Section spacing */

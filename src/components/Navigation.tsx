@@ -57,7 +57,7 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 -mr-2"
+            className="md:hidden p-3 -mr-3 min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label="Toggle menu"
           >
             <div className="w-5 h-4 relative flex flex-col justify-between">
@@ -105,7 +105,7 @@ export function Navigation() {
                   <Link
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block text-lg text-white/80 hover:text-white transition-colors"
+                    className="block text-lg text-white/80 hover:text-white transition-colors py-2 min-h-[44px] flex items-center"
                   >
                     {item.label}
                   </Link>
@@ -121,7 +121,7 @@ export function Navigation() {
                   href="https://cal.com/coldlava/discovery-call"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-sm px-5 py-2.5 bg-white text-black rounded-full"
+                  className="inline-block text-sm px-6 py-3 bg-white text-black rounded-full min-h-[44px]"
                 >
                   Get in touch
                 </Link>

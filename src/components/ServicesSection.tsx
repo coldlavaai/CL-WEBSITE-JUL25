@@ -89,7 +89,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-24 border-t border-white/5 relative overflow-hidden">
+    <section id="services" className="py-16 md:py-24 border-t border-white/5 relative overflow-hidden">
       <GridOverlay spacing={32} opacity={0.01} />
 
       <div className="container-default relative">
@@ -99,7 +99,7 @@ export function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-14"
+          className="mb-8 md:mb-14"
         >
           <div className="flex items-center gap-4 mb-4">
             <div className="h-px w-12 bg-cyan-500/40" />
@@ -107,7 +107,7 @@ export function ServicesSection() {
               Services / Capabilities
             </p>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight max-w-3xl">
+          <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight max-w-3xl">
             Systems that <span className="text-cyan-500">work</span> around your business
           </h2>
         </motion.div>
@@ -152,11 +152,11 @@ export function ServicesSection() {
               className="group relative"
             >
             {/* Outer technical frame */}
-            <div className="absolute -inset-4 border border-cyan-500/10 group-hover:border-cyan-500/20 transition-all duration-700" />
+            <div className="absolute -inset-2 md:-inset-4 border border-cyan-500/10 group-hover:border-cyan-500/20 transition-all duration-700" />
 
             {/* Corner markers */}
-            <div className="absolute -top-2 -left-2 w-6 h-6 border-l-2 border-t-2 border-cyan-500/30 group-hover:border-cyan-500/50 transition-all duration-500" />
-            <div className="absolute -bottom-2 -right-2 w-6 h-6 border-r-2 border-b-2 border-cyan-500/30 group-hover:border-cyan-500/50 transition-all duration-500" />
+            <div className="absolute -top-1 -left-1 md:-top-2 md:-left-2 w-6 h-6 border-l-2 border-t-2 border-cyan-500/30 group-hover:border-cyan-500/50 transition-all duration-500" />
+            <div className="absolute -bottom-1 -right-1 md:-bottom-2 md:-right-2 w-6 h-6 border-r-2 border-b-2 border-cyan-500/30 group-hover:border-cyan-500/50 transition-all duration-500" />
 
             {/* Technical annotation */}
             <div className="absolute -top-3 left-8 bg-black px-3 z-10">
@@ -175,7 +175,7 @@ export function ServicesSection() {
               </div>
 
               {/* Content */}
-              <h3 className="text-3xl lg:text-4xl font-bold mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 group-hover:text-cyan-400 transition-colors duration-300">
                 {services[0].title}
               </h3>
 
@@ -197,7 +197,7 @@ export function ServicesSection() {
               </div>
 
               {/* Capability grid */}
-              <div className="grid grid-cols-2 gap-2.5 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6">
                 {services[0].details.map((detail, idx) => (
                   <motion.div
                     key={idx}
@@ -220,7 +220,7 @@ export function ServicesSection() {
                   <span className="font-mono text-[9px] text-[#C9A962]/60 uppercase tracking-wider">Solutions</span>
                   <div className="flex-1 h-px bg-gradient-to-r from-[#C9A962]/20 to-transparent" />
                 </div>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {services[0].solutions.map((solution, idx) => (
                     <div key={idx} className="flex items-start gap-2 text-sm text-white/50">
                       <div className="w-1 h-1 bg-[#C9A962]/50 rounded-full mt-2 flex-shrink-0" />
@@ -264,7 +264,7 @@ export function ServicesSection() {
               className="group relative"
             >
               {/* Technical frame */}
-              <div className="absolute -inset-2 border border-white/5 group-hover:border-cyan-500/10 transition-all duration-500" />
+              <div className="absolute -inset-1 md:-inset-2 border border-white/5 group-hover:border-cyan-500/10 transition-all duration-500" />
 
               {/* Corner brackets */}
               <div className="absolute top-0 left-0 w-4 h-4 border-l border-t border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -363,7 +363,7 @@ export function ServicesSection() {
               className="group relative"
             >
               {/* Technical frame */}
-              <div className="absolute -inset-2 border border-white/5 group-hover:border-cyan-500/10 transition-all duration-500" />
+              <div className="absolute -inset-1 md:-inset-2 border border-white/5 group-hover:border-cyan-500/10 transition-all duration-500" />
 
               {/* Corner brackets */}
               <div className="absolute top-0 left-0 w-4 h-4 border-l border-t border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -453,7 +453,7 @@ export function ServicesSection() {
               className="group relative"
             >
               {/* Technical frame */}
-              <div className="absolute -inset-2 border border-white/5 group-hover:border-cyan-500/10 transition-all duration-500" />
+              <div className="absolute -inset-1 md:-inset-2 border border-white/5 group-hover:border-cyan-500/10 transition-all duration-500" />
 
               {/* Corner brackets */}
               <div className="absolute top-0 left-0 w-4 h-4 border-l border-t border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
