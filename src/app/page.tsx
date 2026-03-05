@@ -49,19 +49,34 @@ function ProcessOrbit() {
 
   return (
     <div className="relative w-full max-w-[1100px] mx-auto px-4 py-12">
+      <style>{`
+        /* Mobile: single column, correct order (01, 02, 03, 04) */
+        .process-grid {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto;
+          grid-template-areas:
+            "diagnose"
+            "design"
+            "build"
+            "support"
+            "centre";
+        }
+        
+        /* Desktop: circular layout */
+        @media (min-width: 768px) {
+          .process-grid {
+            grid-template-columns: 1fr auto 1fr;
+            grid-template-rows: auto auto auto;
+            grid-template-areas:
+              ". diagnose ."
+              "support centre design"
+              ". build .";
+          }
+        }
+      `}</style>
+      
       {/* Grid Container */}
-      <div
-        className="grid gap-6 md:gap-8 relative"
-        style={{
-          gridTemplateColumns: '1fr auto 1fr',
-          gridTemplateRows: 'auto auto auto',
-          gridTemplateAreas: `
-            ". diagnose ."
-            "support centre design"
-            ". build ."
-          `
-        }}
-      >
+      <div className="grid gap-6 md:gap-8 relative process-grid">
         {/* Circular Progress Path - Progressive Fill */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[480px] pointer-events-none z-0 hidden md:block">
           <svg className="w-full h-full -rotate-90" viewBox="0 0 400 400">
