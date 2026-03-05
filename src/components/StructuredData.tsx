@@ -180,18 +180,36 @@ export function WebsiteSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Cold Lava AI',
+    '@id': 'https://coldlava.ai/#website',
+    name: 'Cold Lava',
     url: 'https://coldlava.ai',
-    description: 'AI automation consultancy specialising in Business Operating Systems, custom CRMs, and workflow automation.',
+    description: 'Bespoke software development and AI solutions. Business Operating Systems, custom CRMs, AI voice agents, and workflow automation for UK businesses.',
     publisher: {
-      '@type': 'Organization',
-      name: 'Cold Lava AI Ltd',
+      '@id': 'https://coldlava.ai/#organization',
     },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: 'https://coldlava.ai/?s={search_term_string}',
-      'query-input': 'required name=search_term_string',
-    },
+    inLanguage: 'en-GB',
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
+export function BreadcrumbSchema() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://coldlava.ai',
+      },
+    ],
   }
 
   return (

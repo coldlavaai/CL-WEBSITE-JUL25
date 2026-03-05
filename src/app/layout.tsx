@@ -3,7 +3,7 @@ import { Montserrat } from 'next/font/google'
 import { SmoothScroll, Navigation, Footer, CookieBanner, StickyCTA } from '@/components'
 import { ConsoleEasterEgg } from '@/components/ConsoleEasterEgg'
 import { DynamicFavicon } from '@/components/DynamicFavicon'
-import { OrganizationSchema, LocalBusinessSchema, ServiceSchema, WebsiteSchema } from '@/components/StructuredData'
+import { OrganizationSchema, LocalBusinessSchema, ServiceSchema, WebsiteSchema, BreadcrumbSchema } from '@/components/StructuredData'
 import { GoogleTagManager, TrackingScripts } from '@/components/tracking'
 import { LeadCaptureProvider } from '@/components/LeadCapture/LeadCaptureProvider'
 import '@/styles/globals.css'
@@ -115,6 +115,7 @@ export default function RootLayout({
         <LocalBusinessSchema />
         <ServiceSchema />
         <WebsiteSchema />
+        <BreadcrumbSchema />
         <GoogleTagManager />
       </head>
       <body className="font-sans antialiased overflow-x-hidden">

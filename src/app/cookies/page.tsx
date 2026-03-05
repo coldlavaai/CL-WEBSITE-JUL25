@@ -2,8 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Cookie Policy',
-  description: 'What cookies we use and why. No dark patterns here.',
+  title: 'Cookie Policy | Cold Lava AI Ltd',
+  description: 'Cold Lava AI Ltd cookie policy. Transparent explanation of what cookies we use, why we use them, and how to manage your preferences.',
+  alternates: {
+    canonical: 'https://coldlava.ai/cookies',
+  },
 }
 
 export default function CookiePolicy() {

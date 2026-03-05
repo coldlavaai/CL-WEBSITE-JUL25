@@ -2,8 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service',
-  description: 'The rules of engagement. Fair and straightforward.',
+  title: 'Terms of Service | Cold Lava AI Ltd',
+  description: 'Cold Lava AI Ltd terms of service. Fair and transparent terms governing our bespoke software development and AI automation services.',
+  alternates: {
+    canonical: 'https://coldlava.ai/terms',
+  },
 }
 
 export default function TermsOfService() {

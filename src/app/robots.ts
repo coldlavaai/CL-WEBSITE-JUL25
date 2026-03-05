@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/', '/admin/'],
+      disallow: ['/api/', '/admin/', '/analytics/', '/redesign-demo/'],
     },
     sitemap: 'https://coldlava.ai/sitemap.xml',
   }

@@ -2,8 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy',
-  description: 'How we handle your data. The short version: we respect it.',
+  title: 'Privacy Policy | Cold Lava AI Ltd',
+  description: 'Cold Lava AI Ltd privacy policy. Learn how we collect, use, and protect your personal data. GDPR compliant. Transparent data handling practices.',
+  alternates: {
+    canonical: 'https://coldlava.ai/privacy',
+  },
 }
 
 export default function PrivacyPolicy() {
