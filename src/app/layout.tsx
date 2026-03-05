@@ -28,7 +28,7 @@ export const viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://coldlava.ai'),
   title: {
-    default: 'Cold Lava | AI Automation for Business',
+    default: 'Cold Lava | Bespoke Software Development & AI Solutions',
     template: '%s | Cold Lava',
   },
   description: 'Bespoke Business Operating Systems, custom CRMs, AI voice agents, and workflow automation that actually work. We build the systems that let you focus on what matters.',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     url: 'https://coldlava.ai',
     siteName: 'Cold Lava',
-    title: 'Cold Lava | AI Automation for Business',
+    title: 'Cold Lava | Bespoke Software Development & AI Solutions',
     description: 'Bespoke Business Operating Systems, custom CRMs, AI voice agents, and workflow automation that actually work.',
     images: [
       {
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cold Lava | AI Automation for Business',
+    title: 'Cold Lava | Bespoke Software Development & AI Solutions',
     description: 'Bespoke Business Operating Systems, custom CRMs, AI voice agents, and workflow automation that actually work.',
     images: ['/og-image.jpg'],
   },
