@@ -62,7 +62,7 @@ export function PremiumHeroTitle({
         duration: 0.6,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="text-[2rem] sm:text-[2.5rem] md:text-7xl lg:text-8xl font-bold tracking-[-0.03em] leading-[0.9] mb-8 max-w-5xl break-words"
+      className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.03em] leading-[0.9] mb-8 max-w-5xl break-words"
     >
       We Build The{' '}
       <span className="block text-white/40 italic font-light">Systems</span>

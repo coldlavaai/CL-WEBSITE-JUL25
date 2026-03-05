@@ -572,7 +572,7 @@ export default function Home() {
                 duration: 0.6,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="text-base md:text-lg lg:text-xl text-white/50 max-w-2xl mb-10 leading-relaxed font-light px-1"
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-white/50 max-w-2xl mb-10 leading-relaxed font-light px-1"
             >
               Custom software, AI agents, and automation for UK businesses ready to scale beyond generic tools.
             </motion.p>
@@ -882,7 +882,7 @@ export default function Home() {
               </p>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight">
-              Working with Cold Lava
+              Working with <span className="text-cyan-400">Cold Lava</span>
             </h2>
           </div>
 
