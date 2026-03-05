@@ -555,7 +555,7 @@ export default function Home() {
                 duration: 0.6,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-white/30 mb-8"
+              className="font-mono text-[8px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] text-white/30 mb-8"
             >
               AI Consultancy & Software Development
             </motion.p>

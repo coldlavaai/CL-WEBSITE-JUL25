@@ -107,7 +107,7 @@ export default function RootLayout({
         <WebsiteSchema />
         <GoogleTagManager />
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased overflow-x-hidden">
         <ConsoleEasterEgg />
         <DynamicFavicon />
         <TrackingScripts />

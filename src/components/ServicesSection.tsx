@@ -112,8 +112,8 @@ export function ServicesSection() {
           </h2>
         </motion.div>
 
-        {/* Coordinate System Overlay */}
-        <div className="absolute top-20 left-0 right-0 pointer-events-none">
+        {/* Coordinate System Overlay — hidden on mobile */}
+        <div className="absolute top-20 left-0 right-0 pointer-events-none hidden md:block">
           <div className="container-default relative">
             {/* X-axis coordinates */}
             <div className="flex justify-between items-center">
@@ -142,14 +142,15 @@ export function ServicesSection() {
           </div>
 
           {/* Left Column - Featured + Consulting */}
-          <div className="space-y-6 lg:space-y-8">
+          {/* Mobile: contents makes children direct grid items for reordering; lg: normal block layout */}
+          <div className="contents lg:block lg:space-y-8">
             {/* Featured Service - Business Systems */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative"
+              className="group relative order-1 lg:order-none"
             >
             {/* Outer technical frame */}
             <div className="absolute -inset-2 md:-inset-4 border border-cyan-500/10 group-hover:border-cyan-500/20 transition-all duration-700" />
@@ -255,13 +256,13 @@ export function ServicesSection() {
             </div>
           </motion.div>
 
-            {/* Consulting Service */}
+            {/* Consulting Service (04 - Advisory) */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative"
+              className="group relative order-4 lg:order-none"
             >
               {/* Technical frame */}
               <div className="absolute -inset-1 md:-inset-2 border border-white/5 group-hover:border-cyan-500/10 transition-all duration-500" />
@@ -275,8 +276,8 @@ export function ServicesSection() {
                 <span className="font-mono text-[10px] text-cyan-500/60">{services[3].num}</span>
               </div>
 
-              {/* Corner coordinates */}
-              <div className="absolute bottom-0 left-0 translate-y-full pl-2 pt-1">
+              {/* Corner coordinates — hidden on mobile */}
+              <div className="absolute bottom-0 left-0 translate-y-full pl-2 pt-1 hidden md:block">
                 <span className="font-mono text-[8px] text-white/15">[0.0, 0.0]</span>
               </div>
 
@@ -353,14 +354,14 @@ export function ServicesSection() {
           </div>
 
           {/* Right Column - Stacked Services */}
-          <div className="space-y-6 lg:space-y-8">
-            {/* Voice/Chat Agents */}
+          <div className="contents lg:block lg:space-y-8">
+            {/* Voice/Chat Agents (02) */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative"
+              className="group relative order-2 lg:order-none"
             >
               {/* Technical frame */}
               <div className="absolute -inset-1 md:-inset-2 border border-white/5 group-hover:border-cyan-500/10 transition-all duration-500" />
@@ -374,8 +375,8 @@ export function ServicesSection() {
                 <span className="font-mono text-[10px] text-cyan-500/60">{services[1].num}</span>
               </div>
 
-              {/* Corner coordinates */}
-              <div className="absolute top-0 right-0 -translate-y-full pr-2 pb-1">
+              {/* Corner coordinates — hidden on mobile */}
+              <div className="absolute top-0 right-0 -translate-y-full pr-2 pb-1 hidden md:block">
                 <span className="font-mono text-[8px] text-white/15">[1.0, 0.66]</span>
               </div>
 
@@ -444,13 +445,13 @@ export function ServicesSection() {
               </div>
             </motion.div>
 
-            {/* Workflows */}
+            {/* Workflows (03) */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative"
+              className="group relative order-3 lg:order-none"
             >
               {/* Technical frame */}
               <div className="absolute -inset-1 md:-inset-2 border border-white/5 group-hover:border-cyan-500/10 transition-all duration-500" />
@@ -464,8 +465,8 @@ export function ServicesSection() {
                 <span className="font-mono text-[10px] text-cyan-500/60">{services[2].num}</span>
               </div>
 
-              {/* Corner coordinates */}
-              <div className="absolute top-0 right-0 -translate-y-full pr-2 pb-1">
+              {/* Corner coordinates — hidden on mobile */}
+              <div className="absolute top-0 right-0 -translate-y-full pr-2 pb-1 hidden md:block">
                 <span className="font-mono text-[8px] text-white/15">[1.0, 0.33]</span>
               </div>
 

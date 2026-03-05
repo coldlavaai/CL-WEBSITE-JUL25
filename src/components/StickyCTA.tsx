@@ -49,9 +49,9 @@ export function StickyCTA() {
               <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-cyan-500/40 group-active:border-[#C9A962]/70 transition-all duration-300" />
               <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-cyan-500/40 group-active:border-[#C9A962]/70 transition-all duration-300" />
 
-              {/* Button */}
-              <div className="relative px-6 py-4 bg-white text-black font-semibold overflow-hidden active:scale-[0.98] transition-transform">
-                {/* Hover/Active effect */}
+              {/* Button — dark theme with cyan accent */}
+              <div className="relative px-6 py-4 bg-cyan-500 text-black font-semibold overflow-hidden active:scale-[0.98] transition-transform">
+                {/* Active press effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#C9A962] to-[#D4B76E] transform scale-x-0 group-active:scale-x-100 transition-transform duration-300 origin-left" />
 
                 {/* Text */}
