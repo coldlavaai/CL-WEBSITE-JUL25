@@ -574,7 +574,8 @@ export default function Home() {
               }}
               className="text-[15px] md:text-lg lg:text-xl text-white/50 max-w-full md:max-w-2xl mb-10 leading-relaxed font-light"
             >
-              Custom software, AI agents, and automation for UK businesses ready to scale beyond generic tools.
+              <span className="hidden md:inline">Custom software, AI agents, and automation for UK businesses ready to scale beyond generic tools.</span>
+              <span className="md:hidden">Custom software, AI agents, and automation for UK businesses ready to scale.</span>
             </motion.p>
 
             {/* CTA */}
