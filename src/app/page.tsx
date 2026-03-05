@@ -260,7 +260,7 @@ function ProcessOrbit() {
           <div className="relative w-16 h-16 md:w-20 md:h-20">
             <Image
               src="/Cold Lava Logo/Cold Lava - Icon.png"
-              alt="Cold Lava"
+              alt="Cold Lava logo - bespoke software development and AI solutions company"
               fill
               className="object-contain"
               priority
@@ -572,7 +572,7 @@ export default function Home() {
                 duration: 0.6,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="text-xs sm:text-sm md:text-lg lg:text-xl text-white/50 max-w-2xl mb-10 leading-relaxed font-light px-4"
+              className="text-sm md:text-lg lg:text-xl text-white/50 max-w-[85vw] sm:max-w-md md:max-w-2xl mb-10 leading-relaxed font-light mx-auto"
             >
               Custom software, AI agents, and automation for UK businesses ready to scale beyond generic tools.
             </motion.p>

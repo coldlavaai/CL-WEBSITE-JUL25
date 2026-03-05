@@ -216,7 +216,7 @@ export function WaveOrbPhysics({ isAnimating = false }: WaveOrbPhysicsProps) {
       >
         <Image
           src="/Cold Lava Logo/Cold Lava - Icon.png"
-          alt="Cold Lava"
+          alt="Cold Lava process animation orb"
           width={24}
           height={24}
           className="relative -translate-x-1/2 -translate-y-1/2"

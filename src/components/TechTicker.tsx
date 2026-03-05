@@ -117,7 +117,7 @@ function LogoTicker({ logos, speed = 'normal' }: { logos: Logo[]; speed?: 'norma
             <div className="h-12 w-32 flex items-center justify-center">
               <Image
                 src={logo.path}
-                alt={logo.name}
+                alt={`${logo.name} logo - technology used by Cold Lava`}
                 width={140}
                 height={48}
                 className="logo-img h-10 w-auto max-w-full object-contain opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"

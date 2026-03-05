@@ -13,7 +13,7 @@ export function Footer() {
           <div className="flex items-center gap-4">
             <Image
               src="/Cold Lava Logo/Cold Lava - Icon.png"
-              alt="Cold Lava"
+              alt="Cold Lava AI Ltd - bespoke software and AI automation"
               width={40}
               height={40}
               className="h-10 w-auto object-contain"

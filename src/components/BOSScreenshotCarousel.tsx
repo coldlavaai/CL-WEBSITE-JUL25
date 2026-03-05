@@ -136,7 +136,7 @@ export function BOSScreenshotCarousel() {
                 <div className="relative w-full h-full">
                   <Image
                     src={currentScreenshot.path}
-                    alt={currentScreenshot.feature}
+                    alt={`BOS screenshot showing ${currentScreenshot.feature} - ${currentScreenshot.description}`}
                     fill
                     className="object-contain"
                     priority={currentIndex === 0}
