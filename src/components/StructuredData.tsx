@@ -1,13 +1,25 @@
 export function OrganizationSchema() {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Cold Lava AI Ltd',
+    '@type': ['Organization', 'SoftwareCompany'],
+    '@id': 'https://coldlava.ai/#organization',
+    name: 'Cold Lava',
     legalName: 'COLD LAVA AI LTD',
     url: 'https://coldlava.ai',
-    logo: 'https://coldlava.ai/Cold Lava Logo/Cold Lava - Icon.png',
-    description: 'AI automation consultancy specialising in bespoke Business Operating Systems (BOS), custom CRMs, voice agents, and workflow automation.',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://coldlava.ai/Cold Lava Logo/Cold Lava - Icon.png',
+      width: 512,
+      height: 512,
+    },
+    image: 'https://coldlava.ai/og-image.jpg',
+    description: 'Bespoke software development and AI solutions company specialising in Business Operating Systems (BOS), custom CRMs, AI voice agents, and workflow automation for UK businesses.',
     foundingDate: '2024',
+    numberOfEmployees: {
+      '@type': 'QuantitativeValue',
+      minValue: 2,
+      maxValue: 10,
+    },
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'GB',
@@ -16,12 +28,25 @@ export function OrganizationSchema() {
     contactPoint: {
       '@type': 'ContactPoint',
       email: 'hello@coldlava.ai',
+      telephone: '+44-151-541-6933',
       contactType: 'Customer Service',
       availableLanguage: 'English',
+      areaServed: {
+        '@type': 'Country',
+        name: 'United Kingdom',
+      },
     },
     sameAs: [
       'https://github.com/coldlavaai',
       'https://www.linkedin.com/company/cold-lava-ai',
+    ],
+    knowsAbout: [
+      'Artificial Intelligence',
+      'Business Automation',
+      'Custom Software Development',
+      'CRM Development',
+      'AI Voice Agents',
+      'Workflow Automation',
     ],
   }
 
@@ -36,18 +61,24 @@ export function OrganizationSchema() {
 export function LocalBusinessSchema() {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
-    name: 'Cold Lava AI Ltd',
+    '@type': ['ProfessionalService', 'ITCompany'],
+    '@id': 'https://coldlava.ai/#localbusiness',
+    name: 'Cold Lava',
     image: 'https://coldlava.ai/og-image.jpg',
-    '@id': 'https://coldlava.ai',
     url: 'https://coldlava.ai',
     telephone: '+44-151-541-6933',
     email: 'hello@coldlava.ai',
+    description: 'Bespoke software development and AI solutions for UK businesses. Custom Business Operating Systems, CRMs, AI voice agents, and workflow automation.',
     priceRange: '££££',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'GB',
       addressRegion: 'England',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 53.4084,
+      longitude: -2.9916,
     },
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
@@ -58,6 +89,12 @@ export function LocalBusinessSchema() {
     areaServed: {
       '@type': 'Country',
       name: 'United Kingdom',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5',
+      reviewCount: '5',
+      bestRating: '5',
     },
   }
 
