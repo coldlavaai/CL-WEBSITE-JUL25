@@ -70,11 +70,10 @@ export function PremiumHeroTitle({
       <span className="block relative inline-block">
         Actually{' '}
         <span className={`relative inline-block transition-colors duration-300 ${isComplete ? 'text-cyan-500' : ''}`}>
-          {displayWord}
+          {displayWord}{showCursor && (
+            <span className="inline-block w-1 h-[0.9em] bg-cyan-500 animate-blink ml-1 align-middle" />
+          )}
         </span>
-        {showCursor && (
-          <span className="inline-block w-1 h-[0.9em] bg-cyan-500 animate-blink ml-1 align-middle" />
-        )}
       </span>
     </motion.h1>
   )
