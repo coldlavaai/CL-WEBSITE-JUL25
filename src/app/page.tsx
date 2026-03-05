@@ -544,8 +544,8 @@ export default function Home() {
         {/* Subtle glow */}
         <div className="absolute top-1/4 -left-1/4 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-cyan-500/5 rounded-full blur-3xl" />
 
-        <div className="container-default relative z-10 py-16">
-          <div className="max-w-full md:max-w-6xl overflow-hidden">
+        <div className="container-default relative z-10 py-16 min-w-0">
+          <div className="max-w-full md:max-w-6xl overflow-hidden min-w-0">
             {/* Eyebrow */}
             <motion.p
               initial={{ opacity: 0, y: 10 }}
