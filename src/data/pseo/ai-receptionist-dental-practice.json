@@ -1,0 +1,32 @@
+{
+  "title": "AI Receptionist for Dental Practices: 24/7 Booking & Patient Care",
+  "slug": "ai-receptionist-dental-practice",
+  "meta_description": "Discover how an AI receptionist can streamline appointment bookings and enhance patient care for dental practices in the UK.",
+  "target_keyword": "AI receptionist dental practice",
+  "intro": "In today's fast-paced dental environment, managing appointments efficiently can be a challenge. An AI receptionist offers a comprehensive solution, providing 24/7 booking and patient care to ensure your practice runs smoothly.",
+  "sections": [
+    {
+      "heading": "The Benefits of an AI Receptionist",
+      "content": "Implementing an AI receptionist in your dental practice can significantly reduce the financial impact of appointment no-shows, which can cost practices between £50 and £150 per missed slot. By automating appointment bookings and reminders, you can ensure that your schedule remains full and productive.\n\nAdditionally, during peak hours, receptionists can become overwhelmed with booking calls, leading to missed opportunities and frustrated patients. An AI solution alleviates this pressure by handling calls and inquiries seamlessly, allowing your team to focus on patient care and other essential tasks."
+    },
+    {
+      "heading": "Streamlined Patient Recall and Follow-Up",
+      "content": "One of the key features of an AI receptionist is its ability to manage patient recall and follow-up reminders efficiently. Manual reminders can often be forgotten or poorly executed, leading to decreased patient engagement and missed appointments. With AI, you can automate these reminders, ensuring that patients receive timely notifications about their upcoming visits or necessary follow-up treatments, enhancing their overall experience and loyalty to your practice."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How does an AI receptionist work?",
+      "answer": "An AI receptionist uses advanced algorithms and natural language processing to manage appointment bookings, handle patient inquiries, and send reminders, all while providing a user-friendly experience."
+    },
+    {
+      "question": "Will an AI receptionist replace my current staff?",
+      "answer": "No, an AI receptionist is designed to complement your existing staff, reducing their workload during busy periods and allowing them to focus on patient care."
+    },
+    {
+      "question": "Can I customise the AI receptionist to fit my practice's needs?",
+      "answer": "Absolutely! The AI receptionist can be tailored to meet the specific needs of your dental practice, including custom scripts for patient interactions and reminder schedules."
+    }
+  ],
+  "cta": "See how AI handles dental appointment bookings. Book a free demo."
+}

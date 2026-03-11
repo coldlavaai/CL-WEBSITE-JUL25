@@ -6,5 +6,10 @@ node_modules/
 .DS_Store
 
 # Lead capture data (private)
-data/
+/data/
 *.json
+
+# Allow pSEO page data
+!src/data/
+!src/data/pseo/
+!src/data/pseo/**

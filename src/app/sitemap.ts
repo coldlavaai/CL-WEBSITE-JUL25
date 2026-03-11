@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { getAllPSEOSlugs } from '@/data/pseo'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://coldlava.ai'
@@ -37,5 +38,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  return routes
+  // pSEO pages
+  const pseoSlugs = getAllPSEOSlugs()
+  const pseoRoutes: MetadataRoute.Sitemap = pseoSlugs.map((slug) => ({
+    url: `${baseUrl}/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  return [...routes, ...pseoRoutes]
 }
