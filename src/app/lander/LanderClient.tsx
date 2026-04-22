@@ -50,41 +50,60 @@ const BOTTLENECKS = [
   'Other',
 ]
 
+const HOW_IT_WORKS = [
+  {
+    num: '01',
+    title: 'We talk',
+    sub: '30 minutes. Free.',
+    bullets: [
+      'You tell us how the business actually runs',
+      'Where time is leaking, what you’ve already tried',
+      'No pitch deck, no pressure',
+    ],
+  },
+  {
+    num: '02',
+    title: 'We audit',
+    sub: 'Written report within 48 hours.',
+    bullets: [
+      'Shortlist of processes AI can take off your team’s plate in 90 days',
+      'Hours reclaimed per role, with £ figures against current payroll',
+      'The stack we’d use — and where we’d push back if it isn’t the right fit',
+    ],
+  },
+  {
+    num: '03',
+    title: 'You scale',
+    sub: 'Fixed scope. Fixed timeline.',
+    bullets: [
+      'We build, deploy, and maintain — you don’t hire a technical team',
+      'Your existing staff get leverage, not replaced',
+      'Growth without adding headcount or wage bill',
+    ],
+  },
+]
+
 const OBJECTIONS = [
   {
     pain: '“Are you replacing my team?”',
     answer:
-      'No. This isn’t about cutting headcount — it’s about giving the team you have more leverage. We automate the repetitive admin so your people focus on work that actually moves the business.',
+      'No. The point is to give the team you already have more leverage — automate the repetitive admin so they can focus on the work that actually moves the business.',
   },
   {
     pain: '“I’ve tried AI tools and they didn’t stick.”',
     answer:
-      'Off-the-shelf tools break the second they hit a real workflow. We build custom systems trained on your processes, integrated with your existing tools, and tested against the way your business actually operates.',
+      'Off-the-shelf tools break the moment they hit a real workflow. We build custom systems trained on your processes and integrated with the tools you already run.',
   },
   {
-    pain: '“We don’t have the technical skills in-house.”',
+    pain: '“We don’t have the technical skills.”',
     answer:
-      'Fully managed end-to-end. We audit, design, build, deploy, and maintain. Your team uses it, we run it. No servers to manage, no prompts to tune.',
+      'Fully managed. We audit, design, build, deploy, and maintain. Your team uses it, we run it. No servers, no prompts, no ops overhead.',
   },
   {
-    pain: '“How do I know it’s actually worth it?”',
+    pain: '“How do I know it’s worth it?”',
     answer:
-      'The audit itself is specific and free. We quantify hours and £ against real roles in your business before anyone commits to anything. If the numbers don’t stack up, we’ll tell you.',
+      'The audit itself is free and specific — real roles, real hours, real £. If the numbers don’t stack up, we’ll tell you before anyone spends a penny.',
   },
-]
-
-const DELIVERABLES = [
-  'A shortlist of processes AI can take off your team’s plate in the first 90 days',
-  'Hours reclaimed per role, with £ figures against your current payroll',
-  'The stack we’d use — Claude, n8n, Supabase, Twilio — and an honest read on trade-offs',
-  'A fixed-scope proposal, or a straight “not yet” if it isn’t the right fit',
-]
-
-const PROCESS = [
-  { num: '01', title: 'We talk', desc: 'A 30-minute call. You tell us how the business actually runs, where time leaks, and what you’ve tried.' },
-  { num: '02', title: 'We audit', desc: 'We map your operations against what AI can genuinely do today — not hype, not someday-maybe.' },
-  { num: '03', title: 'We install', desc: 'Custom agents, integrations, and automations built into your existing stack. Deployed, monitored, maintained.' },
-  { num: '04', title: 'You scale', desc: 'More output from the same team. Growth without a hiring sprint, without firing anyone, without a bigger wage bill.' },
 ]
 
 export function LanderClient() {
@@ -134,7 +153,9 @@ export function LanderClient() {
       })
       if (!res.ok) throw new Error('Request failed')
       setSubmitted(true)
-      document.getElementById('book')?.scrollIntoView({ behavior: 'smooth' })
+      setTimeout(() => {
+        document.getElementById('book')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 150)
     } catch {
       setError('Something went wrong. Please email hello@coldlava.ai and we’ll pick it up directly.')
     } finally {
@@ -144,7 +165,7 @@ export function LanderClient() {
 
   return (
     <div className="bg-black text-white">
-      {/* ───────── HERO ───────── */}
+      {/* ───────── 1. HERO ───────── */}
       <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
         <div className="absolute top-1/4 -left-1/4 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 -right-1/4 w-[400px] md:w-[700px] h-[400px] md:h-[700px] bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
@@ -180,30 +201,7 @@ export function LanderClient() {
         </div>
       </section>
 
-      {/* ───────── PROCESS ───────── */}
-      <section className="relative py-20 md:py-28 border-t border-white/5">
-        <div className="max-w-5xl mx-auto px-6">
-          <FadeIn>
-            <p className="text-xs uppercase tracking-[0.25em] text-cyan-500 text-center">How it works</p>
-            <h2 className="mt-4 text-headline font-semibold tracking-tight text-center max-w-2xl mx-auto">
-              Four steps. No pitch decks, no pressure.
-            </h2>
-          </FadeIn>
-          <div className="mt-14 grid md:grid-cols-4 gap-4">
-            {PROCESS.map((p, i) => (
-              <FadeIn key={p.num} delay={i * 0.05}>
-                <div className="h-full bg-white/[0.02] border border-white/10 rounded-xl p-6 hover:border-cyan-500/30 transition-colors">
-                  <div className="text-cyan-500 font-mono text-sm">{p.num}</div>
-                  <div className="mt-3 text-lg font-semibold">{p.title}</div>
-                  <p className="mt-2 text-sm text-white/60 leading-relaxed">{p.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ───────── AUDIT FORM ───────── */}
+      {/* ───────── 2. FORM ───────── */}
       <section id="audit" className="relative py-20 md:py-28 border-t border-white/5">
         <div className="max-w-3xl mx-auto px-6">
           <FadeIn>
@@ -212,7 +210,7 @@ export function LanderClient() {
               Tell us where the time is leaking.
             </h2>
             <p className="mt-4 text-white/60 text-center max-w-xl mx-auto">
-              We’ll come back with where AI can streamline your operations — so the team you already have can do more, without you having to hire.
+              We’ll come back with exactly where AI can streamline your operations — so the team you already have can do more, without you having to hire.
             </p>
           </FadeIn>
 
@@ -222,12 +220,7 @@ export function LanderClient() {
               className="mt-12 space-y-6 bg-white/[0.02] border border-white/10 rounded-2xl p-6 md:p-10"
             >
               <Field label="1. What industry are you in?" required>
-                <select
-                  required
-                  value={form.industry}
-                  onChange={(e) => update('industry', e.target.value)}
-                  className={inputCls}
-                >
+                <select required value={form.industry} onChange={(e) => update('industry', e.target.value)} className={inputCls}>
                   <option value="">Select…</option>
                   {INDUSTRIES.map((i) => (
                     <option key={i} value={i}>{i}</option>
@@ -255,12 +248,7 @@ export function LanderClient() {
               </Field>
 
               <Field label="3. Which processes eat the most time right now?" required>
-                <select
-                  required
-                  value={form.bottleneck}
-                  onChange={(e) => update('bottleneck', e.target.value)}
-                  className={inputCls}
-                >
+                <select required value={form.bottleneck} onChange={(e) => update('bottleneck', e.target.value)} className={inputCls}>
                   <option value="">Select…</option>
                   {BOTTLENECKS.map((b) => (
                     <option key={b} value={b}>{b}</option>
@@ -268,7 +256,7 @@ export function LanderClient() {
                 </select>
               </Field>
 
-              <Field label="4. What would you free up your team to do, if they weren’t buried in admin? (one sentence is fine)">
+              <Field label="4. What would you free your team up to do, if they weren’t buried in admin? (one sentence is fine)">
                 <textarea
                   rows={3}
                   value={form.context}
@@ -303,58 +291,93 @@ export function LanderClient() {
                 {submitted ? '✓ Submitted — pick a time below' : submitting ? 'Sending…' : 'Submit & pick a time'}
               </button>
               <p className="text-xs text-white/40 text-center">
-                We’ll never share your details. Replies come from Oliver directly — no sales inbox.
+                No spam. Replies come from Oliver directly — not a sales inbox.
               </p>
             </form>
           </FadeIn>
         </div>
       </section>
 
-      {/* ───────── CAL.COM EMBED ───────── */}
-      <section id="book" className="relative py-20 md:py-28 border-t border-white/5">
+      {/* ───────── 3. CAL EMBED (revealed after submit) ───────── */}
+      {submitted && (
+        <section id="book" className="relative py-20 md:py-28 border-t border-white/5">
+          <div className="max-w-5xl mx-auto px-6">
+            <FadeIn>
+              <p className="text-xs uppercase tracking-[0.25em] text-cyan-500 text-center">Step 2 — 30 minutes</p>
+              <h2 className="mt-4 text-headline font-semibold tracking-tight text-center">
+                {booked ? 'You’re booked in.' : 'Pick a time that suits you.'}
+              </h2>
+              <p className="mt-4 text-white/60 text-center max-w-2xl mx-auto">
+                {booked
+                  ? 'Calendar invite is on its way. Oliver will send a short pre-call note with what to have ready. No pitch decks, no pressure.'
+                  : 'A 30-minute call with Oliver. Come with roughly how your team is structured and the top 2–3 things eating their time.'}
+              </p>
+            </FadeIn>
+
+            {!booked && (
+              <FadeIn delay={0.1}>
+                <div className="mt-10 rounded-2xl border border-white/10 bg-white">
+                  <Cal
+                    namespace="discovery-call"
+                    calLink="coldlava/discovery-call"
+                    style={{ width: '100%', height: '1000px' }}
+                    config={{ layout: 'month_view' }}
+                  />
+                </div>
+              </FadeIn>
+            )}
+
+            {booked && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mt-10 bg-cyan-500/5 border border-cyan-500/30 rounded-2xl p-10 text-center"
+              >
+                <div className="text-5xl mb-4 text-cyan-500">✓</div>
+                <p className="text-white/80 max-w-xl mx-auto">
+                  You’ll get a calendar invite within the next few seconds. If nothing arrives, email{' '}
+                  <a className="text-cyan-500 underline" href="mailto:hello@coldlava.ai">hello@coldlava.ai</a>.
+                </p>
+              </motion.div>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* ───────── 4. HOW IT WORKS + WHAT YOU GET (merged) ───────── */}
+      <section className="relative py-24 md:py-32 border-t border-white/5 bg-white/[0.01]">
         <div className="max-w-5xl mx-auto px-6">
           <FadeIn>
-            <p className="text-xs uppercase tracking-[0.25em] text-cyan-500 text-center">Step 2 — 30 minutes</p>
-            <h2 className="mt-4 text-headline font-semibold tracking-tight text-center">
-              {booked ? 'You’re booked in.' : 'Pick a time that suits you.'}
+            <p className="text-xs uppercase tracking-[0.25em] text-cyan-500 text-center">The whole process</p>
+            <h2 className="mt-4 text-headline font-semibold tracking-tight text-center max-w-2xl mx-auto">
+              Three steps. No pitch decks, no pressure.
             </h2>
-            <p className="mt-4 text-white/60 text-center max-w-2xl mx-auto">
-              {booked
-                ? 'Calendar invite is on its way. Oliver will send a short pre-call note with what to have ready. No pitch decks, no pressure.'
-                : 'A 30-minute call with Oliver. Come with roughly how your team is structured and the top 2–3 things eating their time.'}
-            </p>
           </FadeIn>
-
-          {!booked && (
-            <FadeIn delay={0.1}>
-              <div className="mt-10 rounded-2xl border border-white/10 bg-white">
-                <Cal
-                  namespace="discovery-call"
-                  calLink="coldlava/discovery-call"
-                  style={{ width: '100%', height: '1000px' }}
-                  config={{ layout: 'month_view' }}
-                />
-              </div>
-            </FadeIn>
-          )}
-
-          {booked && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mt-10 bg-cyan-500/5 border border-cyan-500/30 rounded-2xl p-10 text-center"
-            >
-              <div className="text-5xl mb-4 text-cyan-500">✓</div>
-              <p className="text-white/80 max-w-xl mx-auto">
-                You’ll get a calendar invite within the next few seconds. If nothing arrives, email{' '}
-                <a className="text-cyan-500 underline" href="mailto:hello@coldlava.ai">hello@coldlava.ai</a>.
-              </p>
-            </motion.div>
-          )}
+          <div className="mt-14 grid md:grid-cols-3 gap-5">
+            {HOW_IT_WORKS.map((step, i) => (
+              <FadeIn key={step.num} delay={i * 0.05}>
+                <div className="h-full bg-white/[0.02] border border-white/10 rounded-2xl p-7 hover:border-cyan-500/30 transition-colors">
+                  <div className="flex items-baseline justify-between">
+                    <span className="text-cyan-500 font-mono text-sm">{step.num}</span>
+                    <span className="text-xs text-white/40">{step.sub}</span>
+                  </div>
+                  <div className="mt-4 text-2xl font-semibold">{step.title}</div>
+                  <ul className="mt-5 space-y-3">
+                    {step.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-3 text-sm text-white/70 leading-relaxed">
+                        <span className="text-cyan-500 mt-1 shrink-0">→</span>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ───────── OBJECTIONS ───────── */}
+      {/* ───────── 5. OBJECTIONS + FINAL CTA ───────── */}
       <section className="relative py-24 md:py-32 border-t border-white/5">
         <div className="max-w-5xl mx-auto px-6">
           <FadeIn>
@@ -379,56 +402,26 @@ export function LanderClient() {
               </FadeIn>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* ───────── WHAT YOU GET ───────── */}
-      <section className="relative py-24 md:py-32 border-t border-white/5 bg-white/[0.01]">
-        <div className="max-w-4xl mx-auto px-6">
-          <FadeIn>
-            <p className="text-xs uppercase tracking-[0.25em] text-cyan-500 text-center">The deliverable</p>
-            <h2 className="mt-4 text-headline font-semibold tracking-tight text-center">
-              What you walk away with.
-            </h2>
-            <p className="mt-4 text-white/60 text-center">
-              A written audit delivered within 48 hours of the call. Yours to keep, whether you work with us or not.
-            </p>
-          </FadeIn>
-          <ul className="mt-12 space-y-4">
-            {DELIVERABLES.map((d, i) => (
-              <FadeIn key={d} delay={i * 0.05}>
-                <li className="flex items-start gap-4 bg-white/[0.02] border border-white/10 rounded-xl p-5">
-                  <span className="shrink-0 w-6 h-6 rounded-full bg-cyan-500/15 border border-cyan-500/40 grid place-items-center text-cyan-500 text-xs font-semibold">
-                    {i + 1}
-                  </span>
-                  <p className="text-white/80">{d}</p>
-                </li>
-              </FadeIn>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* ───────── FINAL CTA ───────── */}
-      <section className="relative py-24 md:py-32 border-t border-white/5">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <FadeIn>
-            <h2 className="text-display font-semibold tracking-tight">
-              Grow the business. <br className="hidden md:block" />
-              <span className="text-cyan-500">Not the wage bill.</span>
-            </h2>
-          </FadeIn>
-          <FadeIn delay={0.1}>
-            <p className="mt-6 text-white/60 text-subhead">
-              Audit is free. Call is 30 minutes. Takeaway lands in your inbox within 48 hours.
-            </p>
-          </FadeIn>
-          <FadeIn delay={0.2}>
-            <a href="#audit" className={primaryBtn}>
-              Book my free audit
-              <span aria-hidden>→</span>
-            </a>
-          </FadeIn>
+          <div className="mt-24 max-w-3xl mx-auto text-center">
+            <FadeIn>
+              <h2 className="text-display font-semibold tracking-tight">
+                Grow the business. <br className="hidden md:block" />
+                <span className="text-cyan-500">Not the wage bill.</span>
+              </h2>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <p className="mt-6 text-white/60 text-subhead">
+                Audit is free. Call is 30 minutes. Written takeaway within 48 hours — yours to keep either way.
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <a href="#audit" className={primaryBtn}>
+                Book my free audit
+                <span aria-hidden>→</span>
+              </a>
+            </FadeIn>
+          </div>
         </div>
       </section>
     </div>
