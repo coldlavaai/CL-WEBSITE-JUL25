@@ -52,32 +52,39 @@ const BOTTLENECKS = [
 
 const OBJECTIONS = [
   {
-    pain: '“I’ve tried AI tools and they didn’t work.”',
+    pain: '“Are you replacing my team?”',
     answer:
-      'Off-the-shelf wrappers break the moment they hit your workflow. We build custom agents trained on your processes, tools, and data — so they behave like staff, not chatbots.',
+      'No. This isn’t about cutting headcount — it’s about giving the team you have more leverage. We automate the repetitive admin so your people focus on work that actually moves the business.',
   },
   {
-    pain: '“I don’t have the technical skills in-house.”',
+    pain: '“I’ve tried AI tools and they didn’t stick.”',
     answer:
-      'Fully managed. No servers to run, no prompts to tune, no infrastructure you need to understand. We build it, deploy it, monitor it, and maintain it.',
+      'Off-the-shelf tools break the second they hit a real workflow. We build custom systems trained on your processes, integrated with your existing tools, and tested against the way your business actually operates.',
   },
   {
-    pain: '“What about security and my data?”',
+    pain: '“We don’t have the technical skills in-house.”',
     answer:
-      'Your data stays in your own Postgres. Row-level security, permissioned access, full audit logs. We already run systems handling RTW documents, payroll, and compliance records under UK GDPR.',
+      'Fully managed end-to-end. We audit, design, build, deploy, and maintain. Your team uses it, we run it. No servers to manage, no prompts to tune.',
   },
   {
-    pain: '“How do I know it’ll actually save money?”',
+    pain: '“How do I know it’s actually worth it?”',
     answer:
-      'The audit is free and specific. We quantify hours and £ against real roles in your business before any engagement. If the numbers aren’t there, we tell you.',
+      'The audit itself is specific and free. We quantify hours and £ against real roles in your business before anyone commits to anything. If the numbers don’t stack up, we’ll tell you.',
   },
 ]
 
 const DELIVERABLES = [
-  'A shortlist of roles and tasks we can automate in the first 90 days',
-  'Estimated hours and payroll reclaimed, broken down by function',
-  'The stack we’d use — Claude, n8n, Supabase, Twilio — and why',
-  'Honest timeline and fixed-scope cost, or a straight “not yet”',
+  'A shortlist of processes AI can take off your team’s plate in the first 90 days',
+  'Hours reclaimed per role, with £ figures against your current payroll',
+  'The stack we’d use — Claude, n8n, Supabase, Twilio — and an honest read on trade-offs',
+  'A fixed-scope proposal, or a straight “not yet” if it isn’t the right fit',
+]
+
+const PROCESS = [
+  { num: '01', title: 'We talk', desc: 'A 30-minute call. You tell us how the business actually runs, where time leaks, and what you’ve tried.' },
+  { num: '02', title: 'We audit', desc: 'We map your operations against what AI can genuinely do today — not hype, not someday-maybe.' },
+  { num: '03', title: 'We install', desc: 'Custom agents, integrations, and automations built into your existing stack. Deployed, monitored, maintained.' },
+  { num: '04', title: 'You scale', desc: 'More output from the same team. Growth without a hiring sprint, without firing anyone, without a bigger wage bill.' },
 ]
 
 export function LanderClient() {
@@ -114,7 +121,7 @@ export function LanderClient() {
           email: form.email,
           phone: form.phone,
           company: form.company,
-          lead_magnet: 'AI ROI Audit',
+          lead_magnet: 'AI Operations Audit',
           source: '/lander',
           trigger: 'manual',
           qualifier: {
@@ -139,38 +146,60 @@ export function LanderClient() {
     <div className="bg-black text-white">
       {/* ───────── HERO ───────── */}
       <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-lava-500/[0.05] to-transparent pointer-events-none" />
+        <div className="absolute top-1/4 -left-1/4 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 -right-1/4 w-[400px] md:w-[700px] h-[400px] md:h-[700px] bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
         <div className="relative max-w-5xl mx-auto px-6 text-center">
           <FadeIn>
-            <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-lava-500 border border-lava-500/30 rounded-full px-4 py-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-lava-500 animate-pulse" />
-              Free ROI Audit
+            <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-cyan-500 border border-cyan-500/30 rounded-full px-4 py-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />
+              Free operations audit
             </span>
           </FadeIn>
           <FadeIn delay={0.1}>
             <h1 className="mt-8 text-display font-semibold tracking-tight">
-              We install <span className="text-lava-500">custom-built AI</span> into your business to cut cost and streamline operations.
+              Scale without hiring. <br className="hidden md:block" />
+              <span className="text-cyan-500">Keep the team you have.</span>
             </h1>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="mt-8 text-subhead text-white/70 max-w-2xl mx-auto">
-              Fixed scope. Fixed timeline. Built on the same stack powering live systems across construction, finance, solar, and recruitment.
+              We audit your business, identify the processes AI can genuinely handle, and install the systems that let you grow without adding headcount — or letting anyone go.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <a
-              href="#audit"
-              className="inline-flex items-center gap-2 mt-10 bg-lava-500 hover:bg-lava-600 text-black font-semibold px-8 py-4 rounded-full transition-colors"
-            >
-              Get my free AI ROI audit
+            <a href="#audit" className={primaryBtn}>
+              Book my free audit
               <span aria-hidden>→</span>
             </a>
           </FadeIn>
           <FadeIn delay={0.4}>
-            <p className="mt-6 text-xs uppercase tracking-[0.2em] text-white/40">
+            <p className="mt-8 text-xs uppercase tracking-[0.25em] text-white/40">
               Trusted by UK operators — Aztec Landscapes · Eiles Finance · RML · Greenstar Solar
             </p>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* ───────── PROCESS ───────── */}
+      <section className="relative py-20 md:py-28 border-t border-white/5">
+        <div className="max-w-5xl mx-auto px-6">
+          <FadeIn>
+            <p className="text-xs uppercase tracking-[0.25em] text-cyan-500 text-center">How it works</p>
+            <h2 className="mt-4 text-headline font-semibold tracking-tight text-center max-w-2xl mx-auto">
+              Four steps. No pitch decks, no pressure.
+            </h2>
+          </FadeIn>
+          <div className="mt-14 grid md:grid-cols-4 gap-4">
+            {PROCESS.map((p, i) => (
+              <FadeIn key={p.num} delay={i * 0.05}>
+                <div className="h-full bg-white/[0.02] border border-white/10 rounded-xl p-6 hover:border-cyan-500/30 transition-colors">
+                  <div className="text-cyan-500 font-mono text-sm">{p.num}</div>
+                  <div className="mt-3 text-lg font-semibold">{p.title}</div>
+                  <p className="mt-2 text-sm text-white/60 leading-relaxed">{p.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -178,11 +207,12 @@ export function LanderClient() {
       <section id="audit" className="relative py-20 md:py-28 border-t border-white/5">
         <div className="max-w-3xl mx-auto px-6">
           <FadeIn>
-            <h2 className="text-headline font-semibold tracking-tight text-center">
-              Answer 4 quick questions.
+            <p className="text-xs uppercase tracking-[0.25em] text-cyan-500 text-center">Step 1 — Four questions</p>
+            <h2 className="mt-4 text-headline font-semibold tracking-tight text-center">
+              Tell us where the time is leaking.
             </h2>
             <p className="mt-4 text-white/60 text-center max-w-xl mx-auto">
-              We’ll come back with exactly where AI can cut cost, which roles can be automated, and what you’d save in the first 90 days.
+              We’ll come back with where AI can streamline your operations — so the team you already have can do more, without you having to hire.
             </p>
           </FadeIn>
 
@@ -191,7 +221,6 @@ export function LanderClient() {
               onSubmit={handleSubmit}
               className="mt-12 space-y-6 bg-white/[0.02] border border-white/10 rounded-2xl p-6 md:p-10"
             >
-              {/* Q1 */}
               <Field label="1. What industry are you in?" required>
                 <select
                   required
@@ -206,7 +235,6 @@ export function LanderClient() {
                 </select>
               </Field>
 
-              {/* Q2 */}
               <Field label="2. How many people are in the team?" required>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                   {TEAM_SIZES.map((s) => (
@@ -216,7 +244,7 @@ export function LanderClient() {
                       onClick={() => update('teamSize', s)}
                       className={`py-3 rounded-lg border text-sm transition-colors ${
                         form.teamSize === s
-                          ? 'border-lava-500 bg-lava-500/10 text-white'
+                          ? 'border-cyan-500 bg-cyan-500/10 text-white'
                           : 'border-white/15 text-white/60 hover:border-white/30'
                       }`}
                     >
@@ -226,7 +254,6 @@ export function LanderClient() {
                 </div>
               </Field>
 
-              {/* Q3 */}
               <Field label="3. Which processes eat the most time right now?" required>
                 <select
                   required
@@ -241,14 +268,13 @@ export function LanderClient() {
                 </select>
               </Field>
 
-              {/* Q4 */}
-              <Field label="4. What’s the biggest bottleneck? (one sentence is fine)">
+              <Field label="4. What would you free up your team to do, if they weren’t buried in admin? (one sentence is fine)">
                 <textarea
                   rows={3}
                   value={form.context}
                   onChange={(e) => update('context', e.target.value)}
                   className={inputCls}
-                  placeholder="e.g. booking coordinators spending 3 hours a day on WhatsApp follow-ups"
+                  placeholder="e.g. spend more time on-site instead of chasing paperwork"
                 />
               </Field>
 
@@ -272,12 +298,12 @@ export function LanderClient() {
               <button
                 type="submit"
                 disabled={submitting || submitted}
-                className="w-full bg-lava-500 hover:bg-lava-600 disabled:opacity-60 disabled:cursor-not-allowed text-black font-semibold py-4 rounded-full transition-colors"
+                className="w-full bg-white hover:bg-cyan-500 disabled:opacity-60 disabled:cursor-not-allowed text-black font-semibold py-4 rounded-full transition-colors"
               >
-                {submitted ? '✓ Submitted — pick a time below' : submitting ? 'Sending…' : 'Submit & book my audit'}
+                {submitted ? '✓ Submitted — pick a time below' : submitting ? 'Sending…' : 'Submit & pick a time'}
               </button>
               <p className="text-xs text-white/40 text-center">
-                We’ll never share your details. Reply-to address is Oliver, not a sales inbox.
+                We’ll never share your details. Replies come from Oliver directly — no sales inbox.
               </p>
             </form>
           </FadeIn>
@@ -288,23 +314,24 @@ export function LanderClient() {
       <section id="book" className="relative py-20 md:py-28 border-t border-white/5">
         <div className="max-w-5xl mx-auto px-6">
           <FadeIn>
-            <h2 className="text-headline font-semibold tracking-tight text-center">
-              {booked ? 'You’re booked in.' : 'Pick a time for your audit.'}
+            <p className="text-xs uppercase tracking-[0.25em] text-cyan-500 text-center">Step 2 — 30 minutes</p>
+            <h2 className="mt-4 text-headline font-semibold tracking-tight text-center">
+              {booked ? 'You’re booked in.' : 'Pick a time that suits you.'}
             </h2>
             <p className="mt-4 text-white/60 text-center max-w-2xl mx-auto">
               {booked
-                ? 'Calendar invite is on its way. Oliver will send a short pre-call note with what to have ready. No pitch decks.'
-                : '30 minutes with Oliver. Come with your current headcount and the top 2–3 roles or tasks eating the most time.'}
+                ? 'Calendar invite is on its way. Oliver will send a short pre-call note with what to have ready. No pitch decks, no pressure.'
+                : 'A 30-minute call with Oliver. Come with roughly how your team is structured and the top 2–3 things eating their time.'}
             </p>
           </FadeIn>
 
           {!booked && (
             <FadeIn delay={0.1}>
-              <div className="mt-10 rounded-2xl overflow-hidden border border-white/10 bg-white">
+              <div className="mt-10 rounded-2xl border border-white/10 bg-white">
                 <Cal
                   namespace="discovery-call"
                   calLink="coldlava/discovery-call"
-                  style={{ width: '100%', height: '700px', overflow: 'scroll' }}
+                  style={{ width: '100%', height: '1000px' }}
                   config={{ layout: 'month_view' }}
                 />
               </div>
@@ -315,12 +342,12 @@ export function LanderClient() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mt-10 bg-lava-500/5 border border-lava-500/30 rounded-2xl p-10 text-center"
+              className="mt-10 bg-cyan-500/5 border border-cyan-500/30 rounded-2xl p-10 text-center"
             >
-              <div className="text-5xl mb-4">✓</div>
+              <div className="text-5xl mb-4 text-cyan-500">✓</div>
               <p className="text-white/80 max-w-xl mx-auto">
                 You’ll get a calendar invite within the next few seconds. If nothing arrives, email{' '}
-                <a className="text-lava-500 underline" href="mailto:hello@coldlava.ai">hello@coldlava.ai</a>.
+                <a className="text-cyan-500 underline" href="mailto:hello@coldlava.ai">hello@coldlava.ai</a>.
               </p>
             </motion.div>
           )}
@@ -331,8 +358,9 @@ export function LanderClient() {
       <section className="relative py-24 md:py-32 border-t border-white/5">
         <div className="max-w-5xl mx-auto px-6">
           <FadeIn>
-            <h2 className="text-headline font-semibold tracking-tight text-center max-w-3xl mx-auto">
-              Here’s what stops most operators from implementing AI. We solve all of them.
+            <p className="text-xs uppercase tracking-[0.25em] text-cyan-500 text-center">Common questions</p>
+            <h2 className="mt-4 text-headline font-semibold tracking-tight text-center max-w-3xl mx-auto">
+              What operators usually ask before we start.
             </h2>
           </FadeIn>
           <div className="mt-14 grid md:grid-cols-2 gap-5">
@@ -340,11 +368,11 @@ export function LanderClient() {
               <FadeIn key={o.pain} delay={i * 0.05}>
                 <div className="h-full bg-white/[0.02] border border-white/10 rounded-2xl p-7">
                   <div className="flex items-start gap-3 mb-4">
-                    <span className="text-red-400 font-mono text-lg leading-none mt-0.5">✗</span>
+                    <span className="text-white/40 font-mono text-lg leading-none mt-0.5">?</span>
                     <p className="text-white/80 italic">{o.pain}</p>
                   </div>
                   <div className="flex items-start gap-3 border-t border-white/10 pt-4">
-                    <span className="text-lava-500 font-mono text-lg leading-none mt-0.5">✓</span>
+                    <span className="text-cyan-500 font-mono text-lg leading-none mt-0.5">→</span>
                     <p className="text-white/70 text-sm leading-relaxed">{o.answer}</p>
                   </div>
                 </div>
@@ -358,18 +386,19 @@ export function LanderClient() {
       <section className="relative py-24 md:py-32 border-t border-white/5 bg-white/[0.01]">
         <div className="max-w-4xl mx-auto px-6">
           <FadeIn>
-            <h2 className="text-headline font-semibold tracking-tight text-center">
-              What you get, specifically.
+            <p className="text-xs uppercase tracking-[0.25em] text-cyan-500 text-center">The deliverable</p>
+            <h2 className="mt-4 text-headline font-semibold tracking-tight text-center">
+              What you walk away with.
             </h2>
             <p className="mt-4 text-white/60 text-center">
-              A written audit delivered within 48 hours of the call. Yours to keep either way.
+              A written audit delivered within 48 hours of the call. Yours to keep, whether you work with us or not.
             </p>
           </FadeIn>
           <ul className="mt-12 space-y-4">
             {DELIVERABLES.map((d, i) => (
               <FadeIn key={d} delay={i * 0.05}>
                 <li className="flex items-start gap-4 bg-white/[0.02] border border-white/10 rounded-xl p-5">
-                  <span className="shrink-0 w-6 h-6 rounded-full bg-lava-500/15 border border-lava-500/40 grid place-items-center text-lava-500 text-xs font-semibold">
+                  <span className="shrink-0 w-6 h-6 rounded-full bg-cyan-500/15 border border-cyan-500/40 grid place-items-center text-cyan-500 text-xs font-semibold">
                     {i + 1}
                   </span>
                   <p className="text-white/80">{d}</p>
@@ -385,20 +414,18 @@ export function LanderClient() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <FadeIn>
             <h2 className="text-display font-semibold tracking-tight">
-              Ready to see what AI can cut from your business?
+              Grow the business. <br className="hidden md:block" />
+              <span className="text-cyan-500">Not the wage bill.</span>
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="mt-6 text-white/60 text-subhead">
-              Takes two minutes. Audit lands in your inbox within 48 hours.
+              Audit is free. Call is 30 minutes. Takeaway lands in your inbox within 48 hours.
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <a
-              href="#audit"
-              className="inline-flex items-center gap-2 mt-10 bg-lava-500 hover:bg-lava-600 text-black font-semibold px-8 py-4 rounded-full transition-colors"
-            >
-              Get my free AI ROI audit
+            <a href="#audit" className={primaryBtn}>
+              Book my free audit
               <span aria-hidden>→</span>
             </a>
           </FadeIn>
@@ -408,8 +435,11 @@ export function LanderClient() {
   )
 }
 
+const primaryBtn =
+  'inline-flex items-center gap-2 mt-10 bg-white hover:bg-cyan-500 text-black font-semibold px-8 py-4 rounded-full transition-colors'
+
 const inputCls =
-  'w-full bg-black/40 border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:border-lava-500 focus:outline-none transition-colors'
+  'w-full bg-black/40 border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:border-cyan-500 focus:outline-none transition-colors'
 
 function Field({
   label,
@@ -423,7 +453,7 @@ function Field({
   return (
     <div>
       <label className="block text-sm text-white/70 mb-2">
-        {label} {required && <span className="text-lava-500">*</span>}
+        {label} {required && <span className="text-cyan-500">*</span>}
       </label>
       {children}
     </div>
