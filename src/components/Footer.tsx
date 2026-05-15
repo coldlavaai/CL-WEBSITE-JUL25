@@ -21,8 +21,7 @@ export function Footer() {
             <div className="text-xs text-white/30 leading-tight">
               <div>© {new Date().getFullYear()} Cold Lava AI Ltd. United Kingdom.</div>
               <div>Company No. 16492732</div>
-              <div className="mt-1">Technology partner to Aztec Landscapes Limited.</div>
-              <div className="max-w-xs">Also partner to A. Sterling Landscapes, Carrot Top Marketing, Eiles Financial, Greenstar Solar and Liverpool Cotton Brokers Limited.</div>
+              <div className="mt-1 max-w-xs">Technology partner to Aztec Landscapes Limited, A. Sterling Landscapes, Carrot Top Marketing, Eiles Financial, Greenstar Solar, Liverpool Cotton Brokers Limited, plus many more.</div>
             </div>
           </div>
 
