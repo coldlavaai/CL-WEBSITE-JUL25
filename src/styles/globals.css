@@ -21,10 +21,6 @@
   --border-subtle: rgba(255, 255, 255, 0.05);
   --border-emphasis: rgba(255, 255, 255, 0.10);
 
-  /* Orange glow variants */
-  --accent-glow: rgba(249, 115, 22, 0.25);
-  --accent-dim: rgba(249, 115, 22, 0.1);
-
   /* Z-index layers */
   --z-navigation: 50;
   --z-grain: 9999;
@@ -166,14 +162,6 @@
     @apply bg-white/10;
   }
   
-  .btn-accent {
-    @apply btn bg-lava-500 text-white;
-  }
-  
-  .btn-accent:hover {
-    @apply bg-lava-600;
-  }
-
   /* Card surface */
   .card {
     @apply bg-[#1d1d1f] rounded-2xl p-8;
@@ -235,19 +223,6 @@
   /* Ticker spotlight effect */
   .in-spotlight .logo-img {
     @apply opacity-100 grayscale-0;
-  }
-
-  /* Glow effects */
-  .glow-orange {
-    box-shadow: 0 0 40px var(--accent-glow);
-  }
-
-  .glow-orange-sm {
-    box-shadow: 0 0 20px var(--accent-glow);
-  }
-
-  .glow-orange-subtle {
-    box-shadow: 0 0 60px var(--accent-dim);
   }
 
   /* Card lift effect */
