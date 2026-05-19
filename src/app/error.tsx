@@ -19,12 +19,12 @@ export default function Error({
     <div className="min-h-screen flex items-center justify-center bg-black">
       <div className="relative max-w-2xl w-full p-8">
         {/* Architectural frame */}
-        <div className="absolute -top-2 -left-2 w-12 h-12 border-t-2 border-l-2 border-cyan-500/40" />
-        <div className="absolute -top-2 -right-2 w-12 h-12 border-t-2 border-r-2 border-cyan-500/40" />
-        <div className="absolute -bottom-2 -left-2 w-12 h-12 border-b-2 border-l-2 border-cyan-500/40" />
-        <div className="absolute -bottom-2 -right-2 w-12 h-12 border-b-2 border-r-2 border-cyan-500/40" />
+        <div className="absolute -top-2 -left-2 w-12 h-12 border-t-2 border-l-2 border-brand-cyan/40" />
+        <div className="absolute -top-2 -right-2 w-12 h-12 border-t-2 border-r-2 border-brand-cyan/40" />
+        <div className="absolute -bottom-2 -left-2 w-12 h-12 border-b-2 border-l-2 border-brand-cyan/40" />
+        <div className="absolute -bottom-2 -right-2 w-12 h-12 border-b-2 border-r-2 border-brand-cyan/40" />
 
-        <div className="relative bg-black/95 border border-cyan-500/20 p-12 rounded-lg">
+        <div className="relative bg-black/95 border border-brand-cyan/20 p-12 rounded-lg">
           {/* Error badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-500/10 border border-red-500/30 rounded mb-6">
             <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
@@ -56,7 +56,7 @@ export default function Error({
           <div className="flex flex-col sm:flex-row gap-4">
             <button
               onClick={reset}
-              className="group relative px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-black font-medium rounded transition-all duration-300 overflow-hidden"
+              className="group relative px-6 py-3 bg-brand-cyan hover:bg-brand-cyan text-black font-medium rounded transition-all duration-300 overflow-hidden"
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
                 Try again
@@ -64,12 +64,12 @@ export default function Error({
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
               </span>
-              <div className="absolute inset-0 bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-brand-cyan opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
 
             <Link
               href="/"
-              className="px-6 py-3 text-center border border-white/20 hover:border-cyan-500/50 text-white/70 hover:text-white font-medium rounded transition-all duration-300"
+              className="px-6 py-3 text-center border border-white/20 hover:border-brand-cyan/50 text-white/70 hover:text-white font-medium rounded transition-all duration-300"
             >
               Go home
             </Link>

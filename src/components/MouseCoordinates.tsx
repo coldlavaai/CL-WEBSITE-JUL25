@@ -59,17 +59,17 @@ export function MouseCoordinates() {
             </a>
 
             {/* Separator line */}
-            <div className="h-10 md:h-12 w-px bg-gradient-to-b from-transparent via-cyan-500/30 to-transparent pointer-events-none" />
+            <div className="h-10 md:h-12 w-px bg-gradient-to-b from-transparent via-brand-cyan/30 to-transparent pointer-events-none" />
 
             {/* Coordinates - Hidden on very small screens */}
             <div className="relative pointer-events-none hidden sm:block">
               {/* Corner bracket */}
-              <div className="absolute -top-1 -left-1 w-3 h-3 border-l border-t border-cyan-500/30" />
+              <div className="absolute -top-1 -left-1 w-3 h-3 border-l border-t border-brand-cyan/30" />
 
               <div className="flex items-center gap-2 md:gap-3 pt-1 pl-2">
                 {/* X coordinate */}
                 <div className="flex items-baseline gap-1">
-                  <span className="font-mono text-[8px] md:text-[9px] text-cyan-500/60 uppercase tracking-wider">X</span>
+                  <span className="font-mono text-[8px] md:text-[9px] text-brand-cyan/60 uppercase tracking-wider">X</span>
                   <motion.span
                     key={displayX}
                     initial={{ opacity: 0.5 }}
@@ -81,11 +81,11 @@ export function MouseCoordinates() {
                 </div>
 
                 {/* Separator */}
-                <div className="w-px h-2.5 md:h-3 bg-cyan-500/20" />
+                <div className="w-px h-2.5 md:h-3 bg-brand-cyan/20" />
 
                 {/* Y coordinate */}
                 <div className="flex items-baseline gap-1">
-                  <span className="font-mono text-[8px] md:text-[9px] text-cyan-500/60 uppercase tracking-wider">Y</span>
+                  <span className="font-mono text-[8px] md:text-[9px] text-brand-cyan/60 uppercase tracking-wider">Y</span>
                   <motion.span
                     key={totalY}
                     initial={{ opacity: 0.5 }}
@@ -98,7 +98,7 @@ export function MouseCoordinates() {
               </div>
 
               {/* Subtle glow effect */}
-              <div className="absolute inset-0 bg-cyan-500/5 blur-xl -z-10 opacity-50" />
+              <div className="absolute inset-0 bg-brand-cyan/5 blur-xl -z-10 opacity-50" />
             </div>
           </div>
         </motion.div>

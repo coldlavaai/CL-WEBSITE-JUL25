@@ -40,9 +40,9 @@ export function MeetingsTicker() {
   if (!mounted) {
     return (
       <div className="flex items-baseline gap-2 font-mono text-xs text-white/30">
-        <span className="text-[10px] text-cyan-500/40 uppercase tracking-wider">📅</span>
+        <span className="text-[10px] text-brand-cyan/40 uppercase tracking-wider">📅</span>
         <span className="text-white/20">Meetings today that could have been emails:</span>
-        <span className="text-cyan-400/50 tabular-nums">—</span>
+        <span className="text-brand-cyan/50 tabular-nums">—</span>
       </div>
     )
   }
@@ -53,10 +53,10 @@ export function MeetingsTicker() {
       title="Based on 11M daily US meetings (Lucid Meetings) × 55% deemed unnecessary (Calendly)"
     >
       {/* Corner bracket accent */}
-      <div className="absolute -top-1 -left-2 w-2 h-2 border-l border-t border-cyan-500/20" />
+      <div className="absolute -top-1 -left-2 w-2 h-2 border-l border-t border-brand-cyan/20" />
 
       {/* Calendar icon */}
-      <span className="text-[10px] text-cyan-500/40 uppercase tracking-wider">📅</span>
+      <span className="text-[10px] text-brand-cyan/40 uppercase tracking-wider">📅</span>
 
       {/* Label */}
       <span className="text-white/30 font-light">Meetings today that could have been emails:</span>
@@ -67,13 +67,13 @@ export function MeetingsTicker() {
         initial={{ opacity: 0.7 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
-        className="text-cyan-400 font-semibold tabular-nums tracking-tight"
+        className="text-brand-cyan font-semibold tabular-nums tracking-tight"
       >
         {formatNumber(count)}
       </motion.span>
 
       {/* Subtle glow effect */}
-      <div className="absolute inset-0 bg-cyan-500/5 blur-xl -z-10 opacity-40" />
+      <div className="absolute inset-0 bg-brand-cyan/5 blur-xl -z-10 opacity-40" />
     </div>
   )
 }

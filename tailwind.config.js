@@ -8,6 +8,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        brand: {
+          cyan: '#35BCCB',      // matches Cold Lava logo PNG render (brightest sample)
+          cyanDim: '#2BA0AD',   // hover / dim variant
+          cyanSoft: '#60C9D8',  // mid-tone for backgrounds / fills
+        },
         neutral: {
           950: '#0a0a0a',
         },

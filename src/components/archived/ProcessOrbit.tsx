@@ -217,13 +217,13 @@ export function ProcessOrbit() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           style={{ gridArea: 'centre' }}
-          className="justify-self-center self-center relative z-10 w-32 h-32 md:w-36 md:h-36 rounded-full border border-cyan-500/20 flex items-center justify-center overflow-hidden"
+          className="justify-self-center self-center relative z-10 w-32 h-32 md:w-36 md:h-36 rounded-full border border-brand-cyan/20 flex items-center justify-center overflow-hidden"
         >
           {/* Gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-black/80 to-black/90" />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan/10 via-black/80 to-black/90" />
 
           {/* Inner glow */}
-          <div className="absolute inset-0 rounded-full bg-cyan-500/5 blur-xl" />
+          <div className="absolute inset-0 rounded-full bg-brand-cyan/5 blur-xl" />
 
           {/* Subtle grid pattern */}
           <div
@@ -235,10 +235,10 @@ export function ProcessOrbit() {
           />
 
           {/* Corner brackets */}
-          <div className="absolute top-3 left-3 w-4 h-4 border-l border-t border-cyan-500/30" />
-          <div className="absolute top-3 right-3 w-4 h-4 border-r border-t border-cyan-500/30" />
-          <div className="absolute bottom-3 left-3 w-4 h-4 border-l border-b border-cyan-500/30" />
-          <div className="absolute bottom-3 right-3 w-4 h-4 border-r border-b border-cyan-500/30" />
+          <div className="absolute top-3 left-3 w-4 h-4 border-l border-t border-brand-cyan/30" />
+          <div className="absolute top-3 right-3 w-4 h-4 border-r border-t border-brand-cyan/30" />
+          <div className="absolute bottom-3 left-3 w-4 h-4 border-l border-b border-brand-cyan/30" />
+          <div className="absolute bottom-3 right-3 w-4 h-4 border-r border-b border-brand-cyan/30" />
 
           {/* Cold Lava Logo */}
           <div className="relative w-16 h-16 md:w-20 md:h-20">
@@ -400,7 +400,7 @@ function ProcessCard({
             opacity: isActive ? 0.08 : 0,
           }}
           transition={{ duration: 0.5 }}
-          className="absolute inset-0 bg-cyan-500 pointer-events-none"
+          className="absolute inset-0 bg-brand-cyan pointer-events-none"
         />
 
         {/* Active state corner highlights */}
@@ -409,14 +409,14 @@ function ProcessCard({
             opacity: isActive ? 0.4 : 0,
           }}
           transition={{ duration: 0.5 }}
-          className="absolute top-0 left-0 w-8 h-8 bg-gradient-to-br from-cyan-500/20 to-transparent pointer-events-none"
+          className="absolute top-0 left-0 w-8 h-8 bg-gradient-to-br from-brand-cyan/20 to-transparent pointer-events-none"
         />
         <motion.div
           animate={{
             opacity: isActive ? 0.4 : 0,
           }}
           transition={{ duration: 0.5 }}
-          className="absolute bottom-0 right-0 w-8 h-8 bg-gradient-to-tl from-cyan-500/20 to-transparent pointer-events-none"
+          className="absolute bottom-0 right-0 w-8 h-8 bg-gradient-to-tl from-brand-cyan/20 to-transparent pointer-events-none"
         />
       </motion.div>
     </div>
@@ -446,7 +446,7 @@ export function TrustPrinciplesStack() {
     >
       {/* Subheading */}
       <div className="mb-4 flex items-center gap-2">
-        <div className="w-6 h-px bg-cyan-500/20" />
+        <div className="w-6 h-px bg-brand-cyan/20" />
         <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/20">
           We believe
         </p>
@@ -464,7 +464,7 @@ export function TrustPrinciplesStack() {
             className="flex items-center gap-2 group"
           >
             {/* Dot indicator */}
-            <div className="w-1 h-1 bg-cyan-500/40 rounded-full group-hover:bg-cyan-500/60 transition-colors" />
+            <div className="w-1 h-1 bg-brand-cyan/40 rounded-full group-hover:bg-brand-cyan/60 transition-colors" />
 
             {/* Principle text */}
             <span className="font-mono text-[10px] text-white/30 group-hover:text-white/40 uppercase tracking-wider whitespace-nowrap transition-colors">

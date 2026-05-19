@@ -16,7 +16,7 @@ export default function PrivacyPolicy() {
         {/* Header */}
         <div className="mb-16">
           <div className="inline-block mb-4">
-            <span className="font-mono text-xs text-cyan-400/50">LEGAL</span>
+            <span className="font-mono text-xs text-brand-cyan/50">LEGAL</span>
           </div>
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
             Privacy Policy
@@ -65,7 +65,7 @@ export default function PrivacyPolicy() {
                   <ListItem>
                     <strong className="text-white font-semibold">Cookies</strong> — Small files that help the site work properly.
                     See our{' '}
-                    <Link href="/cookies" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors">
+                    <Link href="/cookies" className="text-brand-cyan hover:text-brand-cyanSoft underline underline-offset-2 transition-colors">
                       Cookie Policy
                     </Link>
                     {' '}for the details.
@@ -131,7 +131,7 @@ export default function PrivacyPolicy() {
                   Want to exercise any of these? Email us at{' '}
                   <a
                     href="mailto:hello@coldlava.ai"
-                    className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors font-mono"
+                    className="text-brand-cyan hover:text-brand-cyanSoft underline underline-offset-2 transition-colors font-mono"
                   >
                     hello@coldlava.ai
                   </a>
@@ -204,7 +204,7 @@ export default function PrivacyPolicy() {
                   Email us at{' '}
                   <a
                     href="mailto:hello@coldlava.ai"
-                    className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors font-mono"
+                    className="text-brand-cyan hover:text-brand-cyanSoft underline underline-offset-2 transition-colors font-mono"
                   >
                     hello@coldlava.ai
                   </a>
@@ -217,7 +217,7 @@ export default function PrivacyPolicy() {
                     href="https://ico.org.uk"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors font-mono"
+                    className="text-brand-cyan hover:text-brand-cyanSoft underline underline-offset-2 transition-colors font-mono"
                   >
                     ico.org.uk
                   </a>
@@ -235,19 +235,19 @@ export default function PrivacyPolicy() {
               href="/"
               className="text-white/60 hover:text-white transition-colors group flex items-center gap-2"
             >
-              <span className="text-cyan-400 group-hover:translate-x-[-4px] transition-transform">←</span>
+              <span className="text-brand-cyan group-hover:translate-x-[-4px] transition-transform">←</span>
               Back to home
             </Link>
             <div className="flex gap-6 text-sm">
               <Link
                 href="/terms"
-                className="text-white/60 hover:text-cyan-400 transition-colors"
+                className="text-white/60 hover:text-brand-cyan transition-colors"
               >
                 Terms of Service
               </Link>
               <Link
                 href="/cookies"
-                className="text-white/60 hover:text-cyan-400 transition-colors"
+                className="text-white/60 hover:text-brand-cyan transition-colors"
               >
                 Cookie Policy
               </Link>
@@ -272,11 +272,11 @@ function Section({
   return (
     <section className="group">
       <div className="flex items-start gap-6 mb-4">
-        <span className="font-mono text-xs text-cyan-400/50 mt-1 group-hover:text-cyan-400/80 transition-colors">
+        <span className="font-mono text-xs text-brand-cyan/50 mt-1 group-hover:text-brand-cyan/80 transition-colors">
           {number}
         </span>
         <div className="flex-1">
-          <h2 className="text-2xl font-semibold text-white mb-4 group-hover:text-cyan-400 transition-colors">
+          <h2 className="text-2xl font-semibold text-white mb-4 group-hover:text-brand-cyan transition-colors">
             {title}
           </h2>
           <div className="text-white/70 leading-relaxed space-y-4">
@@ -292,7 +292,7 @@ function Section({
 function ListItem({ children }: { children: React.ReactNode }) {
   return (
     <li className="flex items-start gap-3">
-      <span className="text-cyan-400 mt-1 text-xs">▸</span>
+      <span className="text-brand-cyan mt-1 text-xs">▸</span>
       <span className="flex-1">{children}</span>
     </li>
   )

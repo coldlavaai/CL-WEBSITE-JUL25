@@ -117,9 +117,9 @@ function ArchitecturalButton({
       className={`group relative inline-block ${className}`}
     >
       {/* Architectural frame that expands on hover */}
-      <div className="absolute -inset-2 border border-cyan-500/20 group-hover:border-[#C9A962]/40 transition-all duration-500" />
-      <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-cyan-500/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
-      <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-cyan-500/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
+      <div className="absolute -inset-2 border border-brand-cyan/20 group-hover:border-[#C9A962]/40 transition-all duration-500" />
+      <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-brand-cyan/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
+      <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-brand-cyan/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
 
       {/* Button */}
       <div className={`relative px-8 py-4 font-medium overflow-hidden ${
@@ -161,13 +161,13 @@ function ArchitecturalCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
-      className={`group relative bg-white/[0.02] border border-white/5 p-6 md:p-7 hover:border-cyan-500/30 hover:bg-white/[0.03] transition-all duration-500 ${className}`}
+      className={`group relative bg-white/[0.02] border border-white/5 p-6 md:p-7 hover:border-brand-cyan/30 hover:bg-white/[0.03] transition-all duration-500 ${className}`}
     >
       {/* Corner brackets */}
-      <div className="absolute top-0 left-0 w-4 h-4 border-l border-t border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="absolute top-0 right-0 w-4 h-4 border-r border-t border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="absolute bottom-0 left-0 w-4 h-4 border-l border-b border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="absolute bottom-0 right-0 w-4 h-4 border-r border-b border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute top-0 left-0 w-4 h-4 border-l border-t border-brand-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute top-0 right-0 w-4 h-4 border-r border-t border-brand-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute bottom-0 left-0 w-4 h-4 border-l border-b border-brand-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute bottom-0 right-0 w-4 h-4 border-r border-b border-brand-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       {/* Subtle grid pattern on hover */}
       <div
@@ -206,11 +206,11 @@ export default function SolarBOSPage() {
         <TechnicalLabel position="bottom-right">Built by Cold Lava</TechnicalLabel>
 
         {/* Subtle glow */}
-        <div className="absolute top-1/4 -left-1/4 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 -left-1/4 w-[800px] h-[800px] bg-brand-cyan/5 rounded-full blur-3xl" />
 
         {/* Dimension lines */}
-        <div className="absolute left-0 top-1/4 w-px h-1/2 bg-gradient-to-b from-transparent via-cyan-500/20 to-transparent" />
-        <div className="absolute right-0 top-1/3 w-px h-1/3 bg-gradient-to-b from-transparent via-cyan-500/20 to-transparent" />
+        <div className="absolute left-0 top-1/4 w-px h-1/2 bg-gradient-to-b from-transparent via-brand-cyan/20 to-transparent" />
+        <div className="absolute right-0 top-1/3 w-px h-1/3 bg-gradient-to-b from-transparent via-brand-cyan/20 to-transparent" />
 
         <div className="container-default relative z-10 pt-28 pb-24 md:pb-32">
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
@@ -220,7 +220,7 @@ export default function SolarBOSPage() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
-                className="font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-cyan-500/60 mb-6"
+                className="font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-brand-cyan/60 mb-6"
               >
                 Business Operating System for UK Solar Installers
               </motion.p>
@@ -289,9 +289,9 @@ export default function SolarBOSPage() {
               className="hidden lg:block relative"
             >
               {/* Architectural frame around screenshot */}
-              <div className="absolute -inset-4 border border-cyan-500/10" />
-              <div className="absolute -top-2 -left-2 w-6 h-6 border-l-2 border-t-2 border-cyan-500/30" />
-              <div className="absolute -bottom-2 -right-2 w-6 h-6 border-r-2 border-b-2 border-cyan-500/30" />
+              <div className="absolute -inset-4 border border-brand-cyan/10" />
+              <div className="absolute -top-2 -left-2 w-6 h-6 border-l-2 border-t-2 border-brand-cyan/30" />
+              <div className="absolute -bottom-2 -right-2 w-6 h-6 border-r-2 border-b-2 border-brand-cyan/30" />
 
               <ProductScreenshot
                 src="/screenshots/dbr-dashboard.png"
@@ -309,7 +309,7 @@ export default function SolarBOSPage() {
         <GridOverlay spacing={60} opacity={0.01} />
 
         {/* Dimension line */}
-        <div className="absolute left-1/2 top-0 w-px h-full bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent" />
+        <div className="absolute left-1/2 top-0 w-px h-full bg-gradient-to-b from-transparent via-brand-cyan/10 to-transparent" />
 
         <div className="container-default max-w-6xl relative z-10">
           <motion.div
@@ -318,8 +318,8 @@ export default function SolarBOSPage() {
             viewport={{ once: true }}
             className="mb-12 text-center"
           >
-            <div className="inline-block px-3 py-1 border border-cyan-500/20 bg-cyan-500/5 mb-6">
-              <span className="font-mono text-[10px] text-cyan-500 uppercase tracking-wider">
+            <div className="inline-block px-3 py-1 border border-brand-cyan/20 bg-brand-cyan/5 mb-6">
+              <span className="font-mono text-[10px] text-brand-cyan uppercase tracking-wider">
                 System Overview
               </span>
             </div>
@@ -328,7 +328,7 @@ export default function SolarBOSPage() {
           <div className="grid gap-8 md:grid-cols-3">
             <ArchitecturalCard delay={0}>
               <div className="mb-4 flex items-center gap-3">
-                <div className="w-1 h-8 bg-cyan-500/60" />
+                <div className="w-1 h-8 bg-brand-cyan/60" />
                 <h2 className="text-xl md:text-2xl font-semibold">Built for UK solar installers</h2>
               </div>
               <p className="text-white/60 text-sm md:text-base leading-relaxed mb-4">
@@ -336,15 +336,15 @@ export default function SolarBOSPage() {
               </p>
               <ul className="space-y-2 text-white/60 text-sm md:text-base">
                 <li className="flex items-start gap-2">
-                  <span className="text-cyan-500 mt-1">→</span>
+                  <span className="text-brand-cyan mt-1">→</span>
                   <span>Handle the full lifecycle from lead → survey → quote → install → aftercare</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-cyan-500 mt-1">→</span>
+                  <span className="text-brand-cyan mt-1">→</span>
                   <span>Run multiple crews and need shared visibility of every job and customer</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-cyan-500 mt-1">→</span>
+                  <span className="text-brand-cyan mt-1">→</span>
                   <span>Are currently juggling spreadsheets, shared inboxes and WhatsApp</span>
                 </li>
               </ul>
@@ -377,24 +377,24 @@ export default function SolarBOSPage() {
 
             <ArchitecturalCard delay={0.2}>
               <div className="mb-4 flex items-center gap-3">
-                <div className="w-1 h-8 bg-cyan-500/60" />
+                <div className="w-1 h-8 bg-brand-cyan/60" />
                 <h3 className="text-xl md:text-2xl font-semibold">One operating board</h3>
               </div>
               <ul className="space-y-3 text-white/60 text-sm md:text-base">
                 <li className="flex items-start gap-2">
-                  <span className="text-cyan-500 mt-1">→</span>
+                  <span className="text-brand-cyan mt-1">→</span>
                   <span>A kanban job board tuned to solar stages and volumes</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-cyan-500 mt-1">→</span>
+                  <span className="text-brand-cyan mt-1">→</span>
                   <span>A 360° customer timeline tying together jobs, messages and appointments</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-cyan-500 mt-1">→</span>
+                  <span className="text-brand-cyan mt-1">→</span>
                   <span>A focused inbox for email, SMS and WhatsApp-style threads</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-cyan-500 mt-1">→</span>
+                  <span className="text-brand-cyan mt-1">→</span>
                   <span>A calendar for surveys, installs and follow-up visits</span>
                 </li>
               </ul>
@@ -409,8 +409,8 @@ export default function SolarBOSPage() {
 
         {/* Architectural annotation */}
         <div className="absolute top-8 left-8 hidden md:block">
-          <div className="font-mono text-[10px] text-cyan-500/40 uppercase tracking-wider flex items-center gap-2">
-            <div className="w-6 h-px bg-cyan-500/40" />
+          <div className="font-mono text-[10px] text-brand-cyan/40 uppercase tracking-wider flex items-center gap-2">
+            <div className="w-6 h-px bg-brand-cyan/40" />
             <span>Video Demo</span>
           </div>
         </div>
@@ -438,11 +438,11 @@ export default function SolarBOSPage() {
             className="relative"
           >
             {/* Architectural frame around video */}
-            <div className="absolute -inset-4 border border-cyan-500/10" />
-            <div className="absolute -top-2 -left-2 w-8 h-8 border-l-2 border-t-2 border-cyan-500/30" />
-            <div className="absolute -top-2 -right-2 w-8 h-8 border-r-2 border-t-2 border-cyan-500/30" />
-            <div className="absolute -bottom-2 -left-2 w-8 h-8 border-l-2 border-b-2 border-cyan-500/30" />
-            <div className="absolute -bottom-2 -right-2 w-8 h-8 border-r-2 border-b-2 border-cyan-500/30" />
+            <div className="absolute -inset-4 border border-brand-cyan/10" />
+            <div className="absolute -top-2 -left-2 w-8 h-8 border-l-2 border-t-2 border-brand-cyan/30" />
+            <div className="absolute -top-2 -right-2 w-8 h-8 border-r-2 border-t-2 border-brand-cyan/30" />
+            <div className="absolute -bottom-2 -left-2 w-8 h-8 border-l-2 border-b-2 border-brand-cyan/30" />
+            <div className="absolute -bottom-2 -right-2 w-8 h-8 border-r-2 border-b-2 border-brand-cyan/30" />
 
             <VideoEmbed
               videoUrl="https://www.loom.com/share/placeholder"
@@ -473,7 +473,7 @@ export default function SolarBOSPage() {
         <GridOverlay spacing={32} opacity={0.015} />
 
         {/* Dimension lines */}
-        <div className="absolute right-0 top-1/4 w-px h-1/2 bg-gradient-to-b from-transparent via-cyan-500/15 to-transparent" />
+        <div className="absolute right-0 top-1/4 w-px h-1/2 bg-gradient-to-b from-transparent via-brand-cyan/15 to-transparent" />
 
         <div className="container-default max-w-6xl relative z-10">
           <motion.div
@@ -483,8 +483,8 @@ export default function SolarBOSPage() {
             className="mb-16 max-w-3xl"
           >
             <div className="flex items-center gap-4 mb-6">
-              <div className="h-px w-12 bg-cyan-500/40" />
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-cyan-500/60">
+              <div className="h-px w-12 bg-brand-cyan/40" />
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-brand-cyan/60">
                 Core Features
               </p>
             </div>
@@ -500,8 +500,8 @@ export default function SolarBOSPage() {
             <ArchitecturalCard delay={0}>
               <div className="mb-4">
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full" />
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-cyan-500/60">Feature 01</span>
+                  <div className="w-1.5 h-1.5 bg-brand-cyan rounded-full" />
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-brand-cyan/60">Feature 01</span>
                 </div>
                 <h3 className="text-lg md:text-xl font-semibold">Solar job board</h3>
               </div>
@@ -510,15 +510,15 @@ export default function SolarBOSPage() {
               </p>
               <ul className="text-xs md:text-sm text-white/40 space-y-2 border-t border-white/5 pt-4">
                 <li className="flex items-start gap-2">
-                  <span className="text-cyan-500/60">→</span>
+                  <span className="text-brand-cyan/60">→</span>
                   <span>Drag-and-drop stage changes with full activity history</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-cyan-500/60">→</span>
+                  <span className="text-brand-cyan/60">→</span>
                   <span>Compact mode for high-volume lead handling</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-cyan-500/60">→</span>
+                  <span className="text-brand-cyan/60">→</span>
                   <span>Stage totals and pipeline value at a glance</span>
                 </li>
               </ul>
@@ -527,8 +527,8 @@ export default function SolarBOSPage() {
             <ArchitecturalCard delay={0.05}>
               <div className="mb-4">
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full" />
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-cyan-500/60">Feature 02</span>
+                  <div className="w-1.5 h-1.5 bg-brand-cyan rounded-full" />
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-brand-cyan/60">Feature 02</span>
                 </div>
                 <h3 className="text-lg md:text-xl font-semibold">Customer 360° timeline</h3>
               </div>
@@ -537,15 +537,15 @@ export default function SolarBOSPage() {
               </p>
               <ul className="text-xs md:text-sm text-white/40 space-y-2 border-t border-white/5 pt-4">
                 <li className="flex items-start gap-2">
-                  <span className="text-cyan-500/60">→</span>
+                  <span className="text-brand-cyan/60">→</span>
                   <span>Click-to-call and quick actions</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-cyan-500/60">→</span>
+                  <span className="text-brand-cyan/60">→</span>
                   <span>Job count and lifetime value in header</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-cyan-500/60">→</span>
+                  <span className="text-brand-cyan/60">→</span>
                   <span>Internal notes captured in seconds</span>
                 </li>
               </ul>
@@ -554,8 +554,8 @@ export default function SolarBOSPage() {
             <ArchitecturalCard delay={0.1}>
               <div className="mb-4">
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full" />
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-cyan-500/60">Feature 03</span>
+                  <div className="w-1.5 h-1.5 bg-brand-cyan rounded-full" />
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-brand-cyan/60">Feature 03</span>
                 </div>
                 <h3 className="text-lg md:text-xl font-semibold">Communications inbox</h3>
               </div>
@@ -564,15 +564,15 @@ export default function SolarBOSPage() {
               </p>
               <ul className="text-xs md:text-sm text-white/40 space-y-2 border-t border-white/5 pt-4">
                 <li className="flex items-start gap-2">
-                  <span className="text-cyan-500/60">→</span>
+                  <span className="text-brand-cyan/60">→</span>
                   <span>Threads sorted by latest activity</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-cyan-500/60">→</span>
+                  <span className="text-brand-cyan/60">→</span>
                   <span>Channel filters for email, SMS and WhatsApp</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-cyan-500/60">→</span>
+                  <span className="text-brand-cyan/60">→</span>
                   <span>Jump from message to job record</span>
                 </li>
               </ul>
@@ -581,8 +581,8 @@ export default function SolarBOSPage() {
             <ArchitecturalCard delay={0.15}>
               <div className="mb-4">
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full" />
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-cyan-500/60">Feature 04</span>
+                  <div className="w-1.5 h-1.5 bg-brand-cyan rounded-full" />
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-brand-cyan/60">Feature 04</span>
                 </div>
                 <h3 className="text-lg md:text-xl font-semibold">Calendar & scheduling</h3>
               </div>
@@ -591,15 +591,15 @@ export default function SolarBOSPage() {
               </p>
               <ul className="text-xs md:text-sm text-white/40 space-y-2 border-t border-white/5 pt-4">
                 <li className="flex items-start gap-2">
-                  <span className="text-cyan-500/60">→</span>
+                  <span className="text-brand-cyan/60">→</span>
                   <span>Timeline view for busy survey days</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-cyan-500/60">→</span>
+                  <span className="text-brand-cyan/60">→</span>
                   <span>Quick navigation from event to job</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-cyan-500/60">→</span>
+                  <span className="text-brand-cyan/60">→</span>
                   <span>Crew views and conflict detection (roadmap)</span>
                 </li>
               </ul>
@@ -613,7 +613,7 @@ export default function SolarBOSPage() {
         <GridOverlay spacing={48} opacity={0.012} />
 
         {/* Architectural glow */}
-        <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-cyan-500/3 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-brand-cyan/3 rounded-full blur-3xl" />
 
         <div className="container-default max-w-6xl relative z-10">
           <div className="grid gap-12 lg:gap-16 lg:grid-cols-[1.2fr_1fr] items-start">
@@ -622,8 +622,8 @@ export default function SolarBOSPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <div className="inline-block px-3 py-1 border border-cyan-500/30 bg-cyan-500/5 mb-6">
-                <span className="font-mono text-[10px] text-cyan-500 uppercase tracking-wider">
+              <div className="inline-block px-3 py-1 border border-brand-cyan/30 bg-brand-cyan/5 mb-6">
+                <span className="font-mono text-[10px] text-brand-cyan uppercase tracking-wider">
                   System Architecture
                 </span>
               </div>
@@ -637,49 +637,49 @@ export default function SolarBOSPage() {
 
               <ul className="space-y-4 text-white/60 text-sm md:text-base mb-8">
                 <li className="flex items-start gap-3">
-                  <span className="text-cyan-400 mt-1">→</span>
+                  <span className="text-brand-cyan mt-1">→</span>
                   <span>Solar-specific stages, fields and defaults from day one</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-cyan-400 mt-1">→</span>
+                  <span className="text-brand-cyan mt-1">→</span>
                   <span>A single customer and job model powering board, inbox, calendar and reporting</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-cyan-400 mt-1">→</span>
+                  <span className="text-brand-cyan mt-1">→</span>
                   <span>Built on a modern, tested stack with strong data isolation between tenants</span>
                 </li>
               </ul>
 
               {/* Security callout with architectural styling */}
-              <div className="relative bg-gradient-to-br from-cyan-500/5 to-blue-500/5 border border-cyan-500/20 p-6 md:p-7 mb-6">
+              <div className="relative bg-gradient-to-br from-brand-cyan/5 to-blue-500/5 border border-brand-cyan/20 p-6 md:p-7 mb-6">
                 {/* Corner brackets */}
-                <div className="absolute top-0 left-0 w-5 h-5 border-l-2 border-t-2 border-cyan-500/40" />
-                <div className="absolute bottom-0 right-0 w-5 h-5 border-r-2 border-b-2 border-cyan-500/40" />
+                <div className="absolute top-0 left-0 w-5 h-5 border-l-2 border-t-2 border-brand-cyan/40" />
+                <div className="absolute bottom-0 right-0 w-5 h-5 border-r-2 border-b-2 border-brand-cyan/40" />
 
-                <h4 className="text-sm md:text-base font-semibold mb-4 text-cyan-400/90 font-mono uppercase tracking-wider">
+                <h4 className="text-sm md:text-base font-semibold mb-4 text-brand-cyan/90 font-mono uppercase tracking-wider">
                   Security & Data Protection
                 </h4>
                 <ul className="space-y-3 text-xs md:text-sm text-white/60">
                   <li className="flex items-start gap-2">
-                    <span className="text-cyan-400/60 mt-0.5">→</span>
+                    <span className="text-brand-cyan/60 mt-0.5">→</span>
                     <span>Your customer and job data is completely isolated from other solar companies</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-cyan-400/60 mt-0.5">→</span>
+                    <span className="text-brand-cyan/60 mt-0.5">→</span>
                     <span>All customer information is encrypted in transit to protect sensitive data</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-cyan-400/60 mt-0.5">→</span>
+                    <span className="text-brand-cyan/60 mt-0.5">→</span>
                     <span>Automated testing runs continuously to keep critical workflows reliable</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-cyan-400/60 mt-0.5">→</span>
+                    <span className="text-brand-cyan/60 mt-0.5">→</span>
                     <span>Built on proven infrastructure designed for performance and scalability</span>
                   </li>
                 </ul>
-                <div className="mt-5 pt-5 border-t border-cyan-500/20">
+                <div className="mt-5 pt-5 border-t border-brand-cyan/20">
                   <details className="group">
-                    <summary className="text-xs text-cyan-400/70 cursor-pointer hover:text-cyan-400 transition-colors font-mono">
+                    <summary className="text-xs text-brand-cyan/70 cursor-pointer hover:text-brand-cyan transition-colors font-mono">
                       View technical details →
                     </summary>
                     <p className="text-xs text-white/40 mt-3 leading-relaxed">
@@ -830,11 +830,11 @@ export default function SolarBOSPage() {
             className="mb-12 text-center"
           >
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="h-px w-12 bg-cyan-500/40" />
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-cyan-500/60">
+              <div className="h-px w-12 bg-brand-cyan/40" />
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-brand-cyan/60">
                 Case Studies
               </p>
-              <div className="h-px w-12 bg-cyan-500/40" />
+              <div className="h-px w-12 bg-brand-cyan/40" />
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight">
               Built from real BOS projects
@@ -848,18 +848,18 @@ export default function SolarBOSPage() {
             <ArchitecturalCard delay={0}>
               {/* Testimonial number */}
               <div className="absolute -top-3 left-6 bg-black px-2">
-                <span className="font-mono text-[10px] text-cyan-500/60">01</span>
+                <span className="font-mono text-[10px] text-brand-cyan/60">01</span>
               </div>
 
               <blockquote className="relative mb-5">
-                <div className="absolute -left-2 top-0 text-4xl text-cyan-500/10 leading-none font-serif">"</div>
+                <div className="absolute -left-2 top-0 text-4xl text-brand-cyan/10 leading-none font-serif">"</div>
                 <p className="text-white/70 text-sm md:text-base italic leading-relaxed pl-4">
                   "Having one system that actually understands our solar workflow – from lead capture through to DNO submissions – has transformed how we operate. No more data scattered across three different tools."
                 </p>
               </blockquote>
 
               <div className="flex items-center gap-3 border-t border-white/5 pt-4">
-                <div className="flex-shrink-0 w-1 h-1 bg-cyan-500 rounded-full" />
+                <div className="flex-shrink-0 w-1 h-1 bg-brand-cyan rounded-full" />
                 <div className="flex-grow h-px bg-gradient-to-r from-white/10 to-transparent" />
                 <cite className="not-italic text-right text-xs md:text-sm text-white/60 flex-shrink-0">
                   Operations director at a 12-person UK solar installer
@@ -870,18 +870,18 @@ export default function SolarBOSPage() {
             <ArchitecturalCard delay={0.1}>
               {/* Testimonial number */}
               <div className="absolute -top-3 left-6 bg-black px-2">
-                <span className="font-mono text-[10px] text-cyan-500/60">02</span>
+                <span className="font-mono text-[10px] text-brand-cyan/60">02</span>
               </div>
 
               <blockquote className="relative mb-5">
-                <div className="absolute -left-2 top-0 text-4xl text-cyan-500/10 leading-none font-serif">"</div>
+                <div className="absolute -left-2 top-0 text-4xl text-brand-cyan/10 leading-none font-serif">"</div>
                 <p className="text-white/70 text-sm md:text-base italic leading-relaxed pl-4">
                   "Before we had a bespoke system built, our team was juggling spreadsheets, a generic CRM that didn\'t fit solar, and WhatsApp groups. Now every job, customer and conversation is in one place."
                 </p>
               </blockquote>
 
               <div className="flex items-center gap-3 border-t border-white/5 pt-4">
-                <div className="flex-shrink-0 w-1 h-1 bg-cyan-500 rounded-full" />
+                <div className="flex-shrink-0 w-1 h-1 bg-brand-cyan rounded-full" />
                 <div className="flex-grow h-px bg-gradient-to-r from-white/10 to-transparent" />
                 <cite className="not-italic text-right text-xs md:text-sm text-white/60 flex-shrink-0">
                   MD of a UK renewables company
@@ -967,7 +967,7 @@ export default function SolarBOSPage() {
         <GridOverlay spacing={32} opacity={0.012} />
 
         {/* Dimension lines */}
-        <div className="absolute right-0 top-0 w-px h-full bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent" />
+        <div className="absolute right-0 top-0 w-px h-full bg-gradient-to-b from-transparent via-brand-cyan/10 to-transparent" />
 
         <div className="container-default max-w-6xl relative z-10">
           <div className="grid gap-16 lg:gap-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] items-start">
@@ -1028,7 +1028,7 @@ export default function SolarBOSPage() {
               transition={{ delay: 0.1 }}
             >
               <div className="flex items-center gap-4 mb-8">
-                <div className="h-px w-12 bg-cyan-500/40" />
+                <div className="h-px w-12 bg-brand-cyan/40" />
                 <h3 className="text-2xl md:text-3xl font-bold tracking-tight">Solar BOS FAQs</h3>
               </div>
               <dl className="space-y-4">
@@ -1036,7 +1036,7 @@ export default function SolarBOSPage() {
                   <ArchitecturalCard key={faq.question} delay={index * 0.02}>
                     {/* FAQ number */}
                     <div className="absolute -top-2.5 left-5 bg-black px-2">
-                      <span className="font-mono text-[10px] text-cyan-500/60">
+                      <span className="font-mono text-[10px] text-brand-cyan/60">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                     </div>

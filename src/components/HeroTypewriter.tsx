@@ -110,7 +110,7 @@ export function HeroTypewriter({
           <span className="block relative inline-block">
             {segments[3].includes('Needs') ? (
               <>
-                Actually <span className="text-cyan-500 transition-colors duration-300">Needs</span>
+                Actually <span className="text-brand-cyan transition-colors duration-300">Needs</span>
               </>
             ) : (
               segments[3]
@@ -125,7 +125,7 @@ export function HeroTypewriter({
     <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.03em] leading-[0.9] mb-8 max-w-5xl">
       {renderText()}
       {showCursor && hasStarted && (
-        <span className="inline-block w-1 h-[0.9em] bg-cyan-500 animate-blink ml-1 align-middle" />
+        <span className="inline-block w-1 h-[0.9em] bg-brand-cyan animate-blink ml-1 align-middle" />
       )}
     </h1>
   )

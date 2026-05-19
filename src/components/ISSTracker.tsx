@@ -171,9 +171,9 @@ export function ISSTracker() {
   if (!mounted) {
     return (
       <div className="flex items-baseline gap-2 font-mono text-xs text-white/30">
-        <span className="text-[10px] text-cyan-500/40 uppercase tracking-wider">🛰️</span>
+        <span className="text-[10px] text-brand-cyan/40 uppercase tracking-wider">🛰️</span>
         <span className="text-white/20">ISS currently over:</span>
-        <span className="text-cyan-400/50 min-w-[120px]">—</span>
+        <span className="text-brand-cyan/50 min-w-[120px]">—</span>
       </div>
     )
   }
@@ -181,10 +181,10 @@ export function ISSTracker() {
   return (
     <div className="relative flex items-baseline gap-2 font-mono text-xs">
       {/* Corner bracket accent */}
-      <div className="absolute -top-1 -left-2 w-2 h-2 border-l border-t border-cyan-500/20" />
+      <div className="absolute -top-1 -left-2 w-2 h-2 border-l border-t border-brand-cyan/20" />
 
       {/* ISS satellite icon */}
-      <span className="text-[10px] text-cyan-500/40 uppercase tracking-wider">🛰️</span>
+      <span className="text-[10px] text-brand-cyan/40 uppercase tracking-wider">🛰️</span>
 
       {/* Label */}
       <span className="text-white/30 font-light">ISS currently over:</span>
@@ -197,14 +197,14 @@ export function ISSTracker() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 5 }}
           transition={{ duration: 0.4 }}
-          className="text-cyan-400 font-semibold min-w-[120px]"
+          className="text-brand-cyan font-semibold min-w-[120px]"
         >
           {location || '...'}
         </motion.span>
       </AnimatePresence>
 
       {/* Subtle glow effect */}
-      <div className="absolute inset-0 bg-cyan-500/5 blur-xl -z-10 opacity-40" />
+      <div className="absolute inset-0 bg-brand-cyan/5 blur-xl -z-10 opacity-40" />
     </div>
   )
 }

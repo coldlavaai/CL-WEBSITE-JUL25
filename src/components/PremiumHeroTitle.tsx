@@ -69,9 +69,9 @@ export function PremiumHeroTitle({
       <span className="block">Your Business</span>
       <span className="block relative inline-block">
         Actually{' '}
-        <span className={`relative inline-block transition-colors duration-300 ${isComplete ? 'text-cyan-500' : ''}`}>
+        <span className={`relative inline-block transition-colors duration-300 ${isComplete ? 'text-brand-cyan' : ''}`}>
           {displayWord}{showCursor && (
-            <span className="inline-block w-1 h-[0.9em] bg-cyan-500 animate-blink ml-1 align-middle" />
+            <span className="inline-block w-1 h-[0.9em] bg-brand-cyan animate-blink ml-1 align-middle" />
           )}
         </span>
       </span>

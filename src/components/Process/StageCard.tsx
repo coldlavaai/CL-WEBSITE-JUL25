@@ -20,7 +20,7 @@ export function StageCard({ num, title, description, isActive, position }: Stage
           opacity: isActive ? 0.5 : 0.2,
         }}
         transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-        className={`absolute left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-cyan-500/40 to-transparent ${
+        className={`absolute left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-brand-cyan/40 to-transparent ${
           position === 'top' ? 'top-full' : 'bottom-full rotate-180'
         }`}
       />
@@ -75,7 +75,7 @@ export function StageCard({ num, title, description, isActive, position }: Stage
             opacity: isActive ? 0.1 : 0,
           }}
           transition={{ duration: 0.5 }}
-          className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-cyan-500/10 to-transparent"
+          className="absolute inset-0 bg-gradient-to-br from-brand-cyan/20 via-brand-cyan/10 to-transparent"
         />
 
         {/* Step number header */}

@@ -100,10 +100,10 @@ export function BOSScreenshotCarousel() {
         {/* Screenshot display with architectural frame */}
         <div className="relative aspect-[16/10] rounded-lg overflow-hidden border border-white/10 bg-black/40 backdrop-blur-sm">
           {/* Corner brackets - architectural framing */}
-          <div className="absolute -top-1 -left-1 w-6 h-6 border-l-2 border-t-2 border-cyan-500/40 z-10" />
-          <div className="absolute -top-1 -right-1 w-6 h-6 border-r-2 border-t-2 border-cyan-500/40 z-10" />
-          <div className="absolute -bottom-1 -left-1 w-6 h-6 border-l-2 border-b-2 border-cyan-500/40 z-10" />
-          <div className="absolute -bottom-1 -right-1 w-6 h-6 border-r-2 border-b-2 border-cyan-500/40 z-10" />
+          <div className="absolute -top-1 -left-1 w-6 h-6 border-l-2 border-t-2 border-brand-cyan/40 z-10" />
+          <div className="absolute -top-1 -right-1 w-6 h-6 border-r-2 border-t-2 border-brand-cyan/40 z-10" />
+          <div className="absolute -bottom-1 -left-1 w-6 h-6 border-l-2 border-b-2 border-brand-cyan/40 z-10" />
+          <div className="absolute -bottom-1 -right-1 w-6 h-6 border-r-2 border-b-2 border-brand-cyan/40 z-10" />
 
           {/* Subtle grid overlay */}
           <div
@@ -150,11 +150,11 @@ export function BOSScreenshotCarousel() {
           {/* Navigation arrows - minimal and precise */}
           <button
             onClick={handlePrev}
-            className="absolute left-2 md:left-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 md:w-10 md:h-10 flex items-center justify-center bg-black/60 border border-white/10 hover:border-cyan-500/60 hover:bg-black/80 transition-all group rounded"
+            className="absolute left-2 md:left-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 md:w-10 md:h-10 flex items-center justify-center bg-black/60 border border-white/10 hover:border-brand-cyan/60 hover:bg-black/80 transition-all group rounded"
             aria-label="Previous screenshot"
           >
             <svg
-              className="w-4 h-4 text-white/40 group-hover:text-cyan-500 transition-colors"
+              className="w-4 h-4 text-white/40 group-hover:text-brand-cyan transition-colors"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -165,11 +165,11 @@ export function BOSScreenshotCarousel() {
 
           <button
             onClick={handleNext}
-            className="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 md:w-10 md:h-10 flex items-center justify-center bg-black/60 border border-white/10 hover:border-cyan-500/60 hover:bg-black/80 transition-all group rounded"
+            className="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 md:w-10 md:h-10 flex items-center justify-center bg-black/60 border border-white/10 hover:border-brand-cyan/60 hover:bg-black/80 transition-all group rounded"
             aria-label="Next screenshot"
           >
             <svg
-              className="w-4 h-4 text-white/40 group-hover:text-cyan-500 transition-colors"
+              className="w-4 h-4 text-white/40 group-hover:text-brand-cyan transition-colors"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -186,9 +186,9 @@ export function BOSScreenshotCarousel() {
             transition={{ duration: 0.3, delay: 0.2 }}
             className="absolute top-4 left-4 z-10"
           >
-            <div className="flex items-center gap-2 px-3 py-1.5 bg-black/80 border border-cyan-500/30 backdrop-blur-sm rounded">
-              <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full animate-pulse" />
-              <span className="font-mono text-[10px] text-cyan-500/90 uppercase tracking-wider">
+            <div className="flex items-center gap-2 px-3 py-1.5 bg-black/80 border border-brand-cyan/30 backdrop-blur-sm rounded">
+              <div className="w-1.5 h-1.5 bg-brand-cyan rounded-full animate-pulse" />
+              <span className="font-mono text-[10px] text-brand-cyan/90 uppercase tracking-wider">
                 {currentScreenshot.capability}
               </span>
             </div>
@@ -226,8 +226,8 @@ export function BOSScreenshotCarousel() {
                   <div
                     className={`w-2 h-2 rounded-full transition-all ${
                       index === currentIndex
-                        ? 'bg-cyan-500'
-                        : 'bg-white/20 group-hover:bg-cyan-500/40'
+                        ? 'bg-brand-cyan'
+                        : 'bg-white/20 group-hover:bg-brand-cyan/40'
                     }`}
                   />
                   {/* Progress ring for active dot */}
@@ -264,7 +264,7 @@ export function BOSScreenshotCarousel() {
             {currentScreenshot.applications.map((app, idx) => (
               <span
                 key={idx}
-                className="px-2 py-0.5 text-[10px] font-mono text-cyan-500/60 border border-cyan-500/20 rounded uppercase tracking-wider"
+                className="px-2 py-0.5 text-[10px] font-mono text-brand-cyan/60 border border-brand-cyan/20 rounded uppercase tracking-wider"
               >
                 {app}
               </span>

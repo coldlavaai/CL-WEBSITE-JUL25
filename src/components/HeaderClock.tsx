@@ -51,10 +51,10 @@ export function HeaderClock() {
         <div className="container-full">
           <div className="flex items-center justify-end gap-2 text-[10px] text-white/30">
             <span>London · --:--:--</span>
-            <span className="text-cyan-400/40">·</span>
+            <span className="text-brand-cyan/40">·</span>
             <span>Loading...</span>
-            <span className="text-cyan-400/40">·</span>
-            <span className="text-cyan-400/40 font-sans italic">&nbsp;</span>
+            <span className="text-brand-cyan/40">·</span>
+            <span className="text-brand-cyan/40 font-sans italic">&nbsp;</span>
           </div>
         </div>
       </div>
@@ -66,13 +66,13 @@ export function HeaderClock() {
       <div className="container-full">
         <div className="flex items-center justify-end gap-2 text-[10px] text-white/30">
           <span>London · {time}</span>
-          <span className="text-cyan-400/50">·</span>
+          <span className="text-brand-cyan/50">·</span>
           <span>{date}</span>
           {messageData.message && (
             <>
-              <span className="text-cyan-400/50">·</span>
+              <span className="text-brand-cyan/50">·</span>
               <span
-                className="relative text-cyan-400/70 font-sans italic cursor-help"
+                className="relative text-brand-cyan/70 font-sans italic cursor-help"
                 onMouseEnter={() => setShowTooltip(true)}
                 onMouseLeave={() => setShowTooltip(false)}
               >
@@ -86,13 +86,13 @@ export function HeaderClock() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -5 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full right-0 mt-2 w-80 p-4 bg-black/95 border border-cyan-500/30 rounded-lg shadow-[0_0_30px_rgba(6,182,212,0.2)] backdrop-blur-xl"
+                      className="absolute top-full right-0 mt-2 w-80 p-4 bg-black/95 border border-brand-cyan/30 rounded-lg shadow-[0_0_30px_rgba(6,182,212,0.2)] backdrop-blur-xl"
                     >
                       {/* Corner brackets */}
-                      <div className="absolute top-0 left-0 w-3 h-3 border-l border-t border-cyan-500/40" />
-                      <div className="absolute top-0 right-0 w-3 h-3 border-r border-t border-cyan-500/40" />
-                      <div className="absolute bottom-0 left-0 w-3 h-3 border-l border-b border-cyan-500/40" />
-                      <div className="absolute bottom-0 right-0 w-3 h-3 border-r border-b border-cyan-500/40" />
+                      <div className="absolute top-0 left-0 w-3 h-3 border-l border-t border-brand-cyan/40" />
+                      <div className="absolute top-0 right-0 w-3 h-3 border-r border-t border-brand-cyan/40" />
+                      <div className="absolute bottom-0 left-0 w-3 h-3 border-l border-b border-brand-cyan/40" />
+                      <div className="absolute bottom-0 right-0 w-3 h-3 border-r border-b border-brand-cyan/40" />
 
                       <p className="text-[11px] leading-relaxed text-white/70 font-sans not-italic">
                         {messageData.description}

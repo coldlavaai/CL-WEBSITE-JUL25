@@ -16,7 +16,7 @@ export default function CookiePolicy() {
         {/* Header */}
         <div className="mb-16">
           <div className="inline-block mb-4">
-            <span className="font-mono text-xs text-cyan-400/50">LEGAL</span>
+            <span className="font-mono text-xs text-brand-cyan/50">LEGAL</span>
           </div>
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
             Cookie Policy
@@ -51,7 +51,7 @@ export default function CookiePolicy() {
             title="Cookies we use"
             content={
               <>
-                <h3 className="text-lg font-semibold text-cyan-400 mb-4">Essential cookies</h3>
+                <h3 className="text-lg font-semibold text-brand-cyan mb-4">Essential cookies</h3>
                 <p className="mb-4">These make the site work. You can't opt out of these.</p>
 
                 <div className="overflow-x-auto mb-8">
@@ -65,12 +65,12 @@ export default function CookiePolicy() {
                     </thead>
                     <tbody className="font-mono text-sm">
                       <tr className="border-b border-white/5">
-                        <td className="py-3 px-4 text-cyan-400">session_id</td>
+                        <td className="py-3 px-4 text-brand-cyan">session_id</td>
                         <td className="py-3 px-4 text-white/70">Keeps you logged in during your visit</td>
                         <td className="py-3 px-4 text-white/50">Session</td>
                       </tr>
                       <tr className="border-b border-white/5">
-                        <td className="py-3 px-4 text-cyan-400">cookie_consent</td>
+                        <td className="py-3 px-4 text-brand-cyan">cookie_consent</td>
                         <td className="py-3 px-4 text-white/70">Remembers your cookie preferences</td>
                         <td className="py-3 px-4 text-white/50">1 year</td>
                       </tr>
@@ -78,7 +78,7 @@ export default function CookiePolicy() {
                   </table>
                 </div>
 
-                <h3 className="text-lg font-semibold text-cyan-400 mb-4">Analytics cookies</h3>
+                <h3 className="text-lg font-semibold text-brand-cyan mb-4">Analytics cookies</h3>
                 <p className="mb-4">
                   These help us understand how people use the site.
                   We use Meta Pixel for basic analytics.
@@ -95,12 +95,12 @@ export default function CookiePolicy() {
                     </thead>
                     <tbody className="font-mono text-sm">
                       <tr className="border-b border-white/5">
-                        <td className="py-3 px-4 text-cyan-400">_fbp</td>
+                        <td className="py-3 px-4 text-brand-cyan">_fbp</td>
                         <td className="py-3 px-4 text-white/70">Facebook pixel for visitor analytics</td>
                         <td className="py-3 px-4 text-white/50">3 months</td>
                       </tr>
                       <tr className="border-b border-white/5">
-                        <td className="py-3 px-4 text-cyan-400">_fbc</td>
+                        <td className="py-3 px-4 text-brand-cyan">_fbc</td>
                         <td className="py-3 px-4 text-white/70">Facebook click ID for conversion tracking</td>
                         <td className="py-3 px-4 text-white/50">3 months</td>
                       </tr>
@@ -125,7 +125,7 @@ export default function CookiePolicy() {
                       href="https://support.google.com/chrome/answer/95647"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors"
+                      className="text-brand-cyan hover:text-brand-cyanSoft underline underline-offset-2 transition-colors"
                     >
                       Chrome
                     </a>
@@ -135,7 +135,7 @@ export default function CookiePolicy() {
                       href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors"
+                      className="text-brand-cyan hover:text-brand-cyanSoft underline underline-offset-2 transition-colors"
                     >
                       Firefox
                     </a>
@@ -145,7 +145,7 @@ export default function CookiePolicy() {
                       href="https://support.apple.com/en-gb/guide/safari/sfri11471/mac"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors"
+                      className="text-brand-cyan hover:text-brand-cyanSoft underline underline-offset-2 transition-colors"
                     >
                       Safari
                     </a>
@@ -155,7 +155,7 @@ export default function CookiePolicy() {
                       href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors"
+                      className="text-brand-cyan hover:text-brand-cyanSoft underline underline-offset-2 transition-colors"
                     >
                       Edge
                     </a>
@@ -191,7 +191,7 @@ export default function CookiePolicy() {
                   Email{' '}
                   <a
                     href="mailto:hello@coldlava.ai"
-                    className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors font-mono"
+                    className="text-brand-cyan hover:text-brand-cyanSoft underline underline-offset-2 transition-colors font-mono"
                   >
                     hello@coldlava.ai
                   </a>
@@ -209,19 +209,19 @@ export default function CookiePolicy() {
               href="/"
               className="text-white/60 hover:text-white transition-colors group flex items-center gap-2"
             >
-              <span className="text-cyan-400 group-hover:translate-x-[-4px] transition-transform">←</span>
+              <span className="text-brand-cyan group-hover:translate-x-[-4px] transition-transform">←</span>
               Back to home
             </Link>
             <div className="flex gap-6 text-sm">
               <Link
                 href="/privacy"
-                className="text-white/60 hover:text-cyan-400 transition-colors"
+                className="text-white/60 hover:text-brand-cyan transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-white/60 hover:text-cyan-400 transition-colors"
+                className="text-white/60 hover:text-brand-cyan transition-colors"
               >
                 Terms of Service
               </Link>
@@ -246,11 +246,11 @@ function Section({
   return (
     <section className="group">
       <div className="flex items-start gap-6 mb-4">
-        <span className="font-mono text-xs text-cyan-400/50 mt-1 group-hover:text-cyan-400/80 transition-colors">
+        <span className="font-mono text-xs text-brand-cyan/50 mt-1 group-hover:text-brand-cyan/80 transition-colors">
           {number}
         </span>
         <div className="flex-1">
-          <h2 className="text-2xl font-semibold text-white mb-4 group-hover:text-cyan-400 transition-colors">
+          <h2 className="text-2xl font-semibold text-white mb-4 group-hover:text-brand-cyan transition-colors">
             {title}
           </h2>
           <div className="text-white/70 leading-relaxed space-y-4">
@@ -266,7 +266,7 @@ function Section({
 function ListItem({ children }: { children: React.ReactNode }) {
   return (
     <li className="flex items-start gap-3">
-      <span className="text-cyan-400 mt-1 text-xs">▸</span>
+      <span className="text-brand-cyan mt-1 text-xs">▸</span>
       <span className="flex-1">{children}</span>
     </li>
   )

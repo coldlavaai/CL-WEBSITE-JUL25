@@ -45,12 +45,12 @@ export function StickyCTA() {
               className="group relative block w-full"
             >
               {/* Architectural frame */}
-              <div className="absolute -inset-2 border border-cyan-500/20 group-active:border-[#C9A962]/40 transition-all duration-300" />
-              <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-cyan-500/40 group-active:border-[#C9A962]/70 transition-all duration-300" />
-              <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-cyan-500/40 group-active:border-[#C9A962]/70 transition-all duration-300" />
+              <div className="absolute -inset-2 border border-brand-cyan/20 group-active:border-[#C9A962]/40 transition-all duration-300" />
+              <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-brand-cyan/40 group-active:border-[#C9A962]/70 transition-all duration-300" />
+              <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-brand-cyan/40 group-active:border-[#C9A962]/70 transition-all duration-300" />
 
               {/* Button — dark theme with cyan accent */}
-              <div className="relative px-6 py-4 bg-cyan-500 text-black font-semibold overflow-hidden active:scale-[0.98] transition-transform">
+              <div className="relative px-6 py-4 bg-brand-cyan text-black font-semibold overflow-hidden active:scale-[0.98] transition-transform">
                 {/* Active press effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#C9A962] to-[#D4B76E] transform scale-x-0 group-active:scale-x-100 transition-transform duration-300 origin-left" />
 

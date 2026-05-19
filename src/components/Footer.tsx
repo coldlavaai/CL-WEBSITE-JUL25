@@ -65,7 +65,7 @@ export function Footer() {
       </div>
 
       {/* Live Stats Ticker Row */}
-      <div className="border-t border-white/5 bg-cyan-500/[0.01]">
+      <div className="border-t border-white/5 bg-brand-cyan/[0.01]">
         <div className="container-full">
           <div className="flex flex-wrap items-center justify-center gap-8 py-4">
             <ISSTracker />
@@ -78,19 +78,19 @@ export function Footer() {
       <div className="border-t border-white/5">
         <div className="container-full py-3">
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-white/30">
-            <Link href="/privacy" className="relative hover:text-cyan-400 transition-colors group">
+            <Link href="/privacy" className="relative hover:text-brand-cyan transition-colors group">
               Privacy Policy
-              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-cyan-400 transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-brand-cyan transition-all duration-300 group-hover:w-full" />
             </Link>
             <span className="text-white/10">·</span>
-            <Link href="/terms" className="relative hover:text-cyan-400 transition-colors group">
+            <Link href="/terms" className="relative hover:text-brand-cyan transition-colors group">
               Terms of Service
-              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-cyan-400 transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-brand-cyan transition-all duration-300 group-hover:w-full" />
             </Link>
             <span className="text-white/10">·</span>
-            <Link href="/cookies" className="relative hover:text-cyan-400 transition-colors group">
+            <Link href="/cookies" className="relative hover:text-brand-cyan transition-colors group">
               Cookie Policy
-              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-cyan-400 transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-brand-cyan transition-all duration-300 group-hover:w-full" />
             </Link>
           </div>
         </div>

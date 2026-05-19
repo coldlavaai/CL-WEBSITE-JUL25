@@ -25,9 +25,9 @@ function ArchitecturalButton({
       rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
       className={`group relative inline-block ${className}`}
     >
-      <div className="absolute -inset-2 border border-cyan-500/20 group-hover:border-[#C9A962]/40 transition-all duration-500" />
-      <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-cyan-500/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
-      <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-cyan-500/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
+      <div className="absolute -inset-2 border border-brand-cyan/20 group-hover:border-[#C9A962]/40 transition-all duration-500" />
+      <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-brand-cyan/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
+      <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-brand-cyan/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
       <div
         className={`relative px-8 py-4 font-medium overflow-hidden ${
           isPrimary ? 'bg-white text-black' : 'bg-white/5 text-white border border-white/10'
@@ -67,12 +67,12 @@ function ArchCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
-      className={`group relative bg-white/[0.02] border border-white/5 p-6 md:p-7 hover:border-cyan-500/30 hover:bg-white/[0.03] transition-all duration-500 ${className}`}
+      className={`group relative bg-white/[0.02] border border-white/5 p-6 md:p-7 hover:border-brand-cyan/30 hover:bg-white/[0.03] transition-all duration-500 ${className}`}
     >
-      <div className="absolute top-0 left-0 w-4 h-4 border-l border-t border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="absolute top-0 right-0 w-4 h-4 border-r border-t border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="absolute bottom-0 left-0 w-4 h-4 border-l border-b border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="absolute bottom-0 right-0 w-4 h-4 border-r border-b border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute top-0 left-0 w-4 h-4 border-l border-t border-brand-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute top-0 right-0 w-4 h-4 border-r border-t border-brand-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute bottom-0 left-0 w-4 h-4 border-l border-b border-brand-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute bottom-0 right-0 w-4 h-4 border-r border-b border-brand-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-[0.02] transition-opacity duration-500 pointer-events-none"
         style={{
@@ -96,12 +96,12 @@ function Badge({ label, variant }: { label: string; variant: 'difficulty' | 'cos
     },
     cost: {
       free: 'border-green-500/30 text-green-400/80',
-      low: 'border-cyan-500/30 text-cyan-400/80',
+      low: 'border-brand-cyan/30 text-brand-cyan/80',
       medium: 'border-yellow-500/30 text-yellow-400/80',
       high: 'border-red-500/30 text-red-400/80',
     },
     impact: {
-      high: 'border-cyan-500/30 text-cyan-400/80',
+      high: 'border-brand-cyan/30 text-brand-cyan/80',
       medium: 'border-white/20 text-white/60',
       low: 'border-white/10 text-white/40',
     },
@@ -131,7 +131,7 @@ function MarketingIdeasRenderer({ sections }: { sections: MarketingSection[] }) 
         >
           {/* Section Header */}
           <div className="flex items-center gap-4 mb-8">
-            <div className="w-1 h-8 bg-cyan-500/60" />
+            <div className="w-1 h-8 bg-brand-cyan/60" />
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight">{section.section_title}</h2>
           </div>
 
@@ -141,7 +141,7 @@ function MarketingIdeasRenderer({ sections }: { sections: MarketingSection[] }) 
               <ArchCard key={idea.number} delay={iIdx * 0.03}>
                 {/* Idea Number */}
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="font-mono text-[10px] text-cyan-500/60 tracking-wider">
+                  <span className="font-mono text-[10px] text-brand-cyan/60 tracking-wider">
                     {String(idea.number).padStart(2, '0')}
                   </span>
                   <div className="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent" />
@@ -182,7 +182,7 @@ function ArticleSectionsRenderer({ sections }: { sections: ContentSection[] }) {
         >
           <ArchCard>
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-1 h-8 bg-cyan-500/60" />
+              <div className="w-1 h-8 bg-brand-cyan/60" />
               <h2 className="text-xl md:text-2xl font-semibold">{section.heading}</h2>
             </div>
             <div className="text-white/60 text-sm md:text-base leading-relaxed space-y-4">
@@ -211,11 +211,11 @@ function FAQRenderer({ faqs }: { faqs: FAQ[] }) {
           className="mb-10"
         >
           <div className="flex items-center gap-4 mb-6">
-            <div className="h-px w-12 bg-cyan-500/40" />
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-cyan-500/60">FAQ</p>
+            <div className="h-px w-12 bg-brand-cyan/40" />
+            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-brand-cyan/60">FAQ</p>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Frequently asked <span className="text-cyan-400">questions</span>
+            Frequently asked <span className="text-brand-cyan">questions</span>
           </h2>
         </motion.div>
 
@@ -223,7 +223,7 @@ function FAQRenderer({ faqs }: { faqs: FAQ[] }) {
           {faqs.map((faq, idx) => (
             <ArchCard key={idx} delay={idx * 0.05}>
               <div className="flex items-start gap-3 mb-3">
-                <span className="text-cyan-500 mt-1 flex-shrink-0">→</span>
+                <span className="text-brand-cyan mt-1 flex-shrink-0">→</span>
                 <h3 className="text-base md:text-lg font-semibold">{faq.question}</h3>
               </div>
               <p className="text-white/60 text-sm md:text-base leading-relaxed pl-6">{faq.answer}</p>
@@ -240,7 +240,7 @@ function CTASection({ cta }: { cta: string }) {
   return (
     <section className="py-16 md:py-24 border-t border-white/5 relative overflow-hidden">
       <GridOverlay spacing={32} opacity={0.015} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-cyan/5 rounded-full blur-3xl" />
 
       <div className="container-default max-w-3xl relative z-10 text-center">
         <motion.div
@@ -250,13 +250,13 @@ function CTASection({ cta }: { cta: string }) {
         >
           {/* Corner-bracketed box */}
           <div className="relative border border-white/5 p-8 md:p-12">
-            <div className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-cyan-500/30" />
-            <div className="absolute top-0 right-0 w-6 h-6 border-r-2 border-t-2 border-cyan-500/30" />
-            <div className="absolute bottom-0 left-0 w-6 h-6 border-l-2 border-b-2 border-cyan-500/30" />
-            <div className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-cyan-500/30" />
+            <div className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-brand-cyan/30" />
+            <div className="absolute top-0 right-0 w-6 h-6 border-r-2 border-t-2 border-brand-cyan/30" />
+            <div className="absolute bottom-0 left-0 w-6 h-6 border-l-2 border-b-2 border-brand-cyan/30" />
+            <div className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-brand-cyan/30" />
 
             <div className="absolute -top-3 left-8 bg-black px-3">
-              <span className="font-mono text-[9px] text-cyan-500/40 uppercase tracking-wider">
+              <span className="font-mono text-[9px] text-brand-cyan/40 uppercase tracking-wider">
                 Next Step
               </span>
             </div>
@@ -333,11 +333,11 @@ export function PSEOPageClient({
         <TechnicalLabel position="bottom-right">Cold Lava AI</TechnicalLabel>
 
         {/* Subtle glow */}
-        <div className="absolute top-1/4 -left-1/4 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 -left-1/4 w-[600px] h-[600px] bg-brand-cyan/5 rounded-full blur-3xl" />
 
         {/* Dimension lines */}
-        <div className="absolute left-0 top-1/4 w-px h-1/2 bg-gradient-to-b from-transparent via-cyan-500/20 to-transparent" />
-        <div className="absolute right-0 top-1/3 w-px h-1/3 bg-gradient-to-b from-transparent via-cyan-500/20 to-transparent" />
+        <div className="absolute left-0 top-1/4 w-px h-1/2 bg-gradient-to-b from-transparent via-brand-cyan/20 to-transparent" />
+        <div className="absolute right-0 top-1/3 w-px h-1/3 bg-gradient-to-b from-transparent via-brand-cyan/20 to-transparent" />
 
         <div className="container-default relative z-10 pt-28 pb-16 md:pb-24">
           <motion.div
@@ -353,7 +353,7 @@ export function PSEOPageClient({
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-cyan-500/60 mb-6"
+            className="font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-brand-cyan/60 mb-6"
           >
             {page.target_keyword}
           </motion.p>
@@ -384,7 +384,7 @@ export function PSEOPageClient({
             className="mt-10 border-t border-white/5 pt-6"
           >
             <p className="font-mono text-[10px] uppercase tracking-wider text-white/20">
-              By <span className="text-cyan-500/40">Cold Lava AI</span> · United Kingdom
+              By <span className="text-brand-cyan/40">Cold Lava AI</span> · United Kingdom
             </p>
           </motion.div>
         </div>
@@ -418,11 +418,11 @@ export function PSEOPageClient({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <div className="relative border border-cyan-500/20 bg-cyan-500/5 p-8 md:p-12">
-                <div className="absolute top-0 left-0 w-5 h-5 border-l-2 border-t-2 border-cyan-500/30" />
-                <div className="absolute bottom-0 right-0 w-5 h-5 border-r-2 border-b-2 border-cyan-500/30" />
+              <div className="relative border border-brand-cyan/20 bg-brand-cyan/5 p-8 md:p-12">
+                <div className="absolute top-0 left-0 w-5 h-5 border-l-2 border-t-2 border-brand-cyan/30" />
+                <div className="absolute bottom-0 right-0 w-5 h-5 border-r-2 border-b-2 border-brand-cyan/30" />
                 <div className="absolute -top-3 left-8 bg-black px-3">
-                  <span className="font-mono text-[9px] text-cyan-500/60 uppercase tracking-wider">
+                  <span className="font-mono text-[9px] text-brand-cyan/60 uppercase tracking-wider">
                     Calculator Tool
                   </span>
                 </div>

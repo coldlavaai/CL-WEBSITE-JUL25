@@ -67,13 +67,13 @@ export function BOSSwiperCarousel() {
             <SwiperSlide key={i}>
               <div className="relative aspect-[4/3] rounded-lg overflow-hidden border border-white/10 bg-white/[0.02]">
                 {/* Screenshot placeholder - replace with actual images */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan/10 to-transparent" />
                 <div className="relative h-full flex items-center justify-center">
                   <div className="text-center p-8">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-full border-2 border-cyan-500/30 flex items-center justify-center">
-                      <span className="font-mono text-2xl text-cyan-500/60">{(i + 1).toString().padStart(2, '0')}</span>
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-full border-2 border-brand-cyan/30 flex items-center justify-center">
+                      <span className="font-mono text-2xl text-brand-cyan/60">{(i + 1).toString().padStart(2, '0')}</span>
                     </div>
-                    <p className="font-mono text-sm text-cyan-500/80 uppercase tracking-wider">
+                    <p className="font-mono text-sm text-brand-cyan/80 uppercase tracking-wider">
                       {screenshot.label}
                     </p>
                     <p className="text-xs text-white/40 mt-2">BOS Screenshot</p>

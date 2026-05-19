@@ -10,7 +10,9 @@
   --color-background: #000000;
   --color-foreground: #ffffff;
   --color-muted: #86868b;
-  --color-accent: #f97316;
+  --color-brand-cyan: #35BCCB;
+  --color-brand-cyan-dim: #2BA0AD;
+  --color-brand-cyan-soft: #60C9D8;
   --color-surface: #1d1d1f;
   --color-border: #424245;
 
@@ -77,13 +79,13 @@
 
   /* Selection styling */
   ::selection {
-    background: rgba(249, 115, 22, 0.3);
+    background: rgba(53, 188, 203, 0.3);
     color: #fff;
   }
-  
+
   /* Focus styles */
   :focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--color-brand-cyan);
     outline-offset: 2px;
   }
 }

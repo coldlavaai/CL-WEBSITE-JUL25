@@ -81,13 +81,13 @@ export function ProcessSection() {
           className="mb-12 md:mb-16"
         >
           <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-            <div className="h-px w-8 md:w-12 bg-cyan-500/40" />
+            <div className="h-px w-8 md:w-12 bg-brand-cyan/40" />
             <p className="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-white/30">
               Process / Methodology
             </p>
           </div>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-            No <span className="text-cyan-500">surprises</span>
+            No <span className="text-brand-cyan">surprises</span>
             <br />
             No black boxes
           </h2>
@@ -107,31 +107,31 @@ export function ProcessSection() {
             >
               {/* Architectural annotation */}
               <div className="absolute -top-3 left-6 bg-black px-3">
-                <span className="font-mono text-[9px] text-cyan-500/40 uppercase tracking-wider">
+                <span className="font-mono text-[9px] text-brand-cyan/40 uppercase tracking-wider">
                   Philosophy / 002
                 </span>
               </div>
 
               {/* Corner brackets */}
-              <div className="absolute top-0 left-0 w-5 h-5 border-l-2 border-t-2 border-cyan-500/20" />
-              <div className="absolute top-0 right-0 w-5 h-5 border-r-2 border-t-2 border-cyan-500/20" />
-              <div className="absolute bottom-0 left-0 w-5 h-5 border-l-2 border-b-2 border-cyan-500/20" />
-              <div className="absolute bottom-0 right-0 w-5 h-5 border-r-2 border-b-2 border-cyan-500/20" />
+              <div className="absolute top-0 left-0 w-5 h-5 border-l-2 border-t-2 border-brand-cyan/20" />
+              <div className="absolute top-0 right-0 w-5 h-5 border-r-2 border-t-2 border-brand-cyan/20" />
+              <div className="absolute bottom-0 left-0 w-5 h-5 border-l-2 border-b-2 border-brand-cyan/20" />
+              <div className="absolute bottom-0 right-0 w-5 h-5 border-r-2 border-b-2 border-brand-cyan/20" />
 
               <p className="font-mono text-xs md:text-sm lg:text-base text-white/50 leading-relaxed">
-                Good, fast, cheap. You can only pick two. We optimise for <span className="text-cyan-500/80">good</span>.
+                Good, fast, cheap. You can only pick two. We optimise for <span className="text-brand-cyan/80">good</span>.
               </p>
 
               {/* Dimension markers - Hidden on mobile */}
               <div className="absolute -left-4 top-1/2 -translate-y-1/2 flex-col items-center gap-1 hidden md:flex">
-                <div className="w-px h-4 bg-cyan-500/20" />
-                <div className="w-2 h-px bg-cyan-500/20" />
-                <div className="w-px h-4 bg-cyan-500/20" />
+                <div className="w-px h-4 bg-brand-cyan/20" />
+                <div className="w-2 h-px bg-brand-cyan/20" />
+                <div className="w-px h-4 bg-brand-cyan/20" />
               </div>
               <div className="absolute -right-4 top-1/2 -translate-y-1/2 flex-col items-center gap-1 hidden md:flex">
-                <div className="w-px h-4 bg-cyan-500/20" />
-                <div className="w-2 h-px bg-cyan-500/20" />
-                <div className="w-px h-4 bg-cyan-500/20" />
+                <div className="w-px h-4 bg-brand-cyan/20" />
+                <div className="w-2 h-px bg-brand-cyan/20" />
+                <div className="w-px h-4 bg-brand-cyan/20" />
               </div>
             </motion.div>
 
@@ -145,8 +145,8 @@ export function ProcessSection() {
             >
               {/* Label with architectural line */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="h-px w-6 bg-cyan-500/20" />
-                <span className="font-mono text-[9px] text-cyan-500/40 uppercase tracking-wider">
+                <div className="h-px w-6 bg-brand-cyan/20" />
+                <span className="font-mono text-[9px] text-brand-cyan/40 uppercase tracking-wider">
                   Development Priorities
                 </span>
                 <div className="h-px flex-1 bg-white/5" />
@@ -174,8 +174,8 @@ export function ProcessSection() {
                   >
                     {/* Technical marker */}
                     <div className="flex items-center gap-1">
-                      <div className="w-1 h-1 bg-cyan-500/30 rounded-full" />
-                      <div className="w-2 h-px bg-cyan-500/20" />
+                      <div className="w-1 h-1 bg-brand-cyan/30 rounded-full" />
+                      <div className="w-2 h-px bg-brand-cyan/20" />
                     </div>
 
                     {/* Priority text */}
@@ -189,7 +189,7 @@ export function ProcessSection() {
               {/* Bottom technical annotation */}
               <div className="mt-6 pt-4 border-t border-white/5">
                 <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 border border-cyan-500/30 rotate-45" />
+                  <div className="w-1.5 h-1.5 border border-brand-cyan/30 rotate-45" />
                   <span className="font-mono text-[8px] text-white/20 uppercase tracking-wider">
                     System Parameters / Non-Negotiable
                   </span>
@@ -263,11 +263,11 @@ export function ProcessSection() {
               {/* Bottom annotation */}
               <div className="text-center mt-12">
                 <div className="inline-flex items-center gap-3">
-                  <div className="h-px w-8 bg-cyan-500/20" />
+                  <div className="h-px w-8 bg-brand-cyan/20" />
                   <p className="font-mono text-[10px] text-white/40 uppercase tracking-wider">
                     Continuous Development Cycle
                   </p>
-                  <div className="h-px w-8 bg-cyan-500/20" />
+                  <div className="h-px w-8 bg-brand-cyan/20" />
                 </div>
               </div>
             </div>
@@ -285,8 +285,8 @@ export function ProcessSection() {
                 className="border border-white/5 p-6 bg-white/[0.01]"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-0.5 h-4 bg-cyan-500/40" />
-                  <span className="font-mono text-[9px] text-cyan-500/60 uppercase tracking-wider">
+                  <div className="w-0.5 h-4 bg-brand-cyan/40" />
+                  <span className="font-mono text-[9px] text-brand-cyan/60 uppercase tracking-wider">
                     {stage.num}
                   </span>
                 </div>
@@ -297,11 +297,11 @@ export function ProcessSection() {
 
             <div className="text-center pt-6">
               <div className="inline-flex items-center gap-3">
-                <div className="h-px w-8 bg-cyan-500/20" />
+                <div className="h-px w-8 bg-brand-cyan/20" />
                 <p className="font-mono text-[10px] text-white/40 uppercase tracking-wider">
                   Continuous Development Cycle
                 </p>
-                <div className="h-px w-8 bg-cyan-500/20" />
+                <div className="h-px w-8 bg-brand-cyan/20" />
               </div>
             </div>
           </div>

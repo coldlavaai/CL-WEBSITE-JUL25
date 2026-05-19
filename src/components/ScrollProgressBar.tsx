@@ -21,7 +21,7 @@ export function ScrollProgressBar() {
       {/* Top progress bar */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-white/5 z-50 pointer-events-none">
         <motion.div
-          className="h-full bg-gradient-to-r from-cyan-500 via-cyan-400 to-cyan-300 origin-left"
+          className="h-full bg-gradient-to-r from-brand-cyan via-brand-cyan to-brand-cyanSoft origin-left"
           style={{ scaleX }}
         />
       </div>
@@ -38,7 +38,7 @@ export function ScrollProgressBar() {
       {/* Right side progress bar */}
       <div className="fixed top-0 right-0 bottom-0 w-1 bg-white/5 z-50 pointer-events-none">
         <motion.div
-          className="w-full bg-gradient-to-b from-cyan-500 via-cyan-400 to-cyan-300 origin-top"
+          className="w-full bg-gradient-to-b from-brand-cyan via-brand-cyan to-brand-cyanSoft origin-top"
           style={{ scaleY }}
         />
       </div>

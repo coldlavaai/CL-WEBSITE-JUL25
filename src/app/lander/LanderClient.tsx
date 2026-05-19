@@ -167,24 +167,24 @@ export function LanderClient() {
     <div className="bg-black text-white">
       {/* ───────── 1. HERO ───────── */}
       <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
-        <div className="absolute top-1/4 -left-1/4 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 -right-1/4 w-[400px] md:w-[700px] h-[400px] md:h-[700px] bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/4 -left-1/4 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-brand-cyan/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 -right-1/4 w-[400px] md:w-[700px] h-[400px] md:h-[700px] bg-brand-cyan/5 rounded-full blur-3xl pointer-events-none" />
         <div className="relative max-w-5xl mx-auto px-6 text-center">
           <FadeIn>
-            <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-cyan-500 border border-cyan-500/30 rounded-full px-4 py-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />
+            <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-brand-cyan border border-brand-cyan/30 rounded-full px-4 py-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-pulse" />
               AI Operations Audit
             </span>
           </FadeIn>
           <FadeIn delay={0.1}>
             <h1 className="mt-8 text-display font-semibold tracking-tight uppercase leading-[1.05]">
               Scale without hiring.{' '}
-              <span className="text-cyan-500">Keep the team you have.</span>
+              <span className="text-brand-cyan">Keep the team you have.</span>
             </h1>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="mt-10 text-subhead text-white/80 max-w-2xl mx-auto font-medium uppercase tracking-wide">
-              If it does not save you <span className="text-cyan-500">£50,000 a year</span> in payroll, you do not pay.
+              If it does not save you <span className="text-brand-cyan">£50,000 a year</span> in payroll, you do not pay.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
@@ -210,7 +210,7 @@ export function LanderClient() {
       <section id="audit" className="relative py-20 md:py-28 border-t border-white/5">
         <div className="max-w-3xl mx-auto px-6">
           <FadeIn>
-            <p className="text-xs uppercase tracking-[0.25em] text-cyan-500 text-center">Step 1. Four questions</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-brand-cyan text-center">Step 1. Four questions</p>
             <h2 className="mt-4 text-headline font-semibold tracking-tight text-center uppercase">
               Tell us where the time is leaking.
             </h2>
@@ -242,7 +242,7 @@ export function LanderClient() {
                       onClick={() => update('teamSize', s)}
                       className={`py-3 rounded-lg border text-sm transition-colors ${
                         form.teamSize === s
-                          ? 'border-cyan-500 bg-cyan-500/10 text-white'
+                          ? 'border-brand-cyan bg-brand-cyan/10 text-white'
                           : 'border-white/15 text-white/60 hover:border-white/30'
                       }`}
                     >
@@ -291,7 +291,7 @@ export function LanderClient() {
               <button
                 type="submit"
                 disabled={submitting || submitted}
-                className="w-full bg-white hover:bg-cyan-500 disabled:opacity-60 disabled:cursor-not-allowed text-black font-semibold py-4 rounded-full transition-colors"
+                className="w-full bg-white hover:bg-brand-cyan disabled:opacity-60 disabled:cursor-not-allowed text-black font-semibold py-4 rounded-full transition-colors"
               >
                 {submitted ? '✓ Submitted. Pick a time below' : submitting ? 'Sending' : 'Submit and pick a time'}
               </button>
@@ -308,7 +308,7 @@ export function LanderClient() {
         <section id="book" className="relative py-20 md:py-28 border-t border-white/5">
           <div className="max-w-5xl mx-auto px-6">
             <FadeIn>
-              <p className="text-xs uppercase tracking-[0.25em] text-cyan-500 text-center">Step 2. 30 minutes</p>
+              <p className="text-xs uppercase tracking-[0.25em] text-brand-cyan text-center">Step 2. 30 minutes</p>
               <h2 className="mt-4 text-headline font-semibold tracking-tight text-center uppercase">
                 {booked ? 'You are booked in.' : 'Pick a time that suits you.'}
               </h2>
@@ -336,12 +336,12 @@ export function LanderClient() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mt-10 bg-cyan-500/5 border border-cyan-500/30 rounded-2xl p-10 text-center"
+                className="mt-10 bg-brand-cyan/5 border border-brand-cyan/30 rounded-2xl p-10 text-center"
               >
-                <div className="text-5xl mb-4 text-cyan-500">✓</div>
+                <div className="text-5xl mb-4 text-brand-cyan">✓</div>
                 <p className="text-white/80 max-w-xl mx-auto">
                   You will get a calendar invite within the next few seconds. If nothing arrives, email{' '}
-                  <a className="text-cyan-500 underline" href="mailto:hello@coldlava.ai">hello@coldlava.ai</a>.
+                  <a className="text-brand-cyan underline" href="mailto:hello@coldlava.ai">hello@coldlava.ai</a>.
                 </p>
               </motion.div>
             )}
@@ -353,7 +353,7 @@ export function LanderClient() {
       <section className="relative py-24 md:py-32 border-t border-white/5 bg-white/[0.01]">
         <div className="max-w-5xl mx-auto px-6">
           <FadeIn>
-            <p className="text-xs uppercase tracking-[0.25em] text-cyan-500 text-center">The whole process</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-brand-cyan text-center">The whole process</p>
             <h2 className="mt-4 text-headline font-semibold tracking-tight text-center max-w-2xl mx-auto uppercase">
               Three steps. No pitch decks, no pressure.
             </h2>
@@ -361,16 +361,16 @@ export function LanderClient() {
           <div className="mt-14 grid md:grid-cols-3 gap-5">
             {HOW_IT_WORKS.map((step, i) => (
               <FadeIn key={step.num} delay={i * 0.05}>
-                <div className="h-full bg-white/[0.02] border border-white/10 rounded-2xl p-7 hover:border-cyan-500/30 transition-colors">
+                <div className="h-full bg-white/[0.02] border border-white/10 rounded-2xl p-7 hover:border-brand-cyan/30 transition-colors">
                   <div className="flex items-baseline justify-between">
-                    <span className="text-cyan-500 font-mono text-sm">{step.num}</span>
+                    <span className="text-brand-cyan font-mono text-sm">{step.num}</span>
                     <span className="text-xs text-white/40">{step.sub}</span>
                   </div>
                   <div className="mt-4 text-2xl font-semibold">{step.title}</div>
                   <ul className="mt-5 space-y-3">
                     {step.bullets.map((b) => (
                       <li key={b} className="flex items-start gap-3 text-sm text-white/70 leading-relaxed">
-                        <span className="text-cyan-500 mt-1 shrink-0">→</span>
+                        <span className="text-brand-cyan mt-1 shrink-0">→</span>
                         <span>{b}</span>
                       </li>
                     ))}
@@ -386,7 +386,7 @@ export function LanderClient() {
       <section className="relative py-24 md:py-32 border-t border-white/5">
         <div className="max-w-5xl mx-auto px-6">
           <FadeIn>
-            <p className="text-xs uppercase tracking-[0.25em] text-cyan-500 text-center">Common questions</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-brand-cyan text-center">Common questions</p>
             <h2 className="mt-4 text-headline font-semibold tracking-tight text-center max-w-3xl mx-auto uppercase">
               What operators usually ask before we start.
             </h2>
@@ -400,7 +400,7 @@ export function LanderClient() {
                     <p className="text-white/80 italic">{o.pain}</p>
                   </div>
                   <div className="flex items-start gap-3 border-t border-white/10 pt-4">
-                    <span className="text-cyan-500 font-mono text-lg leading-none mt-0.5">→</span>
+                    <span className="text-brand-cyan font-mono text-lg leading-none mt-0.5">→</span>
                     <p className="text-white/70 text-sm leading-relaxed">{o.answer}</p>
                   </div>
                 </div>
@@ -412,12 +412,12 @@ export function LanderClient() {
             <FadeIn>
               <h2 className="text-display font-semibold tracking-tight uppercase leading-[1.05]">
                 Grow the business.{' '}
-                <span className="text-cyan-500">Not the wage bill.</span>
+                <span className="text-brand-cyan">Not the wage bill.</span>
               </h2>
             </FadeIn>
             <FadeIn delay={0.1}>
               <p className="mt-8 text-subhead text-white/80 uppercase tracking-wide font-medium">
-                If it does not save you <span className="text-cyan-500">£50,000 a year</span> in payroll, you do not pay.
+                If it does not save you <span className="text-brand-cyan">£50,000 a year</span> in payroll, you do not pay.
               </p>
             </FadeIn>
             <FadeIn delay={0.2}>
@@ -434,10 +434,10 @@ export function LanderClient() {
 }
 
 const primaryBtn =
-  'inline-flex items-center gap-2 mt-10 bg-white hover:bg-cyan-500 text-black font-semibold px-8 py-4 rounded-full transition-colors'
+  'inline-flex items-center gap-2 mt-10 bg-white hover:bg-brand-cyan text-black font-semibold px-8 py-4 rounded-full transition-colors'
 
 const inputCls =
-  'w-full bg-black/40 border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:border-cyan-500 focus:outline-none transition-colors'
+  'w-full bg-black/40 border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:border-brand-cyan focus:outline-none transition-colors'
 
 function Field({
   label,
@@ -451,7 +451,7 @@ function Field({
   return (
     <div>
       <label className="block text-sm text-white/70 mb-2">
-        {label} {required && <span className="text-cyan-500">*</span>}
+        {label} {required && <span className="text-brand-cyan">*</span>}
       </label>
       {children}
     </div>

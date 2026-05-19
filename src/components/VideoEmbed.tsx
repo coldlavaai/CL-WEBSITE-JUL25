@@ -34,7 +34,7 @@ export function VideoEmbed({
       className="group relative block overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] transition-all hover:border-white/20 hover:bg-white/[0.03]"
     >
       {/* Thumbnail */}
-      <div className="relative aspect-video bg-gradient-to-br from-cyan-500/10 to-orange-500/10">
+      <div className="relative aspect-video bg-gradient-to-br from-brand-cyan/10 to-orange-500/10">
         {/* Play button overlay */}
         <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/30 transition-colors">
           <div className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-orange-500 group-hover:bg-orange-400 transition-all group-hover:scale-110 shadow-lg">

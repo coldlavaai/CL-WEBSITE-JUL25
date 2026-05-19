@@ -100,14 +100,14 @@ export function CookieBanner() {
               className="relative max-w-lg w-full"
             >
               {/* Corner Brackets */}
-              <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-cyan-400/50" />
-              <div className="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 border-cyan-400/50" />
-              <div className="absolute -bottom-2 -left-2 w-8 h-8 border-b-2 border-l-2 border-cyan-400/50" />
-              <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-cyan-400/50" />
+              <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-brand-cyan/50" />
+              <div className="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 border-brand-cyan/50" />
+              <div className="absolute -bottom-2 -left-2 w-8 h-8 border-b-2 border-l-2 border-brand-cyan/50" />
+              <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-brand-cyan/50" />
 
               {/* Animated glow effect */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-lg"
+                className="absolute inset-0 bg-gradient-to-br from-brand-cyan/10 to-transparent rounded-lg"
                 animate={{
                   opacity: [0.3, 0.6, 0.3],
                 }}
@@ -119,12 +119,12 @@ export function CookieBanner() {
               />
 
               {/* Main Content */}
-              <div className="relative bg-black/95 border border-cyan-400/20 rounded-lg p-8 shadow-2xl shadow-cyan-500/10">
+              <div className="relative bg-black/95 border border-brand-cyan/20 rounded-lg p-8 shadow-2xl shadow-brand-cyan/10">
                 {/* Header */}
                 <div className="mb-6">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="font-mono text-xs text-cyan-400 tracking-wider">[NOTICE]</span>
-                    <div className="flex-1 h-px bg-gradient-to-r from-cyan-400/50 to-transparent" />
+                    <span className="font-mono text-xs text-brand-cyan tracking-wider">[NOTICE]</span>
+                    <div className="flex-1 h-px bg-gradient-to-r from-brand-cyan/50 to-transparent" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-2">
                     Cookie Preferences
@@ -141,7 +141,7 @@ export function CookieBanner() {
                     Nothing creepy, nothing sold.{' '}
                     <Link
                       href="/cookies"
-                      className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors font-medium"
+                      className="text-brand-cyan hover:text-brand-cyanSoft underline underline-offset-2 transition-colors font-medium"
                       onClick={() => setShowBanner(false)}
                     >
                       Read our cookie policy
@@ -150,14 +150,14 @@ export function CookieBanner() {
                 </div>
 
                 {/* Cookie Details */}
-                <div className="mb-8 p-4 bg-cyan-500/5 border border-cyan-400/10 rounded">
+                <div className="mb-8 p-4 bg-brand-cyan/5 border border-brand-cyan/10 rounded">
                   <div className="grid grid-cols-2 gap-4 text-xs font-mono">
                     <div>
-                      <div className="text-cyan-400 mb-1">Essential</div>
+                      <div className="text-brand-cyan mb-1">Essential</div>
                       <div className="text-white/60">Always Active</div>
                     </div>
                     <div>
-                      <div className="text-cyan-400 mb-1">Analytics</div>
+                      <div className="text-brand-cyan mb-1">Analytics</div>
                       <div className="text-white/60">Your Choice</div>
                     </div>
                   </div>
@@ -173,13 +173,13 @@ export function CookieBanner() {
                   </button>
                   <button
                     onClick={acceptCookies}
-                    className="group relative flex-1 px-6 py-3 text-sm font-semibold text-black bg-cyan-400 hover:bg-cyan-300 rounded overflow-hidden transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30"
+                    className="group relative flex-1 px-6 py-3 text-sm font-semibold text-black bg-brand-cyan hover:bg-brand-cyanSoft rounded overflow-hidden transition-all duration-300 shadow-lg shadow-brand-cyan/20 hover:shadow-brand-cyan/30"
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       Accept All
                       <span className="text-xs">→</span>
                     </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-cyan-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-brand-cyan to-brand-cyanSoft opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </button>
                 </div>
 

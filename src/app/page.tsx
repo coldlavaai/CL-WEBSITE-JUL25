@@ -233,13 +233,13 @@ function ProcessOrbit() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           style={{ gridArea: 'centre' }}
-          className="justify-self-center self-center relative z-10 w-32 h-32 md:w-36 md:h-36 rounded-full border border-cyan-500/20 flex items-center justify-center overflow-hidden"
+          className="justify-self-center self-center relative z-10 w-32 h-32 md:w-36 md:h-36 rounded-full border border-brand-cyan/20 flex items-center justify-center overflow-hidden"
         >
           {/* Gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-black/80 to-black/90" />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan/10 via-black/80 to-black/90" />
 
           {/* Inner glow */}
-          <div className="absolute inset-0 rounded-full bg-cyan-500/5 blur-xl" />
+          <div className="absolute inset-0 rounded-full bg-brand-cyan/5 blur-xl" />
 
           {/* Subtle grid pattern */}
           <div
@@ -251,10 +251,10 @@ function ProcessOrbit() {
           />
 
           {/* Corner brackets */}
-          <div className="absolute top-3 left-3 w-4 h-4 border-l border-t border-cyan-500/30" />
-          <div className="absolute top-3 right-3 w-4 h-4 border-r border-t border-cyan-500/30" />
-          <div className="absolute bottom-3 left-3 w-4 h-4 border-l border-b border-cyan-500/30" />
-          <div className="absolute bottom-3 right-3 w-4 h-4 border-r border-b border-cyan-500/30" />
+          <div className="absolute top-3 left-3 w-4 h-4 border-l border-t border-brand-cyan/30" />
+          <div className="absolute top-3 right-3 w-4 h-4 border-r border-t border-brand-cyan/30" />
+          <div className="absolute bottom-3 left-3 w-4 h-4 border-l border-b border-brand-cyan/30" />
+          <div className="absolute bottom-3 right-3 w-4 h-4 border-r border-b border-brand-cyan/30" />
 
           {/* Cold Lava Logo */}
           <div className="relative w-16 h-16 md:w-20 md:h-20">
@@ -416,7 +416,7 @@ function ProcessCard({
             opacity: isActive ? 0.08 : 0,
           }}
           transition={{ duration: 0.5 }}
-          className="absolute inset-0 bg-cyan-500 pointer-events-none"
+          className="absolute inset-0 bg-brand-cyan pointer-events-none"
         />
 
         {/* Active state corner highlights */}
@@ -425,14 +425,14 @@ function ProcessCard({
             opacity: isActive ? 0.4 : 0,
           }}
           transition={{ duration: 0.5 }}
-          className="absolute top-0 left-0 w-8 h-8 bg-gradient-to-br from-cyan-500/20 to-transparent pointer-events-none"
+          className="absolute top-0 left-0 w-8 h-8 bg-gradient-to-br from-brand-cyan/20 to-transparent pointer-events-none"
         />
         <motion.div
           animate={{
             opacity: isActive ? 0.4 : 0,
           }}
           transition={{ duration: 0.5 }}
-          className="absolute bottom-0 right-0 w-8 h-8 bg-gradient-to-tl from-cyan-500/20 to-transparent pointer-events-none"
+          className="absolute bottom-0 right-0 w-8 h-8 bg-gradient-to-tl from-brand-cyan/20 to-transparent pointer-events-none"
         />
       </motion.div>
     </div>
@@ -462,7 +462,7 @@ function TrustPrinciplesStack() {
     >
       {/* Subheading */}
       <div className="mb-4 flex items-center gap-2">
-        <div className="w-6 h-px bg-cyan-500/20" />
+        <div className="w-6 h-px bg-brand-cyan/20" />
         <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/20">
           We believe
         </p>
@@ -480,7 +480,7 @@ function TrustPrinciplesStack() {
             className="flex items-center gap-2 group"
           >
             {/* Dot indicator */}
-            <div className="w-1 h-1 bg-cyan-500/40 rounded-full group-hover:bg-cyan-500/60 transition-colors" />
+            <div className="w-1 h-1 bg-brand-cyan/40 rounded-full group-hover:bg-brand-cyan/60 transition-colors" />
 
             {/* Principle text */}
             <span className="font-mono text-[10px] text-white/30 group-hover:text-white/40 uppercase tracking-wider whitespace-nowrap transition-colors">
@@ -542,7 +542,7 @@ export default function Home() {
         <TechnicalLabel position="bottom-right">United Kingdom</TechnicalLabel>
 
         {/* Subtle glow */}
-        <div className="absolute top-1/4 -left-1/4 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-cyan-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 -left-1/4 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-brand-cyan/5 rounded-full blur-3xl" />
 
         <div className="container-default relative z-10 py-16 min-w-0">
           <div className="max-w-full md:max-w-6xl overflow-hidden min-w-0">
@@ -596,9 +596,9 @@ export default function Home() {
                 className="group relative inline-block"
               >
                 {/* Architectural frame that expands on hover */}
-                <div className="absolute -inset-2 border border-cyan-500/20 group-hover:border-[#C9A962]/40 transition-all duration-500" />
-                <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-cyan-500/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
-                <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-cyan-500/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
+                <div className="absolute -inset-2 border border-brand-cyan/20 group-hover:border-[#C9A962]/40 transition-all duration-500" />
+                <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-brand-cyan/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-brand-cyan/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
 
                 {/* Button */}
                 <div className="relative px-8 py-4 bg-white text-black font-medium overflow-hidden">
@@ -631,7 +631,7 @@ export default function Home() {
               className="border-t border-white/5 pt-6 mt-6"
             >
               <p className="font-mono text-[10px] uppercase tracking-wider text-white/20 mb-3">
-                Modern stack. <span className="text-cyan-500">Serious security</span>. UK based.
+                Modern stack. <span className="text-brand-cyan">Serious security</span>. UK based.
               </p>
               <TechStackTicker />
             </motion.div>
@@ -639,7 +639,7 @@ export default function Home() {
         </div>
 
         {/* Dimension line (decorative) */}
-        <div className="absolute right-0 top-1/2 w-px h-32 bg-cyan-500/20 hidden md:block" />
+        <div className="absolute right-0 top-1/2 w-px h-32 bg-brand-cyan/20 hidden md:block" />
       </section>
 
       {/* OLIVER'S QUOTE - Architectural Statement */}
@@ -657,7 +657,7 @@ export default function Home() {
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-cyan-500/30 to-transparent origin-top hidden md:block"
+            className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-brand-cyan/30 to-transparent origin-top hidden md:block"
           />
 
           {/* Dimension line - right */}
@@ -666,7 +666,7 @@ export default function Home() {
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute right-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-cyan-500/30 to-transparent origin-top hidden md:block"
+            className="absolute right-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-brand-cyan/30 to-transparent origin-top hidden md:block"
           />
 
           {/* Philosophy/001 - Box Style */}
@@ -679,46 +679,46 @@ export default function Home() {
           >
             {/* Architectural annotation */}
             <div className="absolute -top-3 left-8 bg-black px-3">
-              <span className="font-mono text-[9px] text-cyan-500/40 uppercase tracking-wider">
+              <span className="font-mono text-[9px] text-brand-cyan/40 uppercase tracking-wider">
                 Philosophy / 001
               </span>
             </div>
 
             {/* Corner brackets */}
-            <div className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-cyan-500/20" />
-            <div className="absolute top-0 right-0 w-6 h-6 border-r-2 border-t-2 border-cyan-500/20" />
-            <div className="absolute bottom-0 left-0 w-6 h-6 border-l-2 border-b-2 border-cyan-500/20" />
-            <div className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-cyan-500/20" />
+            <div className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-brand-cyan/20" />
+            <div className="absolute top-0 right-0 w-6 h-6 border-r-2 border-t-2 border-brand-cyan/20" />
+            <div className="absolute bottom-0 left-0 w-6 h-6 border-l-2 border-b-2 border-brand-cyan/20" />
+            <div className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-brand-cyan/20" />
 
             {/* Main quote */}
             <blockquote className="relative text-center">
-              <div className="absolute -top-6 left-1/2 -translate-x-1/2 text-6xl md:text-8xl text-cyan-500/10 font-serif leading-none">"</div>
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2 text-6xl md:text-8xl text-brand-cyan/10 font-serif leading-none">"</div>
 
               <p className="text-xl md:text-4xl lg:text-5xl font-light leading-[1.25] tracking-tight text-white/90 italic mb-8">
-                Custom solutions for how <span className="text-cyan-400">you work</span>, not how Silicon Valley thinks you should.
+                Custom solutions for how <span className="text-brand-cyan">you work</span>, not how Silicon Valley thinks you should.
               </p>
 
               {/* Attribution */}
               <div className="flex items-center justify-center gap-4">
-                <div className="h-px w-12 bg-cyan-500/30" />
+                <div className="h-px w-12 bg-brand-cyan/30" />
                 <cite className="not-italic">
                   <span className="text-white/80 font-medium">Oliver</span>
                   <span className="text-white/40 font-mono text-xs ml-2">/ Head Developer</span>
                 </cite>
-                <div className="h-px w-12 bg-cyan-500/30" />
+                <div className="h-px w-12 bg-brand-cyan/30" />
               </div>
             </blockquote>
 
             {/* Dimension markers - Hidden on mobile to prevent overflow */}
             <div className="absolute -left-4 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-center gap-1">
-              <div className="w-px h-4 bg-cyan-500/20" />
-              <div className="w-2 h-px bg-cyan-500/20" />
-              <div className="w-px h-4 bg-cyan-500/20" />
+              <div className="w-px h-4 bg-brand-cyan/20" />
+              <div className="w-2 h-px bg-brand-cyan/20" />
+              <div className="w-px h-4 bg-brand-cyan/20" />
             </div>
             <div className="absolute -right-4 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-center gap-1">
-              <div className="w-px h-4 bg-cyan-500/20" />
-              <div className="w-2 h-px bg-cyan-500/20" />
-              <div className="w-px h-4 bg-cyan-500/20" />
+              <div className="w-px h-4 bg-brand-cyan/20" />
+              <div className="w-2 h-px bg-brand-cyan/20" />
+              <div className="w-px h-4 bg-brand-cyan/20" />
             </div>
           </motion.div>
         </div>
@@ -733,7 +733,7 @@ export default function Home() {
       {/* BOS - Full Width Dramatic */}
       <section id="bos" className="py-16 md:py-24 lg:py-32 border-t border-white/5 relative overflow-hidden bg-white/[0.01]">
         <GridOverlay spacing={24} opacity={0.02} />
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan/5 to-transparent" />
 
         <div className="container-default relative">
           <div className="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center">
@@ -743,8 +743,8 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <div className="inline-block px-3 py-1 border border-cyan-500/30 bg-cyan-500/5 mb-6 md:mb-8">
-                <span className="font-mono text-[10px] md:text-xs text-cyan-500 uppercase tracking-wider">
+              <div className="inline-block px-3 py-1 border border-brand-cyan/30 bg-brand-cyan/5 mb-6 md:mb-8">
+                <span className="font-mono text-[10px] md:text-xs text-brand-cyan uppercase tracking-wider">
                   Flagship Product
                 </span>
               </div>
@@ -757,7 +757,7 @@ export default function Home() {
               </p>
 
               <p className="text-base md:text-lg lg:text-xl text-white/60 mb-8 md:mb-10 leading-relaxed max-w-xl">
-                Stop bending your business to fit off the shelf software. BOS is built around you, like an <span className="text-cyan-500">exoskeleton</span>. Custom fitted to your processes, not some San Francisco tech team's idea of how you should work.
+                Stop bending your business to fit off the shelf software. BOS is built around you, like an <span className="text-brand-cyan">exoskeleton</span>. Custom fitted to your processes, not some San Francisco tech team's idea of how you should work.
               </p>
 
               <ul className="space-y-3 md:space-y-4 mb-10 md:mb-12">
@@ -768,7 +768,7 @@ export default function Home() {
                   'One integrated system instead of twelve apps held together with duct tape.',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="text-cyan-500 mt-1">→</span>
+                    <span className="text-brand-cyan mt-1">→</span>
                     <span className="text-white/50">{item}</span>
                   </li>
                 ))}
@@ -781,9 +781,9 @@ export default function Home() {
                 className="group relative inline-block"
               >
                 {/* Architectural frame that expands on hover */}
-                <div className="absolute -inset-2 border border-cyan-500/20 group-hover:border-[#C9A962]/40 transition-all duration-500" />
-                <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-cyan-500/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
-                <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-cyan-500/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
+                <div className="absolute -inset-2 border border-brand-cyan/20 group-hover:border-[#C9A962]/40 transition-all duration-500" />
+                <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-brand-cyan/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-brand-cyan/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
 
                 {/* Button */}
                 <div className="relative px-8 py-4 bg-white text-black font-medium overflow-hidden">
@@ -836,7 +836,7 @@ export default function Home() {
                       <p className="text-[10px] text-white/30 font-mono uppercase tracking-wider">
                         {spec.label}
                       </p>
-                      <p className="text-sm text-cyan-500/80 font-medium leading-tight">
+                      <p className="text-sm text-brand-cyan/80 font-medium leading-tight">
                         {spec.value}
                       </p>
                     </div>
@@ -865,7 +865,7 @@ export default function Home() {
       <section className="py-12 md:py-20 border-t border-white/5">
         <div className="container-default">
           <p className="font-mono text-xs text-white/20 text-center uppercase tracking-wider mb-8">
-            We integrate with the tools <span className="text-cyan-500">you already use</span>
+            We integrate with the tools <span className="text-brand-cyan">you already use</span>
           </p>
           <IntegrationsTicker />
         </div>
@@ -877,13 +877,13 @@ export default function Home() {
           {/* Section Header */}
           <div className="mb-10 md:mb-16">
             <div className="flex items-center gap-4 mb-4">
-              <div className="h-px w-12 bg-cyan-500/40" />
+              <div className="h-px w-12 bg-brand-cyan/40" />
               <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/30">
                 Client Testimonials
               </p>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight">
-              Working with <span className="text-cyan-400">Cold Lava</span>
+              Working with <span className="text-brand-cyan">Cold Lava</span>
             </h2>
           </div>
 
@@ -913,23 +913,23 @@ export default function Home() {
                   className={`group relative ${layouts[i]}`}
                 >
                   {/* Architectural frame */}
-                  <div className="relative bg-white/[0.01] border border-white/5 p-5 md:p-6 hover:border-cyan-500/30 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] transition-all duration-700">
+                  <div className="relative bg-white/[0.01] border border-white/5 p-5 md:p-6 hover:border-brand-cyan/30 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] transition-all duration-700">
                     {/* Corner brackets */}
-                    <div className="absolute top-0 left-0 w-5 h-5 border-l border-t border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute top-0 right-0 w-5 h-5 border-r border-t border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute bottom-0 left-0 w-5 h-5 border-l border-b border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute bottom-0 right-0 w-5 h-5 border-r border-b border-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute top-0 left-0 w-5 h-5 border-l border-t border-brand-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute top-0 right-0 w-5 h-5 border-r border-t border-brand-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute bottom-0 left-0 w-5 h-5 border-l border-b border-brand-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute bottom-0 right-0 w-5 h-5 border-r border-b border-brand-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                     {/* Testimonial number */}
                     <div className="absolute -top-2.5 left-5 bg-black px-2">
-                      <span className="font-mono text-[10px] text-cyan-500/60">
+                      <span className="font-mono text-[10px] text-brand-cyan/60">
                         {String(i + 1).padStart(2, '0')}
                       </span>
                     </div>
 
                     {/* Quote */}
                     <blockquote className="relative mb-5">
-                      <div className="absolute -left-2 top-0 text-5xl text-cyan-500/10 leading-none font-serif">"</div>
+                      <div className="absolute -left-2 top-0 text-5xl text-brand-cyan/10 leading-none font-serif">"</div>
                       <p className={`relative text-white/70 italic leading-relaxed pl-4 ${i === 4 ? 'text-lg md:text-xl' : 'text-base md:text-lg'}`}>
                         {t.quote}
                       </p>
@@ -937,11 +937,11 @@ export default function Home() {
 
                     {/* Attribution with architectural line */}
                     <div className="flex items-center gap-3">
-                      <div className="flex-shrink-0 w-1 h-1 bg-cyan-500 rounded-full" />
+                      <div className="flex-shrink-0 w-1 h-1 bg-brand-cyan rounded-full" />
                       <div className="flex-grow h-px bg-gradient-to-r from-white/10 to-transparent" />
                       <cite className="not-italic flex-shrink-0">
                         <div className="text-right">
-                          <div className="text-cyan-500 font-medium text-sm">{t.author}</div>
+                          <div className="text-brand-cyan font-medium text-sm">{t.author}</div>
                           {t.company && (
                             <div className="text-white/40 font-mono text-[10px] mt-0.5">{t.company}</div>
                           )}
@@ -965,8 +965,8 @@ export default function Home() {
         </div>
 
         {/* Background architectural elements */}
-        <div className="absolute top-1/4 right-0 w-px h-1/2 bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent hidden md:block" />
-        <div className="absolute top-1/2 left-0 w-px h-1/4 bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent hidden md:block" />
+        <div className="absolute top-1/4 right-0 w-px h-1/2 bg-gradient-to-b from-transparent via-brand-cyan/10 to-transparent hidden md:block" />
+        <div className="absolute top-1/2 left-0 w-px h-1/4 bg-gradient-to-b from-transparent via-brand-cyan/10 to-transparent hidden md:block" />
       </section>
 
 
@@ -981,7 +981,7 @@ export default function Home() {
                 Contact
               </p>
               <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 md:mb-8">
-                Let's <span className="text-cyan-500">talk</span>
+                Let's <span className="text-brand-cyan">talk</span>
               </h2>
               <p className="text-lg md:text-xl text-white/50 mb-4 md:mb-6 leading-relaxed">
                 Ready to build something? Book a discovery call or send us a message.
@@ -999,9 +999,9 @@ export default function Home() {
                 className="group relative inline-block w-full"
               >
                 {/* Architectural frame that expands on hover */}
-                <div className="absolute -inset-2 border border-cyan-500/20 group-hover:border-[#C9A962]/40 transition-all duration-500" />
-                <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-cyan-500/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
-                <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-cyan-500/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
+                <div className="absolute -inset-2 border border-brand-cyan/20 group-hover:border-[#C9A962]/40 transition-all duration-500" />
+                <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-brand-cyan/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-brand-cyan/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
 
                 {/* Button */}
                 <div className="relative px-8 py-5 bg-white text-black font-medium overflow-hidden">
@@ -1026,9 +1026,9 @@ export default function Home() {
                 className="group relative inline-block w-full"
               >
                 {/* Architectural frame that expands on hover */}
-                <div className="absolute -inset-2 border border-cyan-500/20 group-hover:border-[#C9A962]/40 transition-all duration-500" />
-                <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-cyan-500/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
-                <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-cyan-500/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
+                <div className="absolute -inset-2 border border-brand-cyan/20 group-hover:border-[#C9A962]/40 transition-all duration-500" />
+                <div className="absolute -top-1 -left-1 w-4 h-4 border-l border-t border-brand-cyan/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-brand-cyan/40 group-hover:border-[#C9A962]/70 transition-all duration-500" />
 
                 {/* Button */}
                 <div className="relative px-8 py-5 bg-white text-black font-medium overflow-hidden">
