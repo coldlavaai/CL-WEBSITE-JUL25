@@ -540,7 +540,7 @@ export function ServicesSection() {
           <p className="text-white/40 italic text-base md:text-lg leading-relaxed mb-3">
             "They helped us automate our whole sales process and built us a website that represents the business brilliantly."
           </p>
-          <p className="text-white/30 text-sm">— Jason Wides, Greenstar Solar</p>
+          <p className="text-white/30 text-sm">- Jack Whybrow, Director, Greenstar Solar</p>
         </motion.div>
       </div>
     </section>

@@ -499,8 +499,8 @@ function TrustPrinciplesStack() {
 const testimonials = [
   {
     quote: 'Things have completely changed for the better. They helped us automate our whole sales process and built us a website that represents the business brilliantly.',
-    author: 'Jason Wides',
-    company: 'Greenstar Solar',
+    author: 'Jack Whybrow',
+    company: 'Director, Greenstar Solar',
   },
   {
     quote: 'We have an AI assistant who answers the phone, grabs details and books jobs. We capture every client possible. Incredibly affordable compared to a full time member of staff.',
@@ -520,7 +520,7 @@ const testimonials = [
   {
     quote: 'Incredibly efficient, knowledgeable, and easy to work with. Delivered everything on time, and often ahead of schedule. The end result far exceeded our expectations.',
     author: 'Jack Castle',
-    company: '',
+    company: 'Director, Greenstar Solar',
   },
 ]
 
