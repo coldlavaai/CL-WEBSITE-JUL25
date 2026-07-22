@@ -87,16 +87,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  // Retired to old.coldlava.ai (2026-07-22): the new site owns the apex.
+  // Noindex so this archive never shadows coldlava.ai in the index.
   robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+    index: false,
+    follow: false,
+    googleBot: { index: false, follow: false },
   },
   verification: {
     google: 'your-google-verification-code', // Replace with actual verification code
